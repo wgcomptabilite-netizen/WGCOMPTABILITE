@@ -135,7 +135,9 @@
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -249,7 +251,7 @@
   }
 
   .hero-left {
-    background: var(--navy);
+    background: radial-gradient(120% 100% at 90% 0%, #1f3658 0%, var(--navy) 58%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -287,8 +289,8 @@
 
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    font-weight: 300;
+    font-size: clamp(2.6rem, 4.3vw, 4rem);
+    font-weight: 400;
     line-height: 1.1;
     color: var(--cream);
     margin-bottom: 1rem;
@@ -302,7 +304,7 @@
 
   .hero-subtitle {
     font-size: 0.9rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8;
     color: rgba(248,245,239,0.55);
     margin-bottom: 2.5rem;
@@ -363,54 +365,6 @@
     text-align: center;
   }
 
-  .monogram {
-    width: 120px; height: 120px;
-    border: 1px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.75rem;
-    position: relative;
-  }
-
-  .monogram::before {
-    content: '';
-    position: absolute;
-    inset: 6px;
-    border: 1px solid rgba(184,154,90,0.3);
-  }
-
-  .monogram span {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.05em;
-  }
-
-  .tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--navy);
-    margin-bottom: 0.75rem;
-  }
-
-  .tagline-sub {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .divider {
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    margin: 1.5rem auto;
-  }
-
   .contact-pills {
     display: flex;
     flex-direction: column;
@@ -461,7 +415,7 @@
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.8rem;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--navy);
     line-height: 1.1;
   }
@@ -600,7 +554,7 @@
   .price-tag {
     font-family: 'Cormorant Garamond', serif;
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--navy);
     line-height: 1;
     margin-bottom: 0.4rem;
@@ -764,7 +718,7 @@
   .tier-price {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.3rem;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--navy);
     line-height: 1.05;
     margin-bottom: 0.4rem;
@@ -928,7 +882,7 @@
   .mission-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.9rem, 3.2vw, 2.6rem);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.15;
     color: var(--cream);
     margin: 1rem 0 1.5rem;
@@ -965,7 +919,7 @@
   .pillar-num {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--gold);
     display: block;
     margin-bottom: 0.9rem;
@@ -1264,9 +1218,125 @@
     cursor: pointer;
   }
 
+
+  /* POLISH — warm, modern, smooth */
+  :root { --r: 16px; --gold-deep: #8a6d2f; --ease: cubic-bezier(.2,.7,.2,1); }
+  html { scroll-padding-top: 5rem; }
+  body { -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--gold); color: var(--navy); }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  nav { transition: box-shadow .3s; }
+  nav.scrolled { box-shadow: 0 6px 24px rgba(14,27,46,0.08); }
+  nav a.nav-call {
+    display: inline-flex; align-items: center; gap: .55rem;
+    background: var(--navy); color: var(--cream);
+    padding: .6rem 1.15rem; border-radius: 999px;
+    font-size: .85rem; font-weight: 500; letter-spacing: .03em; text-transform: none;
+    transition: background .2s, color .2s, transform .2s var(--ease);
+  }
+  nav a.nav-call:hover { background: var(--gold); color: var(--navy); transform: translateY(-1px); }
+  nav a.nav-call svg { width: 14px; height: 14px; }
+
+  /* Hero — call to action */
+  .hero-left > * { position: relative; }
+  .eyebrow { margin-bottom: 1.25rem; }
+  .hero-title { font-weight: 500; margin-bottom: 1.1rem; }
+  .hero-subtitle { color: rgba(248,245,239,0.72); max-width: 440px; margin-bottom: 2rem; font-size: .95rem; }
+  .call-cards { display: flex; flex-direction: column; gap: .75rem; max-width: 430px; margin-bottom: 1.1rem; }
+  .call-card {
+    display: flex; align-items: center; gap: 1rem;
+    background: var(--gold); color: var(--navy); text-decoration: none;
+    padding: 1rem 1.25rem; border-radius: var(--r);
+    box-shadow: 0 10px 28px rgba(0,0,0,.22);
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .2s;
+  }
+  .call-card:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 16px 34px rgba(0,0,0,.3); }
+  .call-ico { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: var(--gold-light); display: grid; place-items: center; flex-shrink: 0; }
+  .call-ico svg { width: 19px; height: 19px; }
+  .call-txt { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+  .call-who { font-size: .8rem; color: rgba(14,27,46,.75); }
+  .call-num { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; line-height: 1.1; letter-spacing: .01em; }
+  .call-arrow { width: 18px; height: 18px; flex-shrink: 0; opacity: .55; transition: transform .25s var(--ease), opacity .25s; }
+  .call-card:hover .call-arrow { transform: translateX(4px); opacity: 1; }
+  .call-note { display: flex; align-items: center; gap: .55rem; font-size: .82rem; color: rgba(248,245,239,.7); margin-bottom: 1.75rem; }
+  .call-note::before { content: '✓'; color: var(--gold-light); font-weight: 600; }
+  .hero-actions { gap: 1.5rem; }
+  .hero-actions .g-badge { margin-top: 0; }
+  .g-badge.on-dark { color: var(--cream); border-color: rgba(212,184,122,.4); }
+  .g-badge.on-dark .g-stars { color: var(--gold-light); }
+
+  /* Hero — price glance */
+  .hero-right { background: linear-gradient(160deg, #f4efe4 0%, #ebe4d6 100%); text-align: left; }
+  .quick { width: 100%; max-width: 400px; }
+  .quick-title { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 500; line-height: 1.1; color: var(--navy); margin-bottom: .4rem; }
+  .quick-sub { font-size: .8rem; color: var(--text-muted); margin-bottom: 1.4rem; }
+  .quick-list { display: flex; flex-direction: column; gap: .6rem; }
+  .quick-row {
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    background: #fffdf8; border: 1px solid rgba(184,154,90,.28); border-radius: 12px;
+    padding: .95rem 1.1rem; text-decoration: none; color: var(--navy);
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .2s;
+  }
+  .quick-row:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(14,27,46,.1); border-color: var(--gold); }
+  .quick-name { font-size: .92rem; font-weight: 500; }
+  .quick-price { font-size: .82rem; color: var(--gold-deep); font-weight: 500; white-space: nowrap; }
+  .quick .contact-pills { margin-top: 1.6rem; max-width: none; }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .hero-left > *, .hero-right .quick { animation: rise .8s var(--ease) both; }
+  .hero-left > :nth-child(2) { animation-delay: .07s; }
+  .hero-left > :nth-child(3) { animation-delay: .14s; }
+  .hero-left > :nth-child(4) { animation-delay: .21s; }
+  .hero-left > :nth-child(5) { animation-delay: .28s; }
+  .hero-left > :nth-child(6) { animation-delay: .35s; }
+  .hero-right .quick { animation-delay: .25s; }
+
+  /* Softer shapes */
+  .services-grid, .price-grid, .tier-grid, .biz-grid, .team-grid, .pillars, .offer { border-radius: var(--r); overflow: hidden; }
+  .addon, .tier-strip { margin-top: 1rem; border-radius: var(--r); }
+  .review-box, .calc, .privacy { border-radius: 14px; }
+  .seg, .stepper { border-radius: 10px; overflow: hidden; }
+  .price-tabs { border-radius: 999px; padding: 4px; gap: 2px; }
+  .price-tabs button { border-radius: 999px; }
+  .lang-toggle, .g-badge, .cta-btn, .submit-btn, .call-fab { border-radius: 999px; }
+  .menu-btn { border-radius: 10px; }
+  .member-photo { border-radius: 50%; }
+  .pill-icon { border-radius: 50%; }
+  input[type="text"], input[type="email"], textarea { border-radius: 12px; }
+  input:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(184,154,90,.2); }
+
+  /* Motion */
+  .service-card, .tier, .member, .pillar { transition: background .3s var(--ease), color .3s var(--ease); }
+  .tier:hover { background: #fffdf8; }
+  .cta-btn { transition: background .2s, transform .25s var(--ease), box-shadow .25s var(--ease); }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(184,154,90,.35); }
+  .submit-btn { transition: background .2s, color .2s, transform .25s var(--ease); }
+  .submit-btn:hover { transform: translateY(-2px); }
+  .reveal { transition: opacity .7s var(--ease), transform .7s var(--ease); }
+  .reveal.visible .service-card, .reveal.visible .member, .reveal.visible .pillar { animation: rise .7s var(--ease) both; }
+  .reveal.visible > :nth-child(2) { animation-delay: .06s; }
+  .reveal.visible > :nth-child(3) { animation-delay: .12s; }
+  .reveal.visible > :nth-child(4) { animation-delay: .18s; }
+  .reveal.visible > :nth-child(n+5) { animation-delay: .24s; }
+
+  /* Tighter rhythm = faster page */
+  .services, .pricing, .about, .contact { padding-top: 6rem; padding-bottom: 6rem; }
+  .section-header { margin-bottom: 3rem; }
+  .about-intro { margin-top: -1rem; margin-bottom: 3rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+
   /* RESPONSIVE — TABLET */
   @media (max-width: 1024px) {
     nav { padding: 1rem 1.75rem; }
+    nav a.nav-call { display: none; }
+    .hero-right { text-align: left; }
+    .quick { max-width: 520px; margin: 0 auto; }
     .nav-right { gap: 1.5rem; }
     nav ul { gap: 1.5rem; }
 
@@ -1321,7 +1391,10 @@
       text-transform: uppercase;
       text-decoration: none;
       box-shadow: 0 6px 18px rgba(14,27,46,0.25);
+      opacity: 0; transform: translateY(14px); pointer-events: none;
+      transition: opacity .3s, transform .3s var(--ease);
     }
+    .call-fab.show { opacity: 1; transform: none; pointer-events: auto; }
 
     footer { padding-bottom: 5rem; }
     .logo { font-size: 1.15rem; }
@@ -1331,6 +1404,9 @@
     .hero-right { padding: 3.5rem 1.5rem; }
     .hero-title { font-size: clamp(2.4rem, 9vw, 3.1rem); }
     .hero-subtitle { max-width: none; }
+    .call-num { font-size: 1.7rem; }
+    .call-cards { max-width: none; }
+    .quick-title { font-size: 1.9rem; }
     .hero-left::before { width: 240px; height: 240px; top: -60px; right: -60px; }
 
     .services, .pricing, .about, .contact { padding: 4rem 1.5rem; }
@@ -1363,6 +1439,7 @@
   <div class="logo">W<span>&</span>G Comptabilité</div>
   <div class="nav-right">
     <button type="button" class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="nav-call" href="tel:+14384986969"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(438) 498-6969</a>
     <ul id="nav-links">
       <li><a href="#apropos" data-fr="À propos" data-en="About">À propos</a></li>
       <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
@@ -1380,55 +1457,76 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="eyebrow" data-lang data-fr="Tenue de livres · Fiscalité · Montérégie" data-en="Bookkeeping · Tax · Montérégie"></p>
+    <p class="eyebrow" data-lang data-fr="Cabinet CPA · Tenue de livres · Fiscalité · Montérégie" data-en="CPA firm · Bookkeeping · Tax · Montérégie"></p>
     <h1 class="hero-title">
-      <span data-lang data-fr="Une comptabilité <em>rigoureuse,</em> une relation de confiance." data-en="<em>Rigorous</em> accounting, a relationship built on trust."></span>
+      <span data-lang data-fr="Un appel, <em>et on s'occupe du reste.</em>" data-en="One call, <em>and we take care of the rest.</em>"></span>
     </h1>
-    <p class="hero-subtitle" data-lang data-fr="Fiscalité, tenue de livres et conseil propulsés par l'automatisation — pour particuliers et entreprises au Québec." data-en="Taxation, bookkeeping, and advisory powered by automation — for individuals and businesses in Quebec."></p>
-    <div class="hero-actions">
-      <a href="#contact" class="cta-btn">
-        <span data-lang data-fr="Prendre contact" data-en="Get in touch"></span>
-        <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
+    <p class="hero-subtitle" data-lang data-fr="Impôts, tenue de livres, TPS/TVQ, paie : parlez directement à Vincent ou à Anaël." data-en="Taxes, bookkeeping, GST/QST, payroll: talk directly to Vincent or Anaël."></p>
+    <div class="call-cards">
+      <a class="call-card" href="tel:+14384986969">
+        <span class="call-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span class="call-txt">
+          <span class="call-who" data-lang data-fr="Appeler Vincent · CPA auditeur" data-en="Call Vincent · CPA auditor"></span>
+          <span class="call-num">(438) 498-6969</span>
+        </span>
+        <svg class="call-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
       </a>
-      <a href="#services" class="cta-ghost" data-lang data-fr="Voir nos services" data-en="See our services"></a>
+      <a class="call-card" href="tel:+14388388658">
+        <span class="call-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span class="call-txt">
+          <span class="call-who" data-lang data-fr="Appeler Anaël · Construction &amp; immobilier" data-en="Call Anaël · Construction &amp; real estate"></span>
+          <span class="call-num">(438) 838-8658</span>
+        </span>
+        <svg class="call-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
+      </a>
+    </div>
+    <p class="call-note" data-lang data-fr="Appel préliminaire gratuit · sans engagement" data-en="Free preliminary call · no obligation"></p>
+    <div class="hero-actions">
+      <a class="g-badge on-dark" href="https://search.google.com/local/reviews?placeid=ChIJsbRhELkYiGcRYlPw8QaCfw4" target="_blank" rel="noopener">
+        <span class="g-stars" aria-hidden="true">★★★★★</span>
+        <span><strong>5,0</strong> · <span data-lang data-fr="16 avis Google" data-en="16 Google reviews"></span></span>
+      </a>
+      <a href="#contact" class="cta-ghost" data-lang data-fr="Préférez écrire ? Écrivez-nous →" data-en="Prefer to write? Message us →"></a>
     </div>
   </div>
 
   <div class="hero-right">
-    <div class="monogram"><span>W&G</span></div>
-    <p class="tagline" data-lang data-fr="L'expertise à votre service." data-en="Expertise at your service."></p>
-    <p class="tagline-sub" data-lang data-fr="Cabinet CPA" data-en="CPA firm"></p>
-    <div class="divider"></div>
-    <div class="contact-pills">
-      <div class="pill">
-        <div class="pill-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <a href="tel:+14384986969">(438) 498-6969 <span class="pill-name">· Vincent Watts</span></a>
+    <div class="quick">
+      <h2 class="quick-title" data-lang data-fr="Combien ça coûte ?" data-en="How much does it cost?"></h2>
+      <p class="quick-sub" data-lang data-fr="Des prix clairs, affichés d'avance. Taxes en sus." data-en="Clear prices, shown upfront. Taxes extra."></p>
+      <div class="quick-list">
+        <a class="quick-row" href="#tarifs" data-goto="particuliers:t1">
+          <span class="quick-name" data-lang data-fr="Déclaration de revenus" data-en="Tax return"></span>
+          <span class="quick-price" data-lang data-fr="dès 100 $" data-en="from $100"></span>
+        </a>
+        <a class="quick-row" href="#tarifs" data-goto="entreprises:livres">
+          <span class="quick-name" data-lang data-fr="Tenue de livres" data-en="Bookkeeping"></span>
+          <span class="quick-price" data-lang data-fr="dès 200 $/mois" data-en="from $200/mo"></span>
+        </a>
+        <a class="quick-row" href="#tarifs" data-goto="entreprises:livres">
+          <span class="quick-name" data-lang data-fr="Paie" data-en="Payroll"></span>
+          <span class="quick-price" data-lang data-fr="dès 20 $/employé/mois" data-en="from $20/employee/mo"></span>
+        </a>
+        <a class="quick-row" href="#tarifs" data-goto="entreprises:ponctuels">
+          <span class="quick-name" data-lang data-fr="Démarrage d'entreprise" data-en="Business start-up"></span>
+          <span class="quick-price" data-lang data-fr="dès 200 $" data-en="from $200"></span>
+        </a>
       </div>
-      <div class="pill">
-        <div class="pill-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <div class="contact-pills">
+        <div class="pill">
+          <div class="pill-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <a href="mailto:wgcomptabilite@gmail.com">wgcomptabilite@gmail.com</a>
         </div>
-        <a href="tel:+14388388658">(438) 838-8658 <span class="pill-name">· Anaël Gagné</span></a>
-      </div>
-      <div class="pill">
-        <div class="pill-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="pill">
+          <div class="pill-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          156, rue Gervais, Otterburn Park
         </div>
-        <a href="mailto:wgcomptabilite@gmail.com">wgcomptabilite@gmail.com</a>
-      </div>
-      <div class="pill">
-        <div class="pill-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        156, rue Gervais, Otterburn Park
       </div>
     </div>
-    <a class="g-badge" href="https://search.google.com/local/reviews?placeid=ChIJsbRhELkYiGcRYlPw8QaCfw4" target="_blank" rel="noopener">
-      <span class="g-stars" aria-hidden="true">★★★★★</span>
-      <span><strong>5,0</strong> · <span data-lang data-fr="16 avis Google" data-en="16 Google reviews"></span></span>
-    </a>
   </div>
 </section>
 
@@ -2057,11 +2155,18 @@ if (new URLSearchParams(location.search).get('merci') === '1') {
 }
 
 // Service cards open the matching pricing tab and service
-document.querySelectorAll('.service-card[data-goto]').forEach(card => card.addEventListener('click', () => {
+document.querySelectorAll('[data-goto]').forEach(card => card.addEventListener('click', () => {
   const [tab, svc] = card.dataset.goto.split(':');
   document.querySelector(`.price-tabs [data-tab="${tab}"]`).click();
   document.querySelector(`.price-panel[data-panel="${tab}"] .svc-pills [data-svc="${svc}"]`).click();
 }));
+
+// Nav shadow on scroll + call button appears on phones once the hero is out of view
+const navScroll = () => document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 8);
+window.addEventListener('scroll', navScroll, { passive: true });
+navScroll();
+new IntersectionObserver(([e]) => document.querySelector('.call-fab').classList.toggle('show', !e.isIntersecting), { threshold: 0.05 })
+  .observe(document.querySelector('.hero-left'));
 
 // Mobile menu
 const menuBtn = document.getElementById('menu-btn');
