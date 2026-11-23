@@ -166,12 +166,12 @@
 
   :root {
     --navy: #0e1b2e;
-    --navy-mid: #162440;
-    --gold: #b89a5a;
-    --gold-light: #d4b87a;
-    --cream: #f8f5ef;
-    --cream-dark: #ede8df;
-    --text-muted: #665c4b;
+    --navy-mid: #1b2f52;
+    --gold: #c29a48;
+    --gold-light: #e6c882;
+    --cream: #fbf3e3;
+    --cream-dark: #f1e4c9;
+    --text-muted: #6b5b40;
   }
 
   html { scroll-behavior: smooth; }
@@ -193,7 +193,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 3rem;
-    background: rgba(248,245,239,0.92);
+    background: rgba(251,243,227,0.94);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(184,154,90,0.18);
   }
@@ -1299,7 +1299,7 @@
   .quick-list { display: flex; flex-direction: column; gap: .6rem; }
   .quick-row {
     display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-    background: #fffdf8; border: 1px solid rgba(184,154,90,.28); border-radius: 12px;
+    background: #fffaf0; border: 1px solid rgba(184,154,90,.28); border-radius: 12px;
     padding: .95rem 1.1rem; text-decoration: none; color: var(--navy);
     transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .2s;
   }
@@ -1308,7 +1308,7 @@
   .quick-price { font-size: .82rem; color: var(--gold-deep); font-weight: 500; white-space: nowrap; }
   .quick .contact-pills { margin-top: 1.6rem; max-width: none; }
 
-  .panel-cta { margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; padding: 1.5rem 2rem; border-radius: var(--r); background: #fffdf8; border: 1px solid rgba(184,154,90,.35); }
+  .panel-cta { margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; padding: 1.5rem 2rem; border-radius: var(--r); background: #fffaf0; border: 1px solid rgba(184,154,90,.35); }
   .panel-cta p { font-size: .95rem; color: var(--navy); max-width: 520px; }
   .panel-cta .cta-btn span { font-family: 'DM Sans', sans-serif; font-weight: 700; letter-spacing: .02em; text-transform: none; font-size: .95rem; }
 
@@ -1353,7 +1353,7 @@
   .fn-cats { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
   .fn-cat {
     text-align: left; font-family: 'DM Sans', sans-serif; cursor: pointer; color: var(--navy);
-    background: #fffdf8; border: 1px solid rgba(184,154,90,.35); border-radius: 14px;
+    background: #fffaf0; border: 1px solid rgba(184,154,90,.35); border-radius: 14px;
     padding: 1rem 1rem .95rem; display: flex; flex-direction: column; gap: .3rem;
     transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .2s;
   }
@@ -1361,28 +1361,28 @@
   .fn-cat b { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; line-height: 1.1; }
   .fn-cat span { font-size: .8rem; line-height: 1.45; color: var(--text-muted); }
   button.quick-row { font-family: 'DM Sans', sans-serif; text-align: left; width: 100%; cursor: pointer; }
-  .fn-chip { font-size: .85rem; line-height: 1.5; color: var(--navy); background: #fffdf8; border: 1px solid rgba(184,154,90,.35); border-radius: 12px; padding: .65rem .9rem; margin-bottom: 1rem; }
+  .fn-chip { font-size: .85rem; line-height: 1.5; color: var(--navy); background: #fffaf0; border: 1px solid rgba(184,154,90,.35); border-radius: 12px; padding: .65rem .9rem; margin-bottom: 1rem; }
   .fn-form { display: flex; flex-direction: column; gap: .8rem; }
   .fn-two { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
-  .fn-form input[type="text"], .fn-form input[type="email"], .fn-form input[type="tel"], .fn-form textarea { background: #fffdf8; padding: .65rem .85rem; }
+  .fn-form input[type="text"], .fn-form input[type="email"], .fn-form input[type="tel"], .fn-form textarea { background: #fffaf0; padding: .65rem .85rem; }
   .fn-form .cta-btn { width: 100%; justify-content: center; margin-top: .2rem; }
   .fn-step { scroll-margin-top: 96px; }
   .quick { scroll-margin-top: 80px; }
   .fn-opts { display: flex; flex-direction: column; gap: 1.1rem; margin: .4rem 0 1rem; }
   .fn-gl { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: .5rem; }
   .fn-pills { display: flex; flex-wrap: wrap; gap: .45rem; }
-  .fn-pills button { font-family: 'DM Sans', sans-serif; font-size: .85rem; cursor: pointer; color: var(--navy); background: #fffdf8; border: 1px solid rgba(14,27,46,.18); border-radius: 999px; padding: .6rem 1rem; min-height: 40px; transition: background .2s, color .2s, border-color .2s; }
+  .fn-pills button { font-family: 'DM Sans', sans-serif; font-size: .85rem; cursor: pointer; color: var(--navy); background: #fffaf0; border: 1px solid rgba(14,27,46,.18); border-radius: 999px; padding: .6rem 1rem; min-height: 40px; transition: background .2s, color .2s, border-color .2s; }
   .fn-pills button:hover { border-color: var(--gold); }
   .fn-pills button.active { background: #fff; border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; color: var(--navy); font-weight: 600; }
   .fn-pills button.active::before { content: '\2713\00a0'; color: var(--gold-deep); }
-  .fn-chk { display: flex; align-items: center; gap: .65rem; font-size: .9rem; color: var(--navy); cursor: pointer; padding: .55rem .75rem; min-height: 44px; background: #fffdf8; border: 1px solid rgba(14,27,46,.12); border-radius: 12px; }
+  .fn-chk { display: flex; align-items: center; gap: .65rem; font-size: .9rem; color: var(--navy); cursor: pointer; padding: .55rem .75rem; min-height: 44px; background: #fffaf0; border: 1px solid rgba(14,27,46,.12); border-radius: 12px; }
   .fn-chk + .fn-chk { margin-top: .4rem; }
   .fn-chk input, .calc input[type="checkbox"] { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; margin: 0; flex-shrink: 0; cursor: pointer; background: #fff; border: 1.5px solid rgba(14,27,46,.35); border-radius: 6px; transition: background .15s, border-color .15s; }
   .fn-chk input:checked, .calc input[type="checkbox"]:checked { background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3 7.5l2.6 2.6L11 4.5' fill='none' stroke='%230e1b2e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat; border-color: var(--gold); }
   .fn-chk input:focus-visible, .calc input[type="checkbox"]:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
   .fn-text { width: 100%; font-family: 'DM Sans', sans-serif; font-size: .9rem; color: var(--navy); background: #fff; border: 1px solid rgba(14,27,46,.18); border-radius: 12px; padding: .65rem .85rem; resize: vertical; }
   .fn-text:focus { outline: none; border-color: var(--gold); }
-  .fn-docs { background: #fffdf8; border: 1px solid rgba(184,154,90,.35); border-radius: 12px; padding: .7rem .9rem; margin-bottom: 1rem; font-size: .82rem; line-height: 1.5; color: var(--navy); }
+  .fn-docs { background: #fffaf0; border: 1px solid rgba(184,154,90,.35); border-radius: 12px; padding: .7rem .9rem; margin-bottom: 1rem; font-size: .82rem; line-height: 1.5; color: var(--navy); }
   .fn-docs summary { cursor: pointer; font-weight: 600; font-size: .9rem; }
   .fn-docs p { margin: .4rem 0; color: var(--text-muted); font-size: .78rem; }
   .fn-docs ul { list-style: none; margin: .3rem 0 0; padding: 0; }
@@ -1394,7 +1394,7 @@
   .fn-count { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
   .fn-count .fn-gl { margin: 0; }
   .fn-tiers { display: flex; flex-direction: column; gap: .55rem; }
-  .fn-tier { font-family: 'DM Sans', sans-serif; text-align: left; cursor: pointer; color: var(--navy); background: #fffdf8; border: 1px solid rgba(14,27,46,.14); border-radius: 14px; padding: .85rem 1rem; display: flex; flex-direction: column; gap: .35rem; transition: border-color .2s, box-shadow .2s, transform .2s var(--ease); }
+  .fn-tier { font-family: 'DM Sans', sans-serif; text-align: left; cursor: pointer; color: var(--navy); background: #fffaf0; border: 1px solid rgba(14,27,46,.14); border-radius: 14px; padding: .85rem 1rem; display: flex; flex-direction: column; gap: .35rem; transition: border-color .2s, box-shadow .2s, transform .2s var(--ease); }
   .fn-tier:hover { border-color: var(--gold); transform: translateY(-2px); }
   .fn-tier.active { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold) inset; background: #fff; }
   .fn-tier-h { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
@@ -1409,7 +1409,7 @@
   .fn-note { font-size: .8rem; line-height: 1.5; color: var(--text-muted); border-left: 2px solid var(--gold); padding-left: .75rem; margin: 0 0 .9rem; }
   .fn-next { width: 100%; justify-content: center; }
   .fn-next:disabled { opacity: .45; cursor: not-allowed; }
-  .fn-recap { font-size: .85rem; line-height: 1.55; color: var(--navy); background: #fffdf8; border: 1px solid rgba(184,154,90,.35); border-radius: 12px; padding: .7rem .9rem; margin-bottom: 1rem; }
+  .fn-recap { font-size: .85rem; line-height: 1.55; color: var(--navy); background: #fffaf0; border: 1px solid rgba(184,154,90,.35); border-radius: 12px; padding: .7rem .9rem; margin-bottom: 1rem; }
   .fn-recap b { display: block; font-weight: 600; }
   .fn-recap ul { list-style: none; margin: .3rem 0 0; padding: 0; color: var(--text-muted); }
   .fn-recap li { padding-left: .9rem; position: relative; }
@@ -1421,7 +1421,7 @@
   .fn-pick { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
   .fn-card {
     text-align: left; font-family: 'DM Sans', sans-serif; cursor: pointer;
-    background: #fffdf8; border: 1px solid rgba(184,154,90,.35); border-radius: var(--r);
+    background: #fffaf0; border: 1px solid rgba(184,154,90,.35); border-radius: var(--r);
     padding: 1.35rem 1.15rem 1.25rem; color: var(--navy);
     display: flex; flex-direction: column; gap: .35rem;
     transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .2s;
@@ -1460,7 +1460,7 @@
 
   /* Motion */
   .service-card, .tier, .member, .pillar { transition: background .3s var(--ease), color .3s var(--ease); }
-  .tier:hover { background: #fffdf8; }
+  .tier:hover { background: #fffaf0; }
   .cta-btn { transition: background .2s, transform .25s var(--ease), box-shadow .25s var(--ease); }
   .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(184,154,90,.35); }
   .submit-btn { transition: background .2s, color .2s, transform .25s var(--ease); }
@@ -1480,7 +1480,7 @@
     padding-top: calc(6rem + var(--ov)); padding-bottom: 6rem;
   }
   .about { background: #0a1424; }
-  .services { background: #fffdf8; }
+  .services { background: #fffaf0; }
   .pricing { background: #e7dfcf; }
   .contact { background: var(--cream); }
   .hero { position: relative; z-index: 0; }
@@ -1676,6 +1676,48 @@
     .fn-two { grid-template-columns: 1fr; }
     .fn-name { font-size: 1.6rem; }
   }
+
+  /* ===== Warm & bold palette ===== */
+  :root { --r: 22px; }
+  nav { border-bottom-color: rgba(194,154,72,.35); }
+  .hero {
+    background:
+      radial-gradient(75% 60% at 50% -8%, rgba(230,200,130,.42) 0%, rgba(230,200,130,0) 72%),
+      radial-gradient(110% 85% at 50% 105%, #2c4672 0%, #172b4d 52%, #11213c 100%);
+  }
+  .hero-top { background: rgba(17,33,60,.55); border-bottom-color: rgba(230,200,130,.28); }
+  .about, .services, .pricing, .contact { box-shadow: 0 -18px 50px rgba(70,45,10,.30), 0 -3px 0 rgba(230,200,130,.75); }
+  .about {
+    background:
+      radial-gradient(60% 45% at 88% 0%, rgba(230,200,130,.20) 0%, transparent 70%),
+      linear-gradient(180deg, #1b3052 0%, #132340 100%);
+  }
+  .services { background: linear-gradient(180deg, #fdf5e4 0%, #f8e9cb 100%); }
+  .contact { background: linear-gradient(180deg, #f7e9c9 0%, #f0dbb0 100%); }
+  .pillar { background: #203760; }
+  .pillar:hover { background: #274370; }
+  .service-card { background: #fffaf0; }
+  .service-card:hover { background: var(--navy-mid); }
+  .service-card.featured { background: linear-gradient(135deg, #ebcf8d 0%, #c29a48 100%); }
+  .services-grid { box-shadow: 0 18px 44px rgba(120,85,20,.18); }
+  .review-box { background: #fff8e8; }
+  input[type="text"], input[type="email"], input[type="tel"], textarea { background: #fffaf0; border-color: rgba(120,85,20,.22); }
+  .cta-btn, .submit-btn {
+    background: linear-gradient(135deg, #ebcf8d 0%, #c29a48 100%); color: var(--navy); font-weight: 600;
+    box-shadow: 0 10px 24px rgba(150,105,25,.32); border: none;
+  }
+  .cta-btn:hover, .submit-btn:hover { background: linear-gradient(135deg, #f2d998 0%, #cfa655 100%); color: var(--navy); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(150,105,25,.42); }
+  .quick {
+    background: linear-gradient(160deg, #fffaf0 0%, #f7e8c8 100%); border-radius: 30px;
+    box-shadow: 0 40px 90px rgba(10,20,40,.5), 0 0 0 1px rgba(230,200,130,.7), 0 0 60px rgba(230,200,130,.18);
+  }
+  .fn-card, .fn-cat, .fn-tier, .quick-row { border-color: rgba(194,154,72,.45); box-shadow: 0 6px 16px rgba(120,85,20,.08); }
+  .fn-card:hover, .fn-cat:hover, .fn-tier:hover, .quick-row:hover { box-shadow: 0 16px 34px rgba(120,85,20,.2); }
+  .fn-est { background: linear-gradient(135deg, #223a63, #14284a); }
+  .fn-progress li.now i { background: #223a63; border-color: #223a63; }
+  .fn-pills button.active { box-shadow: 0 0 0 2px var(--gold) inset; }
+  .quick-price { white-space: normal; text-align: right; max-width: 46%; line-height: 1.35; }
+  footer { background: linear-gradient(180deg, #132340, #0f1d36); }
 </style>
 </head>
 <body>
@@ -2122,7 +2164,7 @@ const NOTE = {
 };
 const FN = {
   particuliers: { fr: 'Particulier', en: 'Individual', items: [
-    { fr: 'Déclaration de revenus', en: 'Tax return', dfr: 'Québec + fédéral, produites dans les délais', den: 'Quebec + federal, filed on time', pfr: 'dès 100 $' + TAX.fr, pen: 'from $100' + TAX.en, go: 'particuliers:t1',
+    { fr: 'Déclaration de revenus', en: 'Tax return', dfr: 'Québec + fédéral, produites dans les délais', den: 'Quebec + federal, filed on time', pfr: 'à partir de 100 $' + TAX.fr, pen: 'from $100' + TAX.en, go: 'particuliers:t1',
       opts: [SITU, C('self1', 'Je suis travailleur autonome', "I'm self-employed")].concat(
         selfQs('1', s => s.self1, false),
         [C('self2', 'Mon conjoint ou ma conjointe est travailleur autonome', 'My partner is self-employed', s => s.mode === 1)],
@@ -2131,7 +2173,7 @@ const FN = {
       est: (s, L) => {
         if (s.complex) return L === 'fr' ? 'sur soumission' : 'by quote';
         const r = t1Calc(s);
-        return (r.self ? (L === 'fr' ? 'dès ' : 'from ') : '') + fm(r.total, L) + TAX[L];
+        return (r.self ? (L === 'fr' ? 'à partir de ' : 'from ') : '') + fm(r.total, L) + TAX[L];
       },
       internal: s => {
         if (s.complex) return [];
@@ -2152,20 +2194,21 @@ const FN = {
         opts: [{ t: 'tiers', id: 'tier', fr: 'Votre forfait', en: 'Your plan', req: true }],
         est: (s, L) => s.tier == null ? null : (L === 'fr' ? 'Investissement : ' : 'Investment: ') + '$'.repeat(TIERS[s.tier].n) } ] },
     { fr: 'Fiscalité', en: 'Tax', dfr: 'Déclarations, taxes de vente, conseil et optimisation', den: 'Returns, sales taxes, advice and optimization', items: [
-      { fr: 'Fin d\'année (T2 / T3)', en: 'Year-end (T2 / T3)', dfr: 'Déclarations fédérales et du Québec de votre société ou fiducie', den: 'Federal and Quebec returns for your corporation or trust', pfr: 'dès 1 000 $' + TAX.fr, pen: 'from $1,000' + TAX.en, go: 'entreprises:impots',
+      { fr: 'Fin d\'année (T2 / T3)', en: 'Year-end (T2 / T3)', dfr: 'Déclarations fédérales et du Québec de votre société ou fiducie', den: 'Federal and Quebec returns for your corporation or trust', pfr: 'à partir de 1 000 $' + TAX.fr, pen: 'from $1,000' + TAX.en, go: 'entreprises:impots',
         opts: [S('type', 'Type de déclaration', 'Return type', [['Société (T2 / CO-17)', 'Corporation (T2 / CO-17)'], ['Fiducie (T3 / TP-646)', 'Trust (T3 / TP-646)']])],
-        est: (s, L) => (L === 'fr' ? 'dès ' : 'from ') + fm(s.type === 1 ? 2000 : 1000, L) + TAX[L] },
+        est: (s, L) => (L === 'fr' ? 'à partir de ' : 'from ') + fm(s.type === 1 ? 2000 : 1000, L) + TAX[L] },
       { fr: 'TPS / TVQ', en: 'GST / QST', dfr: 'Déclarations mensuelles, trimestrielles ou annuelles, conciliées à vos livres', den: 'Monthly, quarterly or annual filings, reconciled with your books', pfr: 'sur soumission', pen: 'by quote', go: 'entreprises:tpstvq',
         opts: [S('freq', 'Fréquence de déclaration', 'Filing frequency', [['Mensuelle', 'Monthly'], ['Trimestrielle', 'Quarterly'], ['Annuelle', 'Annual'], ['Je ne sais pas', "I don't know"]])] },
       { fr: 'Conseil et optimisation', en: 'Advice & optimization', dfr: 'Rémunération, planification fiscale, structure de l\'entreprise', den: 'Compensation, tax planning, business structure', pfr: 'Appeler', pen: 'Call us', go: 'entreprises:optim',
         opts: [M('topics', 'Sujets qui vous intéressent', 'Topics of interest', [['Rémunération des actionnaires (salaire ou dividendes)', 'Shareholder compensation (salary or dividends)'], ['Planification fiscale et réduction d\'impôt', 'Tax planning and tax reduction'], ['Structure de l\'entreprise (société, société de portefeuille)', 'Business structure (corporation, holding company)'], ['Relève ou vente de l\'entreprise', 'Succession or business sale']])] } ] },
     { fr: 'Conseil & accompagnement', en: 'Advisory & support', dfr: 'Démarrage, paie et direction financière', den: 'Start-up, payroll and financial leadership', items: [
-      { fr: 'Démarrage d\'entreprise', en: 'Business start-up', dfr: 'Création, compte bancaire, terminal de paiement : cochez ce qu\'il vous faut', den: 'Setup, bank account, payment terminal: tick what you need', pfr: 'dès 200 $' + TAX.fr, pen: 'from $200' + TAX.en, go: 'entreprises:ponctuels',
+      { fr: 'Démarrage d\'entreprise', en: 'Business start-up', dfr: 'Création, compte bancaire, terminal de paiement : cochez ce qu\'il vous faut', den: 'Setup, bank account, payment terminal: tick what you need', pfr: 'à partir de 200 $' + TAX.fr, pen: 'from $200' + TAX.en, go: 'entreprises:ponctuels',
         opts: [M('svcs', 'Services souhaités', 'Services needed', [['Création d\'entreprise — enregistrée', 'Business setup — registered', 200], ['Création d\'entreprise — incorporée', 'Business setup — incorporated', 700], ['Ouverture d\'un compte bancaire', 'Business bank account opening', 300], ['Commande d\'un terminal de paiement', 'Payment terminal order', 250]])],
         est: (s, L) => { const P = [200, 700, 300, 250]; const t = P.reduce((a, p, i) => a + (s.svcs[i] ? p : 0), 0); return t ? fm(t, L) + TAX[L] : null; } },
-      { fr: 'Paie', en: 'Payroll', dfr: 'Calcul des salaires, remises à la source, relevés T4 et RL-1', den: 'Pay calculations, source remittances, T4 and RL-1 slips', pfr: 'dès 20 $/employé/mois' + TAX.fr, pen: 'from $20/employee/mo' + TAX.en, go: 'entreprises:paie',
-        opts: [N('emp', 'Nombre d\'employés', 'Number of employees', 1, 100, 1), S('freq', 'Fréquence de paie', 'Pay frequency', [['Hebdomadaire', 'Weekly'], ['Aux deux semaines', 'Every two weeks'], ['Mensuelle', 'Monthly']])],
-        est: (s, L) => (L === 'fr' ? 'dès ' : 'from ') + fm(20 * s.emp, L) + (L === 'fr' ? '/mois' : '/mo') + TAX[L] },
+      { fr: 'Paie', en: 'Payroll', dfr: 'Calcul des salaires, remises à la source, relevés T4 et RL-1', den: 'Pay calculations, source remittances, T4 and RL-1 slips', pfr: 'à partir de 20 $/employé/mois' + TAX.fr, pen: 'from $20/employee/mo' + TAX.en, go: 'entreprises:paie',
+        opts: [N('emp', 'Nombre d\'employés', 'Number of employees', 1, 100, 1), S('freq', 'Fréquence de paie', 'Pay frequency', [['Hebdomadaire', 'Weekly'], ['Aux deux semaines', 'Every two weeks'], ['Mensuelle', 'Monthly']]),
+          M('setup', 'Option', 'Option', [['Mise en place initiale de la paie (une seule fois)', 'Initial payroll setup (one-time)', 150]], false)],
+        est: (s, L) => (L === 'fr' ? 'à partir de ' : 'from ') + fm(20 * s.emp, L) + (L === 'fr' ? '/mois' : '/mo') + TAX[L] + (s.setup[0] ? ' + ' + fm(150, L) + (L === 'fr' ? ' (mise en place)' : ' (setup)') : '') },
       { fr: 'CFO à temps partiel', en: 'Fractional CFO', dfr: 'Budgets, prévisions, tableau de bord et soutien aux décisions', den: 'Budgets, forecasts, dashboard and decision support', pfr: 'Appeler', pen: 'Call us', go: 'entreprises:cfo',
         opts: [M('topics', 'Ce dont vous avez besoin', 'What you need', [['Budgets, prévisions et flux de trésorerie', 'Budgets, forecasts and cash flow'], ['Tableau de bord de performance', 'Performance dashboard'], ['Financement auprès des institutions financières', 'Financing with lenders'], ['Soutien aux décisions stratégiques', 'Strategic decision support'], ['Rencontres fréquentes', 'Frequent meetings']])] } ] },
     { fr: 'Audit & états financiers', en: 'Audit & financial statements', dfr: 'Des états financiers fiables pour prêteurs et partenaires', den: 'Reliable financial statements for lenders and partners', items: [
