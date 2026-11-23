@@ -1256,7 +1256,7 @@
   .call-ico svg { width: 19px; height: 19px; }
   .call-txt { display: flex; flex-direction: column; min-width: 0; flex: 1; }
   .call-who { font-size: .8rem; color: rgba(14,27,46,.75); }
-  .call-num { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; line-height: 1.1; letter-spacing: .01em; }
+  .call-num { font-family: 'DM Sans', sans-serif; font-size: 1.5rem; font-weight: 700; line-height: 1.2; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
   .call-arrow { width: 18px; height: 18px; flex-shrink: 0; opacity: .55; transition: transform .25s var(--ease), opacity .25s; }
   .call-card:hover .call-arrow { transform: translateX(4px); opacity: 1; }
   .call-note { display: flex; align-items: center; gap: .55rem; font-size: .82rem; color: rgba(248,245,239,.7); margin-bottom: 1.75rem; }
@@ -1282,6 +1282,24 @@
   .quick-name { font-size: .92rem; font-weight: 500; }
   .quick-price { font-size: .82rem; color: var(--gold-deep); font-weight: 500; white-space: nowrap; }
   .quick .contact-pills { margin-top: 1.6rem; max-width: none; }
+
+  /* Funnel: particulier / entreprise */
+  .fn-pick { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .fn-card {
+    text-align: left; font-family: 'DM Sans', sans-serif; cursor: pointer;
+    background: #fffdf8; border: 1px solid rgba(184,154,90,.35); border-radius: var(--r);
+    padding: 1.35rem 1.15rem 1.25rem; color: var(--navy);
+    display: flex; flex-direction: column; gap: .35rem;
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .2s;
+  }
+  .fn-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(14,27,46,.12); border-color: var(--gold); }
+  .fn-ico { width: 42px; height: 42px; border-radius: 50%; background: var(--navy); color: var(--gold-light); display: grid; place-items: center; margin-bottom: .6rem; }
+  .fn-ico svg { width: 20px; height: 20px; }
+  .fn-name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; line-height: 1.1; }
+  .fn-desc { font-size: .78rem; line-height: 1.5; color: var(--text-muted); }
+  .fn-back { background: none; border: none; font-family: 'DM Sans', sans-serif; font-size: .78rem; color: var(--gold-deep); cursor: pointer; padding: 0; margin-bottom: .9rem; }
+  .fn-back:hover { text-decoration: underline; }
+  .fn-step { animation: rise .45s var(--ease) both; }
 
   @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
   .hero-left > *, .hero-right .quick { animation: rise .8s var(--ease) both; }
@@ -1320,8 +1338,19 @@
   .reveal.visible > :nth-child(4) { animation-delay: .18s; }
   .reveal.visible > :nth-child(n+5) { animation-delay: .24s; }
 
+  /* Stacked sheets: each section overlaps the previous one with a rounded edge + shadow */
+  .about, .services, .pricing, .contact {
+    position: relative; margin-top: -28px;
+    border-radius: 28px 28px 0 0;
+    box-shadow: 0 -14px 34px rgba(14,27,46,.16);
+    padding-top: calc(6rem + 28px); padding-bottom: 6rem;
+  }
+  .about { background: #0a1424; border-top: 1px solid rgba(184,154,90,.35); }
+  .services { background: #fffdf8; }
+  .pricing { background: var(--cream-dark); }
+  .contact { background: var(--cream); }
+  .hero { position: relative; z-index: 0; }
   /* Tighter rhythm = faster page */
-  .services, .pricing, .about, .contact { padding-top: 6rem; padding-bottom: 6rem; }
   .section-header { margin-bottom: 3rem; }
   .about-intro { margin-top: -1rem; margin-bottom: 3rem; }
 
@@ -1344,7 +1373,7 @@
     .hero-left { padding: 4.5rem 2.5rem; }
     .hero-right { padding: 4rem 2.5rem; }
 
-    .services, .pricing, .about, .contact { padding: 5rem 2.5rem; }
+    .services, .pricing, .about, .contact { padding: 5rem 2.5rem; padding-top: calc(5rem + 28px); }
     .price-grid { grid-template-columns: 1fr; }
     .tier-grid { grid-template-columns: repeat(2, 1fr); }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1404,12 +1433,14 @@
     .hero-right { padding: 3.5rem 1.5rem; }
     .hero-title { font-size: clamp(2.4rem, 9vw, 3.1rem); }
     .hero-subtitle { max-width: none; }
-    .call-num { font-size: 1.7rem; }
+    .call-num { font-size: 1.4rem; }
     .call-cards { max-width: none; }
     .quick-title { font-size: 1.9rem; }
+    .fn-name { font-size: 1.45rem; }
     .hero-left::before { width: 240px; height: 240px; top: -60px; right: -60px; }
 
-    .services, .pricing, .about, .contact { padding: 4rem 1.5rem; }
+    .services, .pricing, .about, .contact { padding: 4rem 1.5rem; padding-top: calc(4rem + 28px); }
+    .about, .services, .pricing, .contact { border-radius: 22px 22px 0 0; margin-top: -22px; }
     .price-card { padding: 2.25rem 1.5rem; }
     .tier-grid { grid-template-columns: 1fr; }
     .tier { padding: 2rem 1.5rem; }
@@ -1492,25 +1523,27 @@
 
   <div class="hero-right">
     <div class="quick">
-      <h2 class="quick-title" data-lang data-fr="Combien ça coûte ?" data-en="How much does it cost?"></h2>
-      <p class="quick-sub" data-lang data-fr="Des prix clairs, affichés d'avance. Taxes en sus." data-en="Clear prices, shown upfront. Taxes extra."></p>
-      <div class="quick-list">
-        <a class="quick-row" href="#tarifs" data-goto="particuliers:t1">
-          <span class="quick-name" data-lang data-fr="Déclaration de revenus" data-en="Tax return"></span>
-          <span class="quick-price" data-lang data-fr="dès 100 $" data-en="from $100"></span>
-        </a>
-        <a class="quick-row" href="#tarifs" data-goto="entreprises:livres">
-          <span class="quick-name" data-lang data-fr="Tenue de livres" data-en="Bookkeeping"></span>
-          <span class="quick-price" data-lang data-fr="dès 200 $/mois" data-en="from $200/mo"></span>
-        </a>
-        <a class="quick-row" href="#tarifs" data-goto="entreprises:livres">
-          <span class="quick-name" data-lang data-fr="Paie" data-en="Payroll"></span>
-          <span class="quick-price" data-lang data-fr="dès 20 $/employé/mois" data-en="from $20/employee/mo"></span>
-        </a>
-        <a class="quick-row" href="#tarifs" data-goto="entreprises:ponctuels">
-          <span class="quick-name" data-lang data-fr="Démarrage d'entreprise" data-en="Business start-up"></span>
-          <span class="quick-price" data-lang data-fr="dès 200 $" data-en="from $200"></span>
-        </a>
+      <div class="fn-step" id="fn-1">
+        <h2 class="quick-title" data-lang data-fr="Vous êtes…" data-en="You are…"></h2>
+        <p class="quick-sub" data-lang data-fr="Choisissez pour voir les services et les prix qui vous concernent." data-en="Choose to see the services and prices that fit you."></p>
+        <div class="fn-pick">
+          <button type="button" class="fn-card" data-seg="particuliers">
+            <span class="fn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+            <span class="fn-name" data-lang data-fr="Particulier" data-en="Individual"></span>
+            <span class="fn-desc" data-lang data-fr="Impôts, travail autonome, retraite" data-en="Taxes, self-employed, retirement"></span>
+          </button>
+          <button type="button" class="fn-card" data-seg="entreprises">
+            <span class="fn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16"/><path d="M14 10h5a1 1 0 0 1 1 1v10"/><path d="M8 8h2M8 12h2M8 16h2M3 21h18"/></svg></span>
+            <span class="fn-name" data-lang data-fr="Entreprise" data-en="Business"></span>
+            <span class="fn-desc" data-lang data-fr="Livres, fiscalité, paie, démarrage" data-en="Books, tax, payroll, start-up"></span>
+          </button>
+        </div>
+      </div>
+      <div class="fn-step" id="fn-2" hidden>
+        <button type="button" class="fn-back" id="fn-back"></button>
+        <h2 class="quick-title" data-lang data-fr="De quoi avez-vous besoin ?" data-en="What do you need?"></h2>
+        <p class="quick-sub" id="fn-sub"></p>
+        <div class="quick-list" id="fn-list"></div>
       </div>
       <div class="contact-pills">
         <div class="pill">
@@ -2077,6 +2110,7 @@ function setLang(lang) {
   if (msg) msg.placeholder = msg.getAttribute('data-' + lang + '-placeholder');
 
   if (typeof renderT1 === 'function') renderT1();
+  if (typeof renderFunnel === 'function') renderFunnel();
 }
 
 // T1 price estimator
@@ -2160,6 +2194,45 @@ document.querySelectorAll('[data-goto]').forEach(card => card.addEventListener('
   document.querySelector(`.price-tabs [data-tab="${tab}"]`).click();
   document.querySelector(`.price-panel[data-panel="${tab}"] .svc-pills [data-svc="${svc}"]`).click();
 }));
+
+// Hero funnel: particulier / entreprise, then the services of that side
+const FN = {
+  particuliers: [
+    { go: 'particuliers:t1',       fr: 'Déclaration de revenus (T1)',   en: 'Tax return (T1)',        pfr: 'dès 100 $',            pen: 'from $100' },
+    { go: 'particuliers:ta',       fr: 'Travailleur autonome',          en: 'Self-employed',          pfr: 'dès 110 $/mois',       pen: 'from $110/mo' },
+    { go: 'particuliers:retraite', fr: 'Planification & retraite',      en: 'Planning & retirement',  pfr: 'dès 200 $',            pen: 'from $200' }
+  ],
+  entreprises: [
+    { go: 'entreprises:livres',      fr: 'Tenue de livres',             en: 'Bookkeeping',            pfr: 'dès 200 $/mois',       pen: 'from $200/mo' },
+    { go: 'entreprises:impots',      fr: 'Fin d\'année (T2 / T3)',      en: 'Year-end (T2 / T3)',     pfr: 'dès 1 000 $',          pen: 'from $1,000' },
+    { go: 'entreprises:tpstvq',      fr: 'Déclarations TPS / TVQ',      en: 'GST / QST returns',      pfr: 'sur soumission',       pen: 'by quote' },
+    { go: 'entreprises:livres',      fr: 'Paie',                        en: 'Payroll',                pfr: 'dès 20 $/employé/mois', pen: 'from $20/employee/mo' },
+    { go: 'entreprises:ponctuels',   fr: 'Démarrage d\'entreprise',     en: 'Business start-up',      pfr: 'dès 200 $',            pen: 'from $200' },
+    { go: 'entreprises:compilation', fr: 'Mission de compilation',      en: 'Compilation engagement', pfr: 'sur soumission',       pen: 'by quote' }
+  ]
+};
+let fnSeg = null;
+function renderFunnel() {
+  const fr = currentLang === 'fr';
+  document.getElementById('fn-1').hidden = !!fnSeg;
+  document.getElementById('fn-2').hidden = !fnSeg;
+  if (!fnSeg) return;
+  const label = fnSeg === 'particuliers' ? (fr ? 'Particulier' : 'Individual') : (fr ? 'Entreprise' : 'Business');
+  document.getElementById('fn-back').textContent = '← ' + (fr ? 'Changer · ' : 'Change · ') + label;
+  document.getElementById('fn-sub').textContent = fr ? 'Prix affichés d\'avance, taxes en sus. Cliquez pour voir le détail.' : 'Prices shown upfront, taxes extra. Click for details.';
+  document.getElementById('fn-list').innerHTML = FN[fnSeg].map(r =>
+    `<a class="quick-row" href="#tarifs" data-go="${r.go}"><span class="quick-name">${fr ? r.fr : r.en}</span><span class="quick-price">${fr ? r.pfr : r.pen}</span></a>`).join('');
+}
+document.querySelectorAll('.fn-card').forEach(c => c.addEventListener('click', () => { fnSeg = c.dataset.seg; renderFunnel(); }));
+document.getElementById('fn-back').addEventListener('click', () => { fnSeg = null; renderFunnel(); });
+document.getElementById('fn-list').addEventListener('click', e => {
+  const a = e.target.closest('.quick-row'); if (!a) return;
+  e.preventDefault();
+  const [tab, svc] = a.dataset.go.split(':');
+  document.querySelector(`.price-tabs [data-tab="${tab}"]`).click();
+  document.querySelector(`.price-panel[data-panel="${tab}"] .svc-pills [data-svc="${svc}"]`).click();
+  document.getElementById('tarifs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
 
 // Nav shadow on scroll + call button appears on phones once the hero is out of view
 const navScroll = () => document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 8);
