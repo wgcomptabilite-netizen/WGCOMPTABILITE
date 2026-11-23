@@ -1372,10 +1372,21 @@
   .fn-pills { display: flex; flex-wrap: wrap; gap: .45rem; }
   .fn-pills button { font-family: 'DM Sans', sans-serif; font-size: .85rem; cursor: pointer; color: var(--navy); background: #fffdf8; border: 1px solid rgba(14,27,46,.18); border-radius: 999px; padding: .6rem 1rem; min-height: 40px; transition: background .2s, color .2s, border-color .2s; }
   .fn-pills button:hover { border-color: var(--gold); }
-  .fn-pills button.active { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+  .fn-pills button.active { background: #fff; border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; color: var(--navy); font-weight: 600; }
+  .fn-pills button.active::before { content: '\2713\00a0'; color: var(--gold-deep); }
   .fn-chk { display: flex; align-items: center; gap: .65rem; font-size: .9rem; color: var(--navy); cursor: pointer; padding: .55rem .75rem; min-height: 44px; background: #fffdf8; border: 1px solid rgba(14,27,46,.12); border-radius: 12px; }
   .fn-chk + .fn-chk { margin-top: .4rem; }
-  .fn-chk input { accent-color: var(--gold); width: 17px; height: 17px; flex-shrink: 0; }
+  .fn-chk input, .calc input[type="checkbox"] { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; margin: 0; flex-shrink: 0; cursor: pointer; background: #fff; border: 1.5px solid rgba(14,27,46,.35); border-radius: 6px; transition: background .15s, border-color .15s; }
+  .fn-chk input:checked, .calc input[type="checkbox"]:checked { background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3 7.5l2.6 2.6L11 4.5' fill='none' stroke='%230e1b2e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat; border-color: var(--gold); }
+  .fn-chk input:focus-visible, .calc input[type="checkbox"]:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+  .fn-text { width: 100%; font-family: 'DM Sans', sans-serif; font-size: .9rem; color: var(--navy); background: #fff; border: 1px solid rgba(14,27,46,.18); border-radius: 12px; padding: .65rem .85rem; resize: vertical; }
+  .fn-text:focus { outline: none; border-color: var(--gold); }
+  .fn-docs { background: #fffdf8; border: 1px solid rgba(184,154,90,.35); border-radius: 12px; padding: .7rem .9rem; margin-bottom: 1rem; font-size: .82rem; line-height: 1.5; color: var(--navy); }
+  .fn-docs summary { cursor: pointer; font-weight: 600; font-size: .9rem; }
+  .fn-docs p { margin: .4rem 0; color: var(--text-muted); font-size: .78rem; }
+  .fn-docs ul { list-style: none; margin: .3rem 0 0; padding: 0; }
+  .fn-docs li { padding: .2rem 0 .2rem .9rem; position: relative; color: var(--text-muted); }
+  .fn-docs li::before { content: '–'; position: absolute; left: 0; color: var(--gold); }
   .fn-chk span { flex: 1; line-height: 1.35; }
   .fn-chk em { font-style: normal; font-size: .85rem; font-weight: 600; color: var(--gold-deep); white-space: nowrap; }
   .fn-chk:has(input:checked) { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
@@ -1682,6 +1693,7 @@
         <button type="button" class="fn-back" id="fn-back3"></button>
         <h2 class="quick-title" data-lang data-fr="Votre demande" data-en="Your request">Votre demande</h2>
         <div class="fn-recap" id="fn-recap"></div>
+        <details class="fn-docs" id="fn-docs" open></details>
         <form class="fn-form" id="fn-form" action="https://formsubmit.co/wgcomptabilite@gmail.com" method="POST">
           <input type="hidden" name="_subject" id="fn-subject" value="Nouvelle demande — wgcomptabilite.ca">
           <input type="hidden" name="_template" value="table">
@@ -1890,6 +1902,7 @@
         <li><span data-lang data-fr="Par client référé" data-en="Per client referred">Par client référé</span><span>− 10 $</span></li>
       </ul>
       <p class="price-note" data-lang data-fr="Client du forfait Travailleur autonome (110 $/mois) ? Votre déclaration de fin d&#39;année est incluse." data-en="On the Self-employed plan ($110/mo)? Your year-end return is included.">Client du forfait Travailleur autonome (110 $/mois) ? Votre déclaration de fin d'année est incluse.</p>
+      <p class="price-note" data-lang data-fr="Revenus de travail autonome de plus de 30 000 $ ? Ajoutez les déclarations TPS / TVQ : + 50 $ (moins de 10 transactions par mois), + 125 $ (moins de 25) ou + 200 $ (25 et plus)." data-en="Self-employment income over $30,000? Add GST / QST filings: + $50 (under 10 transactions a month), + $125 (under 25) or + $200 (25 or more).">Revenus de travail autonome de plus de 30 000 $ ? Ajoutez les déclarations TPS / TVQ : + 50 $ (moins de 10 transactions par mois), + 125 $ (moins de 25) ou + 200 $ (25 et plus).</p>
       <p class="price-note" data-lang data-fr="Revenus locatifs, gains en capital ou autres situations complexes : sur soumission." data-en="Rental income, capital gains or other complex situations: custom quote.">Revenus locatifs, gains en capital ou autres situations complexes : sur soumission.</p>
       <div class="calc" id="t1-calc">
         <span class="calc-title" data-lang data-fr="Estimez votre prix" data-en="Estimate your price">Estimez votre prix</span>
@@ -2493,11 +2506,32 @@ document.querySelectorAll('[data-goto]').forEach(card => card.addEventListener('
 // Hero funnel: segment -> category -> service -> its options -> request form -> email
 const TAX = { fr: ' + taxes', en: ' + tax' };
 const fm = (n, L) => n.toLocaleString(L === 'fr' ? 'fr-CA' : 'en-CA', { style: 'currency', currency: 'CAD', minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
-const S = (id, fr, en, ch, def = 0) => ({ t: 'seg', id, fr, en, ch, def });
+const S = (id, fr, en, ch, def = null, show = null, req = false) => ({ t: 'seg', id, fr, en, ch, def, show, req });
 const C = (id, fr, en, show) => ({ t: 'chk', id, fr, en, show });
-const M = (id, fr, en, ch, req = true) => ({ t: 'multi', id, fr, en, ch, req });
+const M = (id, fr, en, ch, req = true, show = null) => ({ t: 'multi', id, fr, en, ch, req, show });
+const X = (id, fr, en, show) => ({ t: 'text', id, fr, en, show });
 const N = (id, fr, en, min, max, def) => ({ t: 'count', id, fr, en, min, max, def });
 const SITU = S('mode', 'Situation', 'Situation', [['Seul', 'Single'], ['En couple', 'Couple']]);
+const GST_ADD = [50, 125, 200];
+const selfQs = (k, base, partner) => {
+  const P = partner;
+  return [
+    S('rev' + k, P ? 'Les revenus de travail autonome de votre conjoint(e) dépassent-ils 30 000 $ par année ?' : 'Vos revenus de travail autonome dépassent-ils 30 000 $ par année ?',
+      P ? "Does your partner's self-employment income exceed $30,000 a year?" : 'Does your self-employment income exceed $30,000 a year?',
+      [['Oui', 'Yes'], ['Non', 'No'], ['Je ne sais pas', "I don't know"]], null, base, true),
+    S('reg' + k, P ? 'Votre conjoint(e) est-il/elle déjà inscrit(e) aux taxes (TPS/TVQ) ?' : 'Êtes-vous déjà inscrit(e) aux taxes (TPS/TVQ) ?',
+      P ? 'Is your partner already registered for GST/QST?' : 'Are you already registered for GST/QST?',
+      [['Oui', 'Yes'], ['Non', 'No']], null, s => base(s) && s['rev' + k] === 0),
+    S('gst' + k, P ? 'Ajouter les déclarations TPS / TVQ de votre conjoint(e) à votre dossier ?' : 'Ajouter le service de déclarations TPS / TVQ ?',
+      P ? "Add your partner's GST/QST filings?" : 'Add the GST/QST filing service?',
+      [['Oui, ajouter', 'Yes, add it'], ['Non, merci', 'No thanks']], null, s => base(s) && s['rev' + k] === 0, true),
+    S('tx' + k, P ? 'Transactions par mois (conjoint(e))' : 'Combien de transactions par mois ?',
+      P ? 'Transactions per month (partner)' : 'How many transactions per month?',
+      [['Moins de 10 (+ 50 $)', 'Under 10 (+ $50)'], ['10 à 24 (+ 125 $)', '10 to 24 (+ $125)'], ['25 et plus (+ 200 $)', '25 or more (+ $200)']], null, s => base(s) && s['rev' + k] === 0 && s['gst' + k] === 0, true),
+    M('extra' + k, P ? 'Autres précisions (conjoint(e))' : 'Autres précisions', P ? 'Other details (partner)' : 'Other details',
+      [['Véhicule utilisé pour le travail', 'Vehicle used for work'], ['Travail à la maison (bureau à domicile)', 'Work from home (home office)'], ['Employés', 'Employees'], ['Local commercial loué', 'Rented commercial space']], false, base)
+  ];
+};
 const TIERS = [
   { n: 1, fr: 'Essentiel', en: 'Essential', dfr: 'Conciliation bancaire mensuelle, saisie et catégorisation des transactions, pièces justificatives numériques, accès infonuagique.', den: 'Monthly bank reconciliation, transaction entry and categorization, digital receipts, cloud access.' },
   { n: 2, fr: 'Croissance', en: 'Growth', dfr: 'Tout Essentiel, plus : comptes clients et fournisseurs, analyse financière semestrielle.', den: 'Everything in Essential, plus: accounts receivable and payable, semi-annual financial analysis.' },
@@ -2511,13 +2545,26 @@ const NOTE = {
 const FN = {
   particuliers: { fr: 'Particulier', en: 'Individual', items: [
     { fr: 'Déclaration de revenus', en: 'Tax return', dfr: 'Québec + fédéral, produites dans les délais', den: 'Quebec + federal, filed on time', pfr: 'dès 100 $' + TAX.fr, pen: 'from $100' + TAX.en, go: 'particuliers:t1',
-      opts: [SITU, C('self1', 'Je suis travailleur autonome', "I'm self-employed"), C('self2', 'Mon conjoint ou ma conjointe est travailleur autonome', 'My partner is self-employed', s => s.mode === 1), N('refs', 'Clients référés', 'Clients referred', 0, 20, 0), C('complex', 'Revenus locatifs, gains en capital ou autre situation complexe', 'Rental income, capital gains or another complex situation')],
-      est: (s, L) => { if (s.complex) return L === 'fr' ? 'sur soumission' : 'by quote'; const c = s.mode === 1, a = s.self1, b = c && s.self2; let n = a ? 250 : 100; if (c) { n += b ? 250 : 100; n -= 20; } n = Math.max(0, n - s.refs * 10); return ((a || b) ? (L === 'fr' ? 'dès ' : 'from ') : '') + fm(n, L) + TAX[L]; } },
+      opts: [SITU, C('self1', 'Je suis travailleur autonome', "I'm self-employed")].concat(
+        selfQs('1', s => s.self1, false),
+        [C('self2', 'Mon conjoint ou ma conjointe est travailleur autonome', 'My partner is self-employed', s => s.mode === 1)],
+        selfQs('2', s => s.mode === 1 && s.self2, true),
+        [N('refs', 'Clients référés', 'Clients referred', 0, 20, 0), C('complex', 'Revenus locatifs, gains en capital ou autre situation complexe', 'Rental income, capital gains or another complex situation')]),
+      est: (s, L) => {
+        if (s.complex) return L === 'fr' ? 'sur soumission' : 'by quote';
+        const c = s.mode === 1, a = s.self1, b = c && s.self2;
+        const add = k => (s['rev' + k] === 0 && s['gst' + k] === 0 && s['tx' + k] != null) ? GST_ADD[s['tx' + k]] : 0;
+        let n = a ? 250 : 100, x = a ? add('1') : 0;
+        if (c) { n += b ? 250 : 100; x += b ? add('2') : 0; n -= 20; }
+        n = Math.max(0, n - s.refs * 10) + x;
+        return ((a || b) ? (L === 'fr' ? 'dès ' : 'from ') : '') + fm(n, L) + TAX[L];
+      } },
     { fr: 'Travailleur autonome', en: 'Self-employed', dfr: 'Service complet : impôts + TPS/TVQ + tenue de livres mensuelle', den: 'Full service: taxes + GST/QST + monthly bookkeeping', pfr: '110 $/mois' + TAX.fr, pen: '$110/mo' + TAX.en, go: 'particuliers:ta',
-      opts: [SITU, S('tax', 'Inscrit aux taxes (TPS/TVQ) ?', 'Registered for GST/QST?', [['Oui', 'Yes'], ['Non', 'No'], ['Je ne sais pas', "I don't know"]]), C('payroll', "J'ai aussi besoin de la paie (employés)", 'I also need payroll (employees)')],
+      opts: [S('tax', 'Inscrit aux taxes (TPS/TVQ) ?', 'Registered for GST/QST?', [['Oui', 'Yes'], ['Non', 'No'], ['Je ne sais pas', "I don't know"]]), C('payroll', "J'ai aussi besoin de la paie (employés)", 'I also need payroll (employees)')],
       est: (s, L) => (L === 'fr' ? '110 $/mois' : '$110/mo') + TAX[L] },
     { fr: 'Planification, conseil et retraite', en: 'Planning, advice & retirement', dfr: 'Budget, REER / FERR / CRI, optimisation fiscale', den: 'Budget, RRSP / RRIF / LIRA, tax optimization', pfr: 'Appeler', pen: 'Call us', go: 'particuliers:retraite',
-      opts: [SITU, M('topics', 'Sujets qui vous intéressent', 'Topics of interest', [['Budget personnel', 'Personal budget'], ['Conseils personnalisés selon ma situation', 'Personalized advice'], ['Stratégie de retraite (REER, FERR, CRI)', 'Retirement strategy (RRSP, RRIF, LIRA)'], ['Projections et objectifs de retraite', 'Retirement projections and goals'], ['Optimisation fiscale de mes revenus à la retraite', 'Tax optimization of my retirement income']])] }
+      opts: [M('topics', 'Sujets qui vous intéressent', 'Topics of interest', [['Budget personnel', 'Personal budget'], ['Conseils personnalisés selon ma situation', 'Personalized advice'], ['Stratégie de retraite (REER, FERR, CRI)', 'Retirement strategy (RRSP, RRIF, LIRA)'], ['Projections et objectifs de retraite', 'Retirement projections and goals'], ['Optimisation fiscale de mes revenus à la retraite', 'Tax optimization of my retirement income'], ['Autre', 'Other']]),
+        X('notes', 'Notes : dites-nous ce que vous cherchez', 'Notes: tell us what you are looking for', s => s.topics[5])] }
   ] },
   entreprises: { fr: 'Entreprise', en: 'Business', cats: [
     { fr: 'Tenue de livres', en: 'Bookkeeping', dfr: 'Vos livres à jour toute l\'année : choisissez votre forfait', den: 'Your books current all year: pick your plan', items: [
@@ -2529,7 +2576,7 @@ const FN = {
         opts: [S('type', 'Type de déclaration', 'Return type', [['Société (T2 / CO-17)', 'Corporation (T2 / CO-17)'], ['Fiducie (T3 / TP-646)', 'Trust (T3 / TP-646)']])],
         est: (s, L) => (L === 'fr' ? 'dès ' : 'from ') + fm(s.type === 1 ? 2000 : 1000, L) + TAX[L] },
       { fr: 'TPS / TVQ', en: 'GST / QST', dfr: 'Déclarations mensuelles, trimestrielles ou annuelles, conciliées à vos livres', den: 'Monthly, quarterly or annual filings, reconciled with your books', pfr: 'sur soumission', pen: 'by quote', go: 'entreprises:tpstvq',
-        opts: [S('freq', 'Fréquence de déclaration', 'Filing frequency', [['Mensuelle', 'Monthly'], ['Trimestrielle', 'Quarterly'], ['Annuelle', 'Annual'], ['Je ne sais pas', "I don't know"]], 3)] },
+        opts: [S('freq', 'Fréquence de déclaration', 'Filing frequency', [['Mensuelle', 'Monthly'], ['Trimestrielle', 'Quarterly'], ['Annuelle', 'Annual'], ['Je ne sais pas', "I don't know"]])] },
       { fr: 'Conseil et optimisation', en: 'Advice & optimization', dfr: 'Rémunération, planification fiscale, structure de l\'entreprise', den: 'Compensation, tax planning, business structure', pfr: 'Appeler', pen: 'Call us', go: 'entreprises:optim',
         opts: [M('topics', 'Sujets qui vous intéressent', 'Topics of interest', [['Rémunération des actionnaires (salaire ou dividendes)', 'Shareholder compensation (salary or dividends)'], ['Planification fiscale et réduction d\'impôt', 'Tax planning and tax reduction'], ['Structure de l\'entreprise (société, société de portefeuille)', 'Business structure (corporation, holding company)'], ['Relève ou vente de l\'entreprise', 'Succession or business sale']])] } ] },
     { fr: 'Conseil & accompagnement', en: 'Advisory & support', dfr: 'Démarrage, paie et direction financière', den: 'Start-up, payroll and financial leadership', items: [
@@ -2537,7 +2584,7 @@ const FN = {
         opts: [M('svcs', 'Services souhaités', 'Services needed', [['Création d\'entreprise — enregistrée', 'Business setup — registered', 200], ['Création d\'entreprise — incorporée', 'Business setup — incorporated', 700], ['Ouverture d\'un compte bancaire', 'Business bank account opening', 300], ['Commande d\'un terminal de paiement', 'Payment terminal order', 250]])],
         est: (s, L) => { const P = [200, 700, 300, 250]; const t = P.reduce((a, p, i) => a + (s.svcs[i] ? p : 0), 0); return t ? fm(t, L) + TAX[L] : null; } },
       { fr: 'Paie', en: 'Payroll', dfr: 'Calcul des salaires, remises à la source, relevés T4 et RL-1', den: 'Pay calculations, source remittances, T4 and RL-1 slips', pfr: 'dès 20 $/employé/mois' + TAX.fr, pen: 'from $20/employee/mo' + TAX.en, go: 'entreprises:paie',
-        opts: [N('emp', 'Nombre d\'employés', 'Number of employees', 1, 100, 1), S('freq', 'Fréquence de paie', 'Pay frequency', [['Hebdomadaire', 'Weekly'], ['Aux deux semaines', 'Every two weeks'], ['Mensuelle', 'Monthly']], 1)],
+        opts: [N('emp', 'Nombre d\'employés', 'Number of employees', 1, 100, 1), S('freq', 'Fréquence de paie', 'Pay frequency', [['Hebdomadaire', 'Weekly'], ['Aux deux semaines', 'Every two weeks'], ['Mensuelle', 'Monthly']])],
         est: (s, L) => (L === 'fr' ? 'dès ' : 'from ') + fm(20 * s.emp, L) + (L === 'fr' ? '/mois' : '/mo') + TAX[L] },
       { fr: 'CFO à temps partiel', en: 'Fractional CFO', dfr: 'Budgets, prévisions, tableau de bord et soutien aux décisions', den: 'Budgets, forecasts, dashboard and decision support', pfr: 'Appeler', pen: 'Call us', go: 'entreprises:cfo',
         opts: [M('topics', 'Ce dont vous avez besoin', 'What you need', [['Budgets, prévisions et flux de trésorerie', 'Budgets, forecasts and cash flow'], ['Tableau de bord de performance', 'Performance dashboard'], ['Financement auprès des institutions financières', 'Financing with lenders'], ['Soutien aux décisions stratégiques', 'Strategic decision support'], ['Rencontres fréquentes', 'Frequent meetings']])] } ] },
@@ -2553,20 +2600,25 @@ const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const ix = L => L === 'fr' ? 0 : 1;
 function fnDefaults(it) {
   const s = {};
-  it.opts.forEach(o => { s[o.id] = o.t === 'seg' ? o.def : o.t === 'chk' ? false : o.t === 'multi' ? {} : o.t === 'count' ? o.def : undefined; });
+  it.opts.forEach(o => { s[o.id] = o.t === 'seg' ? o.def : o.t === 'chk' ? false : o.t === 'multi' ? {} : o.t === 'count' ? o.def : o.t === 'text' ? '' : undefined; });
   return s;
 }
 function fnReady(it, s) {
-  return it.opts.every(o => !o.req || (o.t === 'multi' ? Object.values(s[o.id]).some(Boolean) : s[o.id] != null));
+  return it.opts.every(o => {
+    if (o.show && !o.show(s)) return true;
+    if (!o.req) return true;
+    return o.t === 'multi' ? Object.values(s[o.id]).some(Boolean) : s[o.id] != null;
+  });
 }
 function fnLines(it, s, L) {
   const out = [], yes = L === 'fr' ? 'Oui' : 'Yes', no = L === 'fr' ? 'Non' : 'No';
   it.opts.forEach(o => {
     if (o.show && !o.show(s)) return;
     const lab = o[L], v = s[o.id];
-    if (o.t === 'seg') out.push(lab + ' : ' + o.ch[v][ix(L)]);
+    if (o.t === 'seg') { if (v != null) out.push(lab + ' : ' + o.ch[v][ix(L)]); }
     else if (o.t === 'chk') out.push(lab + ' : ' + (v ? yes : no));
     else if (o.t === 'count') out.push(lab + ' : ' + v);
+    else if (o.t === 'text') { if (v && v.trim()) out.push(lab + ' : ' + v.trim()); }
     else if (o.t === 'tiers') { if (v != null) out.push(lab + ' : ' + TIERS[v][L] + ' (' + '$'.repeat(TIERS[v].n) + ')'); }
     else if (o.t === 'multi') {
       const sel = o.ch.filter((c, i) => v[i]).map(c => c[ix(L)] + (c[2] ? ' (' + fm(c[2], L) + ')' : ''));
@@ -2581,12 +2633,114 @@ function fnOptsHTML(it, s, L) {
     const lab = esc(o[L]);
     if (o.t === 'seg') return `<div class="fn-g"><span class="fn-gl">${lab}</span><div class="fn-pills" role="group">${o.ch.map((c, i) => `<button type="button" data-k="${o.id}:${i}" data-o="${o.id}" data-v="${i}" aria-pressed="${s[o.id] === i}" class="${s[o.id] === i ? 'active' : ''}">${esc(c[ix(L)])}</button>`).join('')}</div></div>`;
     if (o.t === 'chk') return `<label class="fn-chk"><input type="checkbox" data-k="${o.id}" data-o="${o.id}" ${s[o.id] ? 'checked' : ''}><span>${lab}</span></label>`;
+    if (o.t === 'text') return `<div class="fn-g"><span class="fn-gl">${lab}</span><textarea class="fn-text" rows="3" data-k="${o.id}" data-o="${o.id}">${esc(s[o.id] || '')}</textarea></div>`;
     if (o.t === 'multi') return `<div class="fn-g"><span class="fn-gl">${lab}</span>${o.ch.map((c, i) => `<label class="fn-chk"><input type="checkbox" data-k="${o.id}:${i}" data-o="${o.id}" data-v="${i}" ${s[o.id][i] ? 'checked' : ''}><span>${esc(c[ix(L)])}</span>${c[2] ? `<em>${fm(c[2], L)}</em>` : ''}</label>`).join('')}</div>`;
     if (o.t === 'count') return `<div class="fn-g fn-count"><span class="fn-gl">${lab}</span><div class="stepper"><button type="button" data-k="${o.id}-" data-o="${o.id}" data-d="-1" aria-label="−">−</button><span>${s[o.id]}</span><button type="button" data-k="${o.id}+" data-o="${o.id}" data-d="1" aria-label="+">+</button></div></div>`;
     if (o.t === 'tiers') return `<div class="fn-g"><span class="fn-gl">${lab}</span><div class="fn-tiers">${TIERS.map((t, i) => `<button type="button" class="fn-tier${s[o.id] === i ? ' active' : ''}" data-k="${o.id}:${i}" data-o="${o.id}" data-v="${i}" aria-pressed="${s[o.id] === i}"><span class="fn-tier-h"><b>${esc(t[L])}</b><span class="bars" aria-hidden="true">${[1, 2, 3, 4].map(k => `<i${k <= t.n ? ' class="on"' : ''}></i>`).join('')}</span></span><small>${esc(t['d' + L])}</small></button>`).join('')}</div></div>`;
     return '';
   }).join('');
 }
+// "À nous fournir": indicative, non-exhaustive guideline of what the client should gather
+const SIN = ["NAS (numéro d'assurance sociale)", 'SIN (social insurance number)'];
+const DOCS = {
+  'particuliers:t1': s => {
+    const c = s.mode === 1, a = s.self1, b = c && s.self2, d = [
+      [SIN[0] + (c ? ' de chaque conjoint' : ''), SIN[1] + (c ? ' of each spouse' : '')],
+      ['Avis de cotisation de l\'année précédente (ARC et Revenu Québec)', 'Last year\'s notices of assessment (CRA and Revenu Québec)'],
+      ['Feuillets de renseignements : T4 / RL-1 (emploi), T4A / RL-2, T5 / RL-3 (intérêts, dividendes), T3 / RL-16', 'Tax slips: T4 / RL-1 (employment), T4A / RL-2, T5 / RL-3 (interest, dividends), T3 / RL-16'],
+      ['Reçus de cotisations REER, CELIAPP / FHSA', 'RRSP and FHSA contribution receipts'],
+      ['Frais de garde, frais de scolarité (T2202 / RL-8), dons, frais médicaux', 'Child care, tuition (T2202 / RL-8), donations, medical expenses'],
+      ['Changements dans l\'année : mariage ou union de fait, séparation, naissance, décès, déménagement (dates et adresses)', 'Changes during the year: marriage or common-law union, separation, birth, death, move (dates and addresses)'],
+      ['Achat d\'une première propriété ou vente d\'une résidence principale : actes d\'achat ou de vente et dates', 'First home purchase or sale of a principal residence: purchase or sale deeds and dates'],
+      ['Télétravail ou dépenses d\'emploi : formulaire T2200 / TP-64.3 de l\'employeur', 'Home office or employment expenses: employer form T2200 / TP-64.3']];
+    if (c) d.push(['Conjoint(e) : date de naissance et revenus de l\'année (feuillets ou montants)', 'Spouse: date of birth and income for the year (slips or amounts)']);
+    const selfDocs = who => [
+      [who + 'état des revenus et dépenses de l\'année, factures et reçus', who + 'statement of income and expenses for the year, invoices and receipts'],
+      [who + 'relevés bancaires et de cartes de crédit liés à l\'entreprise', who + 'bank and credit card statements tied to the business'],
+      [who + 'kilométrage (véhicule) et frais de bureau à domicile, le cas échéant', who + 'mileage (vehicle) and home office costs, if applicable']];
+    if (a) d.push(...selfDocs(c ? 'Travailleur autonome : ' : 'Travailleur autonome : ').map(x => [x[0], x[1].replace(/^Travailleur autonome : /, 'Self-employed: ')]));
+    if (b) d.push(...selfDocs('Conjoint(e) travailleur autonome : ').map(x => [x[0], x[1].replace(/^Conjoint\(e\) travailleur autonome : /, 'Self-employed spouse: ')]));
+    const gst = k => s['rev' + k] === 0 && s['gst' + k] === 0;
+    if ((a && gst('1')) || (b && gst('2'))) d.push(['TPS / TVQ : numéros d\'inscription, ventes et achats de la période, déclarations déjà produites', 'GST / QST: registration numbers, sales and purchases for the period, filings already made']);
+    if (s.complex) d.push(['Revenus locatifs ou gains en capital : baux, loyers et dépenses, coût d\'acquisition et prix de vente', 'Rental income or capital gains: leases, rents and expenses, acquisition cost and selling price']);
+    return d;
+  },
+  'particuliers:ta': [
+    [SIN[0], SIN[1]],
+    ['Relevés bancaires et de cartes de crédit liés à vos activités', 'Bank and credit card statements for your activities'],
+    ['Factures de ventes et reçus de dépenses (numérisés)', 'Sales invoices and expense receipts (scanned)'],
+    ['Numéros de TPS et de TVQ, et déclarations déjà produites', 'GST and QST numbers, and filings already made'],
+    ['Avis de cotisation de l\'année précédente (ARC et Revenu Québec)', 'Last year\'s notices of assessment (CRA and Revenu Québec)'],
+    ['Situation familiale : marié(e) ou conjoint(e) de fait, personnes à charge', 'Family situation: married or common-law, dependants']
+  ],
+  'particuliers:retraite': [
+    [SIN[0], SIN[1]],
+    ['Derniers avis de cotisation (ARC et Revenu Québec)', 'Latest notices of assessment (CRA and Revenu Québec)'],
+    ['Relevés REER, FERR, CRI, CELI, CELIAPP / FHSA', 'RRSP, RRIF, LIRA, TFSA and FHSA statements'],
+    ['Régime de retraite de l\'employeur et prestations de la RRQ / PSV', 'Employer pension plan and QPP / OAS benefits'],
+    ['Budget ou dépenses courantes, dettes et hypothèque', 'Budget or current expenses, debts and mortgage'],
+    ['Vos objectifs et la date de retraite visée', 'Your goals and target retirement date']
+  ],
+  'entreprises:livres': [
+    ['Relevés bancaires et de cartes de crédit (ou accès en lecture)', 'Bank and credit card statements (or read-only access)'],
+    ['Accès à votre logiciel comptable, le cas échéant (QuickBooks, etc.)', 'Access to your accounting software, if any (QuickBooks, etc.)'],
+    ['Factures clients et fournisseurs, reçus de dépenses', 'Customer and supplier invoices, expense receipts'],
+    ['Derniers états financiers et dernière déclaration de société', 'Latest financial statements and corporate tax return'],
+    ['NEQ, numéros de TPS / TVQ et de retenues à la source', 'NEQ, GST / QST and payroll account numbers']
+  ],
+  'entreprises:impots': [
+    ['États financiers de l\'exercice (ou grand livre et balance de vérification)', 'Financial statements for the year (or general ledger and trial balance)'],
+    ['Déclaration et avis de cotisation de l\'année précédente', 'Prior-year return and notice of assessment'],
+    ['NEQ, numéro d\'entreprise (NE) et liste des actionnaires', 'NEQ, business number (BN) and list of shareholders'],
+    ['Relevés T4 / RL-1, T5 / RL-3 émis dans l\'année', 'T4 / RL-1, T5 / RL-3 slips issued during the year'],
+    ['Procès-verbaux et résolutions de l\'année (dividendes, prêts d\'actionnaires)', 'Minutes and resolutions for the year (dividends, shareholder loans)']
+  ],
+  'entreprises:tpstvq': [
+    ['Numéros d\'inscription TPS et TVQ', 'GST and QST registration numbers'],
+    ['Ventes et achats de la période (ou accès à vos livres)', 'Sales and purchases for the period (or access to your books)'],
+    ['Relevés bancaires de la période', 'Bank statements for the period'],
+    ['Déclarations précédentes et avis de cotisation', 'Previous filings and notices of assessment']
+  ],
+  'entreprises:optim': [
+    ['États financiers récents et dernière déclaration de société', 'Recent financial statements and latest corporate tax return'],
+    ['Déclarations de revenus personnelles des actionnaires', 'Personal tax returns of the shareholders'],
+    ['Structure actuelle : actionnaires, sociétés liées, convention entre actionnaires', 'Current structure: shareholders, related companies, shareholder agreement'],
+    ['Vos objectifs : rémunération, relève, vente, croissance', 'Your goals: compensation, succession, sale, growth']
+  ],
+  'entreprises:ponctuels': [
+    [SIN[0] + ' des actionnaires ou du propriétaire', 'SIN of the shareholders or owner'],
+    ['Nom d\'entreprise souhaité (et solutions de rechange)', 'Desired business name (and alternatives)'],
+    ['Activité principale et adresse de l\'entreprise', 'Main activity and business address'],
+    ['Répartition des actions et administrateurs (pour une société)', 'Share split and directors (for a corporation)'],
+    ['Institution financière souhaitée et pièces d\'identité des signataires', 'Preferred bank and ID for the signing officers']
+  ],
+  'entreprises:paie': [
+    ['NAS, adresse et date d\'embauche de chaque employé', 'SIN, address and hire date of each employee'],
+    ['Formulaires TD1 et TP-1015.3 remplis par chaque employé', 'TD1 and TP-1015.3 forms completed by each employee'],
+    ['Taux de salaire ou d\'heures, et fréquence de paie', 'Pay rates or hours, and pay frequency'],
+    ['Numéros de compte de retenues à la source (ARC et Revenu Québec)', 'Payroll account numbers (CRA and Revenu Québec)'],
+    ['Paies déjà versées dans l\'année, le cas échéant', 'Payrolls already paid during the year, if any']
+  ],
+  'entreprises:cfo': [
+    ['États financiers et grand livre récents', 'Recent financial statements and general ledger'],
+    ['Budget et prévisions existants, le cas échéant', 'Existing budget and forecasts, if any'],
+    ['Ententes de financement, prêts et marges de crédit', 'Financing agreements, loans and credit lines'],
+    ['Vos objectifs de croissance et vos principales préoccupations', 'Your growth goals and main concerns']
+  ],
+  'entreprises:compilation': [
+    ['Grand livre et balance de vérification de l\'exercice', 'General ledger and trial balance for the year'],
+    ['Relevés bancaires, de prêts et de cartes de crédit', 'Bank, loan and credit card statements'],
+    ['États financiers de l\'année précédente', 'Prior-year financial statements'],
+    ['Liste des immobilisations et de l\'inventaire', 'List of fixed assets and inventory']
+  ],
+  'entreprises:audit': [
+    ['Grand livre, balance de vérification et états financiers préliminaires', 'General ledger, trial balance and draft financial statements'],
+    ['Relevés bancaires, confirmations de prêts et de cartes de crédit', 'Bank, loan and credit card confirmations'],
+    ['Contrats importants, procès-verbaux et ententes d\'actionnaires', 'Key contracts, minutes and shareholder agreements'],
+    ['États financiers de l\'année précédente et exigences du prêteur ou de l\'investisseur', 'Prior-year financial statements and lender or investor requirements']
+  ]
+};
+function fnDocs(it, s) { const d = DOCS[it.go]; return typeof d === 'function' ? d(s) : (d || []); }
 function fnPriceText(it, L) { const e = it.est && it.est(fn.sel, L); return e || it['p' + L]; }
 function fnKeepInView(id) {
   const el = document.getElementById(id), r = el.getBoundingClientRect();
@@ -2623,7 +2777,9 @@ function renderFunnel() {
     $('fn-profile').value = seg.fr;
     $('fn-service').value = [cat && cat.fr, it.fr].filter(Boolean).join(' › ') + ' — ' + fnPriceText(it, 'fr');
     $('fn-subject').value = 'Nouvelle demande — ' + seg.fr + ' — ' + it.fr;
-    $('fn-details').value = frLines.concat(['Estimation / prix : ' + fnPriceText(it, 'fr'), 'Note : sélections à titre informatif ; forfaits et prix finaux confirmés par téléphone.']).join('\n');
+    const docs = fnDocs(it, fn.sel);
+    $('fn-docs').innerHTML = `<summary>${fr ? 'À nous fournir' : 'To provide to us'}</summary><p>${fr ? 'À titre indicatif : liste non exhaustive. Nous vous confirmerons les documents exacts par téléphone.' : 'For guidance only: not an exhaustive list. We will confirm the exact documents by phone.'}</p><ul>${docs.map(d => `<li>${esc(d[ix(L)])}</li>`).join('')}</ul>`;
+    $('fn-details').value = frLines.concat(['Estimation / prix : ' + fnPriceText(it, 'fr'), 'Note : sélections à titre informatif ; forfaits et prix finaux confirmés par téléphone.', '', 'À nous fournir (liste indicative présentée au client, non exhaustive) :'], docs.map(d => '- ' + d[0])).join('\n');
     return;
   }
   if (fn.svc) {
@@ -2677,6 +2833,10 @@ document.getElementById('fn-opts').addEventListener('change', e => {
   const o = fn.svc.opts.find(x => x.id === i.dataset.o);
   if (o.t === 'chk') fn.sel[o.id] = i.checked; else fn.sel[o.id][+i.dataset.v] = i.checked;
   renderOpts();
+});
+document.getElementById('fn-opts').addEventListener('input', e => {
+  const t = e.target.closest('textarea[data-o]'); if (!t) return;
+  fn.sel[t.dataset.o] = t.value;
 });
 document.getElementById('fn-next').addEventListener('click', () => {
   if (!fnReady(fn.svc, fn.sel)) return;
