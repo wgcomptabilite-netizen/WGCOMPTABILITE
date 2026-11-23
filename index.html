@@ -1731,6 +1731,12 @@ button,input,select,textarea{font-family:inherit}
 .hero-top .sub,.hero-top a span,.hero-top a b,.quick-sub,.fn-desc,.svc-desc,.pillar-desc,.member-bio,.review-text,.review-title,.review-title span,.fn-recap,.fn-recap b,.fn-recap li,.fn-docs p,.fn-docs li,.fn-est>span,.stepper span,.fn-pills button,.fn-chk em,.contact-val,.about-intro{font-size:var(--fs-sm)}
 .hero-subtitle,.mission-body{font-size:var(--fs-base)!important}
 .fn-progress li i{font-size:var(--fs-xs)!important}
+.svc-tag{font-size:var(--fs-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin:.2rem 0 .35rem;display:block}
+.svc-list{list-style:none;margin-top:.6rem;display:flex;flex-direction:column;gap:.5rem}
+.svc-list li{font-size:var(--fs-sm);line-height:1.45;color:var(--text-muted);padding-left:1rem;position:relative}
+.svc-list li::before{content:"";position:absolute;left:0;top:.62em;width:.45rem;height:2px;background:var(--gold)}
+.service-card:hover .svc-tag{color:var(--gold-light)}
+.service-card:hover .svc-list li{color:rgba(244,232,198,.85)}
 </style>
 </head>
 <body>
@@ -1915,54 +1921,82 @@ button,input,select,textarea{font-family:inherit}
     <h2 class="section-title" data-lang data-fr="Ce que nous offrons" data-en="What we offer">Ce que nous offrons</h2>
   </div>
   <div class="services-grid reveal">
-    <a class="service-card" href="#soumission" data-goto="entreprises:livres">
+    <a class="service-card" href="#soumission" data-goto="particuliers:t1">
       <span class="svc-num">01</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Tenue de livres" data-en="Bookkeeping">Tenue de livres</h3>
-      <p class="svc-desc" data-lang data-fr="Conciliation bancaire, saisie des transactions, comptes clients et fournisseurs : des livres toujours à jour." data-en="Bank reconciliation, transaction entry, receivables and payables: books that are always current.">Conciliation bancaire, saisie des transactions, comptes clients et fournisseurs : des livres toujours à jour.</p>
-      <span class="svc-more" data-lang data-fr="Obtenir une soumission →" data-en="Get a quote →">Obtenir une soumission →</span>
+      <span class="svc-tag" data-lang data-fr="Particuliers" data-en="Individuals">Particuliers</span>
+      <h3 class="svc-name" data-lang data-fr="Déclaration de revenus" data-en="Tax return">Déclaration de revenus</h3>
+      <ul class="svc-list">
+        <li data-lang data-fr="Déclarations fédérale et du Québec" data-en="Federal and Quebec returns">Déclarations fédérale et du Québec</li>
+        <li data-lang data-fr="Déclaration individuelle ou en couple" data-en="Individual or couple return">Déclaration individuelle ou en couple</li>
+        <li data-lang data-fr="Produites dans les délais" data-en="Filed on time">Produites dans les délais</li>
+      </ul>
     </a>
-    <a class="service-card" href="#soumission" data-goto="particuliers:t1">
+    <a class="service-card" href="#soumission" data-goto="particuliers:ta">
       <span class="svc-num">02</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Déclarations fiscales" data-en="Tax returns">Déclarations fiscales</h3>
-      <p class="svc-desc" data-lang data-fr="Particuliers, travailleurs autonomes, sociétés et fiducies (T1, T2, T3), produites avec rigueur et dans les délais." data-en="Individuals, self-employed, corporations and trusts (T1, T2, T3), prepared carefully and on time.">Particuliers, travailleurs autonomes, sociétés et fiducies (T1, T2, T3), produites avec rigueur et dans les délais.</p>
-      <span class="svc-more" data-lang data-fr="Obtenir une soumission →" data-en="Get a quote →">Obtenir une soumission →</span>
-    </a>
-    <a class="service-card" href="#soumission" data-goto="entreprises:paie">
-      <span class="svc-num">03</span>
-      <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Paie" data-en="Payroll">Paie</h3>
-      <p class="svc-desc" data-lang data-fr="Calcul des salaires, remises des retenues à la source et relevés T4 et RL-1, offerte avec tous nos forfaits." data-en="Pay calculations, source deduction remittances, and T4 and RL-1 slips, available with every plan.">Calcul des salaires, remises des retenues à la source et relevés T4 et RL-1, offerte avec tous nos forfaits.</p>
-      <span class="svc-more" data-lang data-fr="Obtenir une soumission →" data-en="Get a quote →">Obtenir une soumission →</span>
-    </a>
-    <a class="service-card" href="#soumission" data-goto="entreprises:tpstvq">
-      <span class="svc-num">04</span>
-      <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="TPS / TVQ" data-en="GST / QST">TPS / TVQ</h3>
-      <p class="svc-desc" data-lang data-fr="Vos déclarations de taxes de vente produites à temps et conciliées avec vos livres." data-en="Your sales tax returns filed on time and reconciled with your books.">Vos déclarations de taxes de vente produites à temps et conciliées avec vos livres.</p>
-      <span class="svc-more" data-lang data-fr="Obtenir une soumission →" data-en="Get a quote →">Obtenir une soumission →</span>
-    </a>
-    <a class="service-card" href="#soumission" data-goto="entreprises:compilation">
-      <span class="svc-num">05</span>
-      <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Audit &amp; états financiers" data-en="Audit &amp; financial statements">Audit & états financiers</h3>
-      <p class="svc-desc" data-lang data-fr="Mission de compilation ou audit : des états financiers fiables pour vos prêteurs, vos partenaires et vos déclarations." data-en="Compilation or audit: reliable financial statements for your lenders, partners and tax filings.">Mission de compilation ou audit : des états financiers fiables pour vos prêteurs, vos partenaires et vos déclarations.</p>
-      <span class="svc-more" data-lang data-fr="Obtenir une soumission →" data-en="Get a quote →">Obtenir une soumission →</span>
+      <span class="svc-tag" data-lang data-fr="Particuliers" data-en="Individuals">Particuliers</span>
+      <h3 class="svc-name" data-lang data-fr="Travailleur autonome" data-en="Self-employed">Travailleur autonome</h3>
+      <ul class="svc-list">
+        <li data-lang data-fr="Déclaration de revenus" data-en="Income tax return">Déclaration de revenus</li>
+        <li data-lang data-fr="Déclarations TPS / TVQ" data-en="GST / QST returns">Déclarations TPS / TVQ</li>
+        <li data-lang data-fr="Tenue de livres mensuelle" data-en="Monthly bookkeeping">Tenue de livres mensuelle</li>
+      </ul>
     </a>
     <a class="service-card" href="#soumission" data-goto="particuliers:retraite">
-      <span class="svc-num">06</span>
+      <span class="svc-num">03</span>
       <div class="svc-line"></div>
+      <span class="svc-tag" data-lang data-fr="Particuliers" data-en="Individuals">Particuliers</span>
       <h3 class="svc-name" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement">Planification, conseil et retraite</h3>
-      <p class="svc-desc" data-lang data-fr="Budget, conseils personnalisés et stratégie REER, FERR et CRI pour atteindre vos objectifs." data-en="Budget, personalized advice, and RRSP, RRIF and LIRA strategy to reach your goals.">Budget, conseils personnalisés et stratégie REER, FERR et CRI pour atteindre vos objectifs.</p>
-      <span class="svc-more" data-lang data-fr="Obtenir une soumission →" data-en="Get a quote →">Obtenir une soumission →</span>
+      <ul class="svc-list">
+        <li data-lang data-fr="Budget personnel" data-en="Personal budget">Budget personnel</li>
+        <li data-lang data-fr="Conseils personnalisés selon votre situation" data-en="Advice tailored to your situation">Conseils personnalisés selon votre situation</li>
+        <li data-lang data-fr="Stratégie de retraite (REER, FERR, CRI)" data-en="Retirement strategy (RRSP, RRIF, LIRA)">Stratégie de retraite (REER, FERR, CRI)</li>
+        <li data-lang data-fr="Optimisation fiscale à la retraite" data-en="Tax optimization in retirement">Optimisation fiscale à la retraite</li>
+      </ul>
+    </a>
+    <a class="service-card" href="#soumission" data-goto="entreprises:livres">
+      <span class="svc-num">04</span>
+      <div class="svc-line"></div>
+      <span class="svc-tag" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</span>
+      <h3 class="svc-name" data-lang data-fr="Tenue de livres" data-en="Bookkeeping">Tenue de livres</h3>
+      <ul class="svc-list">
+        <li data-lang data-fr="Conciliation bancaire et saisie des transactions" data-en="Bank reconciliation and transaction entry">Conciliation bancaire et saisie des transactions</li>
+        <li data-lang data-fr="Comptes clients et fournisseurs" data-en="Receivables and payables">Comptes clients et fournisseurs</li>
+        <li data-lang data-fr="Forfaits Essentiel, Croissance, Stratégique et CFO" data-en="Essential, Growth, Strategic and CFO plans">Forfaits Essentiel, Croissance, Stratégique et CFO</li>
+      </ul>
+    </a>
+    <a class="service-card" href="#soumission" data-goto="entreprises:impots">
+      <span class="svc-num">05</span>
+      <div class="svc-line"></div>
+      <span class="svc-tag" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</span>
+      <h3 class="svc-name" data-lang data-fr="Fiscalité" data-en="Tax">Fiscalité</h3>
+      <ul class="svc-list">
+        <li data-lang data-fr="Fin d&#x27;année (T2 / T3) : société ou fiducie" data-en="Year-end (T2 / T3): corporation or trust">Fin d'année (T2 / T3) : société ou fiducie</li>
+        <li data-lang data-fr="Déclarations TPS / TVQ" data-en="GST / QST returns">Déclarations TPS / TVQ</li>
+        <li data-lang data-fr="Conseil et optimisation : rémunération, structure" data-en="Advice and optimization: compensation, structure">Conseil et optimisation : rémunération, structure</li>
+      </ul>
     </a>
     <a class="service-card" href="#soumission" data-goto="entreprises:ponctuels">
+      <span class="svc-num">06</span>
+      <div class="svc-line"></div>
+      <span class="svc-tag" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</span>
+      <h3 class="svc-name" data-lang data-fr="Conseil &amp; accompagnement" data-en="Advisory &amp; support">Conseil & accompagnement</h3>
+      <ul class="svc-list">
+        <li data-lang data-fr="Démarrage d&#x27;entreprise : création, compte bancaire, terminal" data-en="Business start-up: setup, bank account, terminal">Démarrage d'entreprise : création, compte bancaire, terminal</li>
+        <li data-lang data-fr="Paie : T4 et RL-1" data-en="Payroll: T4 and RL-1 slips">Paie : T4 et RL-1</li>
+        <li data-lang data-fr="CFO à temps partiel" data-en="Fractional CFO">CFO à temps partiel</li>
+      </ul>
+    </a>
+    <a class="service-card" href="#soumission" data-goto="entreprises:compilation">
       <span class="svc-num">07</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Démarrage d'entreprise" data-en="Business startup">Démarrage d'entreprise</h3>
-      <p class="svc-desc" data-lang data-fr="Immatriculation ou incorporation, compte bancaire et terminal de paiement : on vous lance du bon pied." data-en="Registration or incorporation, bank account and payment terminal: we get you started right.">Immatriculation ou incorporation, compte bancaire et terminal de paiement : on vous lance du bon pied.</p>
-      <span class="svc-more" data-lang data-fr="Obtenir une soumission →" data-en="Get a quote →">Obtenir une soumission →</span>
+      <span class="svc-tag" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</span>
+      <h3 class="svc-name" data-lang data-fr="Audit &amp; états financiers" data-en="Audit &amp; financial statements">Audit & états financiers</h3>
+      <ul class="svc-list">
+        <li data-lang data-fr="Mission de compilation" data-en="Compilation engagement">Mission de compilation</li>
+        <li data-lang data-fr="Audit par un CPA auditeur" data-en="Audit by a CPA auditor">Audit par un CPA auditeur</li>
+      </ul>
     </a>
     <a class="service-card featured" href="#contact">
       <span class="svc-num">08</span>
