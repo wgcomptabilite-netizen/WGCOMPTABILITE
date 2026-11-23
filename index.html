@@ -158,7 +158,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
+<link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#0e1b2e">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <style>
@@ -1718,6 +1723,14 @@
   .fn-pills button.active { box-shadow: 0 0 0 2px var(--gold) inset; }
   .quick-price { white-space: normal; text-align: right; max-width: 46%; line-height: 1.35; }
   footer { background: linear-gradient(180deg, #132340, #0f1d36); }
+
+/* Round 12: unified type scale — xs 12.8 / sm 14.4 / base 16 */
+:root{--fs-xs:.8rem;--fs-sm:.9rem;--fs-base:1rem}
+button,input,select,textarea{font-family:inherit}
+.fn-progress li span,.fn-progress i,.fn-gl,.eyebrow,.section-label,.pillars-label,.svc-num,.svc-more,.contact-label,.member-role,.form-label,.form-consent,.footer-cpa,.footer-copy,.fn-note,.lang-btn,.g-badge,.g-badge *,.review-link,.cta-ghost,.cta-btn,.submit-btn,.fn-back{font-size:var(--fs-xs)}
+.hero-top .sub,.hero-top a span,.hero-top a b,.quick-sub,.fn-desc,.svc-desc,.pillar-desc,.member-bio,.review-text,.review-title,.review-title span,.fn-recap,.fn-recap b,.fn-recap li,.fn-docs p,.fn-docs li,.fn-est>span,.stepper span,.fn-pills button,.fn-chk em,.contact-val,.about-intro{font-size:var(--fs-sm)}
+.hero-subtitle,.mission-body{font-size:var(--fs-base)!important}
+.fn-progress li i{font-size:var(--fs-xs)!important}
 </style>
 </head>
 <body>
@@ -2205,10 +2218,11 @@ const FN = {
       { fr: 'Démarrage d\'entreprise', en: 'Business start-up', dfr: 'Création, compte bancaire, terminal de paiement : cochez ce qu\'il vous faut', den: 'Setup, bank account, payment terminal: tick what you need', pfr: 'à partir de 200 $' + TAX.fr, pen: 'from $200' + TAX.en, go: 'entreprises:ponctuels',
         opts: [M('svcs', 'Services souhaités', 'Services needed', [['Création d\'entreprise — enregistrée', 'Business setup — registered', 200], ['Création d\'entreprise — incorporée', 'Business setup — incorporated', 700], ['Ouverture d\'un compte bancaire', 'Business bank account opening', 300], ['Commande d\'un terminal de paiement', 'Payment terminal order', 250]])],
         est: (s, L) => { const P = [200, 700, 300, 250]; const t = P.reduce((a, p, i) => a + (s.svcs[i] ? p : 0), 0); return t ? fm(t, L) + TAX[L] : null; } },
-      { fr: 'Paie', en: 'Payroll', dfr: 'Calcul des salaires, remises à la source, relevés T4 et RL-1', den: 'Pay calculations, source remittances, T4 and RL-1 slips', pfr: 'à partir de 20 $/employé/mois' + TAX.fr, pen: 'from $20/employee/mo' + TAX.en, go: 'entreprises:paie',
+      { fr: 'Paie', en: 'Payroll', dfr: 'Calcul des salaires, remises à la source, relevés T4 et RL-1 : 50 $ de base + 10 $ par employé, par mois', den: 'Pay calculations, source remittances, T4 and RL-1 slips: $50 base + $10 per employee, per month', pfr: '50 $/mois + 10 $/employé' + TAX.fr, pen: '$50/mo + $10/employee' + TAX.en, go: 'entreprises:paie',
         opts: [N('emp', 'Nombre d\'employés', 'Number of employees', 1, 100, 1), S('freq', 'Fréquence de paie', 'Pay frequency', [['Hebdomadaire', 'Weekly'], ['Aux deux semaines', 'Every two weeks'], ['Mensuelle', 'Monthly']]),
           M('setup', 'Option', 'Option', [['Mise en place initiale de la paie (une seule fois)', 'Initial payroll setup (one-time)', 150]], false)],
-        est: (s, L) => (L === 'fr' ? 'à partir de ' : 'from ') + fm(20 * s.emp, L) + (L === 'fr' ? '/mois' : '/mo') + TAX[L] + (s.setup[0] ? ' + ' + fm(150, L) + (L === 'fr' ? ' (mise en place)' : ' (setup)') : '') },
+        est: (s, L) => fm(50 + 10 * s.emp, L) + (L === 'fr' ? '/mois' : '/mo') + TAX[L] + (s.setup[0] ? ' + ' + fm(150, L) + (L === 'fr' ? ' (mise en place)' : ' (setup)') : ''),
+        internal: s => ['', 'Calcul interne de la paie : 50 $ de base + 10 $ × ' + s.emp + ' employé(s) = ' + (50 + 10 * s.emp) + ' $/mois + taxes' + (s.setup[0] ? ' ; mise en place : 150 $' : '')] },
       { fr: 'CFO à temps partiel', en: 'Fractional CFO', dfr: 'Budgets, prévisions, tableau de bord et soutien aux décisions', den: 'Budgets, forecasts, dashboard and decision support', pfr: 'Appeler', pen: 'Call us', go: 'entreprises:cfo',
         opts: [M('topics', 'Ce dont vous avez besoin', 'What you need', [['Budgets, prévisions et flux de trésorerie', 'Budgets, forecasts and cash flow'], ['Tableau de bord de performance', 'Performance dashboard'], ['Financement auprès des institutions financières', 'Financing with lenders'], ['Soutien aux décisions stratégiques', 'Strategic decision support'], ['Rencontres fréquentes', 'Frequent meetings']])] } ] },
     { fr: 'Audit & états financiers', en: 'Audit & financial statements', dfr: 'Des états financiers fiables pour prêteurs et partenaires', den: 'Reliable financial statements for lenders and partners', items: [
