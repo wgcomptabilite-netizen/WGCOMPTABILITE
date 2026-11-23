@@ -1597,19 +1597,97 @@
     footer { flex-direction: column; gap: 0.85rem; text-align: center; padding: 2.25rem 1.5rem; }
     .footer-cpa { order: 3; }
   }
+
+  /* ===== Form-first hero ===== */
+  nav { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; }
+  .nav-right { justify-self: end; }
+  nav a.nav-cta {
+    display: inline-flex; align-items: center; gap: .65rem; white-space: nowrap;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold)); color: var(--navy);
+    font-size: .9rem; font-weight: 600; letter-spacing: .02em; text-transform: none;
+    padding: .8rem 1.6rem; border-radius: 999px;
+    box-shadow: 0 8px 22px rgba(184,154,90,.45);
+    transition: transform .2s var(--ease), box-shadow .2s;
+  }
+  nav a.nav-cta:hover { color: var(--navy); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(184,154,90,.6); }
+  nav a.nav-cta svg { transition: transform .2s var(--ease); }
+  nav a.nav-cta:hover svg { transform: translateX(3px); }
+  .hero {
+    display: block; min-height: 0; padding: 5rem 0 calc(4.5rem + var(--ov)); position: relative; overflow: hidden;
+    background: radial-gradient(90% 75% at 50% 0%, #26456f 0%, #14263f 52%, var(--navy) 100%);
+  }
+  .hero::before { content: ''; position: absolute; top: 4rem; right: -90px; width: 380px; height: 380px; border-radius: 50%; border: 1px solid rgba(184,154,90,.14); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: 8rem; left: -80px; width: 260px; height: 260px; border-radius: 50%; border: 1px solid rgba(184,154,90,.1); pointer-events: none; }
+  .hero-top {
+    position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+    gap: .15rem 1.5rem; padding: .45rem 1.5rem; background: rgba(0,0,0,.24); border-bottom: 1px solid rgba(184,154,90,.2);
+    font-size: .82rem; color: rgba(248,245,239,.78);
+  }
+  .hero-top a { display: inline-flex; align-items: center; gap: .45rem; color: var(--cream); text-decoration: none; padding: .45rem .2rem; min-height: 40px; }
+  .hero-top a b { font-weight: 700; letter-spacing: .02em; font-variant-numeric: tabular-nums; color: var(--gold-light); }
+  .hero-top a:hover b { color: #fff; }
+  .hero-top svg { width: 14px; height: 14px; color: var(--gold-light); flex-shrink: 0; }
+  .hero-top .sub { color: rgba(248,245,239,.7); }
+  .hero-top .free::before { content: '\2713\00a0'; color: var(--gold-light); }
+  .hero-main { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 3.25rem 1.5rem 0; text-align: center; }
+  .hero-main > * { animation: rise .8s var(--ease) both; }
+  .hero-main > :nth-child(2) { animation-delay: .06s; } .hero-main > :nth-child(3) { animation-delay: .12s; }
+  .hero-main > :nth-child(4) { animation-delay: .2s; } .hero-main > :nth-child(5) { animation-delay: .3s; }
+  .hero-main .eyebrow { margin-bottom: 1rem; }
+  .hero-main .hero-title { font-size: clamp(2.5rem, 5.4vw, 3.9rem); line-height: 1.06; margin: 0 auto 1rem; text-wrap: balance; }
+  .hero-main .hero-subtitle { max-width: 560px; margin: 0 auto 2.25rem; font-size: 1.02rem; }
+  .quick {
+    max-width: 780px; margin: 0 auto; text-align: left; scroll-margin-top: 90px;
+    background: linear-gradient(160deg, #fcf9f2 0%, #f1ebdd 100%); border-radius: 28px; padding: 2rem 2.5rem 2.4rem;
+    box-shadow: 0 40px 90px rgba(0,0,0,.42), 0 0 0 1px rgba(212,184,122,.55);
+  }
+  .quick-title { font-size: 2.1rem; }
+  .quick-sub { font-size: .88rem; margin-bottom: 1.5rem; }
+  .fn-progress { list-style: none; display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.6rem; padding: 0 0 1.1rem; border-bottom: 1px solid rgba(14,27,46,.08); }
+  .fn-progress li { display: flex; align-items: center; gap: .5rem; font-size: .72rem; letter-spacing: .09em; text-transform: uppercase; color: var(--text-muted); }
+  .fn-progress li i { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: .74rem; font-weight: 600; border: 1px solid rgba(14,27,46,.22); background: #fff; color: var(--text-muted); }
+  .fn-progress li.done i { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+  .fn-progress li.now i { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+  .fn-progress li.now { color: var(--navy); font-weight: 600; }
+  .fn-progress li + li::before { content: ''; width: clamp(14px, 5vw, 44px); height: 1px; background: rgba(14,27,46,.2); margin-right: .15rem; }
+  .fn-pick { gap: 1rem; }
+  .fn-card { padding: 1.5rem 1.4rem; }
+  .fn-name { font-size: 1.9rem; }
+  .fn-dollars { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; letter-spacing: .06em; color: rgba(14,27,46,.18); line-height: 1; }
+  .fn-dollars b { color: var(--gold-deep); font-weight: 700; }
+  .hero-actions { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem 1.75rem; margin-top: 1.75rem; }
+  @media (min-width: 720px) { .fn-tiers { display: grid; grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 1024px) {
+    nav { grid-template-columns: auto 1fr auto; }
+    nav a.nav-cta { justify-self: center; padding: .7rem 1.25rem; }
+    .hero { padding-top: 4.5rem; padding-bottom: calc(4rem + var(--ov)); }
+  }
+  @media (max-width: 680px) {
+    nav { display: flex; }
+    nav a.nav-cta { display: none; }
+    .hero { padding-bottom: calc(3.5rem + var(--ov)); }
+    .hero-top { gap: 0 1rem; padding: .35rem 1rem; font-size: .8rem; }
+    .hero-main { padding: 2.25rem 1rem 0; }
+    .hero-main .hero-subtitle { font-size: .95rem; margin-bottom: 1.6rem; }
+    .quick { border-radius: 22px; padding: 1.35rem 1.15rem 1.6rem; }
+    .quick-title { font-size: 1.75rem; }
+    .fn-progress li:not(.now) span { display: none; }
+    .fn-pick, .fn-cats { grid-template-columns: 1fr; }
+    .fn-two { grid-template-columns: 1fr; }
+    .fn-name { font-size: 1.6rem; }
+  }
 </style>
 </head>
 <body>
 
 <nav>
   <div class="logo">W<span>&</span>G Comptabilité</div>
+  <a class="nav-cta" href="#soumission"><span data-lang data-fr="Démarrer ma demande" data-en="Start my request">Démarrer ma demande</span><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg></a>
   <div class="nav-right">
     <button type="button" class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <a class="nav-call" href="tel:+14384986969"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(438) 498-6969</a>
     <ul id="nav-links">
       <li><a href="#apropos" data-fr="À propos" data-en="About">À propos</a></li>
       <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
-      <li><a href="#soumission" data-fr="Soumission" data-en="Get a quote">Soumission</a></li>
       <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
     </ul>
     <div class="lang-toggle">
@@ -1622,42 +1700,20 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
+  <div class="hero-top">
+    <span class="sub" data-lang data-fr="Préférez nous parler ?" data-en="Prefer to talk?">Préférez nous parler ?</span>
+    <a href="tel:+14384986969"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Vincent</span> <b>(438) 498-6969</b></a>
+    <a href="tel:+14388388658"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Anaël</span> <b>(438) 838-8658</b></a>
+    <span class="sub free" data-lang data-fr="Appel préliminaire gratuit" data-en="Free preliminary call">Appel préliminaire gratuit</span>
+  </div>
+  <div class="hero-main">
     <p class="eyebrow" data-lang data-fr="Cabinet CPA · Tenue de livres · Fiscalité · Montérégie" data-en="CPA firm · Bookkeeping · Tax · Montérégie">Cabinet CPA · Tenue de livres · Fiscalité · Montérégie</p>
     <h1 class="hero-title">
-      <span data-lang data-fr="Un appel, <em>et on s'occupe du reste.</em>" data-en="One call, <em>and we take care of the rest.</em>">Un appel, <em>et on s'occupe du reste.</em></span>
+      <span data-lang data-fr="Votre soumission, <em>en quelques clics.</em>" data-en="Your quote, <em>in a few clicks.</em>">Votre soumission, <em>en quelques clics.</em></span>
     </h1>
-    <p class="hero-subtitle" data-lang data-fr="Impôts, tenue de livres, TPS/TVQ, paie : parlez directement à Vincent ou à Anaël." data-en="Taxes, bookkeeping, GST/QST, payroll: talk directly to Vincent or Anaël.">Impôts, tenue de livres, TPS/TVQ, paie : parlez directement à Vincent ou à Anaël.</p>
-    <div class="call-cards">
-      <a class="call-card" href="tel:+14384986969">
-        <span class="call-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-        <span class="call-txt">
-          <span class="call-who" data-lang data-fr="Appeler Vincent · CPA auditeur" data-en="Call Vincent · CPA auditor">Appeler Vincent · CPA auditeur</span>
-          <span class="call-num">(438) 498-6969</span>
-        </span>
-        <svg class="call-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
-      </a>
-      <a class="call-card" href="tel:+14388388658">
-        <span class="call-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-        <span class="call-txt">
-          <span class="call-who" data-lang data-fr="Appeler Anaël · Construction &amp; immobilier" data-en="Call Anaël · Construction &amp; real estate">Appeler Anaël · Construction & immobilier</span>
-          <span class="call-num">(438) 838-8658</span>
-        </span>
-        <svg class="call-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
-      </a>
-    </div>
-    <p class="call-note" data-lang data-fr="Appel préliminaire gratuit · sans engagement" data-en="Free preliminary call · no obligation">Appel préliminaire gratuit · sans engagement</p>
-    <div class="hero-actions">
-      <a class="g-badge on-dark" href="https://search.google.com/local/reviews?placeid=ChIJsbRhELkYiGcRYlPw8QaCfw4" target="_blank" rel="noopener">
-        <span class="g-stars" aria-hidden="true">★★★★★</span>
-        <span><strong>5,0</strong> · <span data-lang data-fr="16 avis Google" data-en="16 Google reviews">16 avis Google</span></span>
-      </a>
-      <a href="#contact" class="cta-ghost" data-lang data-fr="Préférez écrire ? Écrivez-nous →" data-en="Prefer to write? Message us →">Préférez écrire ? Écrivez-nous →</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
+    <p class="hero-subtitle" data-lang data-fr="Répondez à quelques questions : nous préparons votre dossier avant de vous rappeler." data-en="Answer a few questions: we prepare your file before we call you back.">Répondez à quelques questions : nous préparons votre dossier avant de vous rappeler.</p>
     <div class="quick" id="soumission">
+      <ol class="fn-progress" id="fn-progress" aria-label="Progression"></ol>
       <div class="fn-step" id="fn-1">
         <h2 class="quick-title" data-lang data-fr="Vous êtes…" data-en="You are…">Vous êtes…</h2>
         <p class="quick-sub" data-lang data-fr="Choisissez pour voir les services et les prix qui vous concernent." data-en="Choose to see the services and prices that fit you.">Choisissez pour voir les services et les prix qui vous concernent.</p>
@@ -1732,20 +1788,13 @@
         <h2 class="quick-title" data-lang data-fr="Merci, c&#39;est bien reçu !" data-en="Thank you, we got it!">Merci, c'est bien reçu !</h2>
         <p class="quick-sub" data-lang data-fr="Nous vous répondrons très bientôt. Une copie de votre demande vous a été envoyée par courriel. Pressé ? Appelez-nous au (438) 498-6969." data-en="We will get back to you shortly. A copy of your request was emailed to you. In a hurry? Call us at (438) 498-6969.">Nous vous répondrons très bientôt. Une copie de votre demande vous a été envoyée par courriel. Pressé ? Appelez-nous au (438) 498-6969.</p>
       </div>
-      <div class="contact-pills">
-        <div class="pill">
-          <div class="pill-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <a href="mailto:wgcomptabilite@gmail.com">wgcomptabilite@gmail.com</a>
-        </div>
-        <div class="pill">
-          <div class="pill-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          156, rue Gervais, Otterburn Park
-        </div>
-      </div>
+    </div>
+    <div class="hero-actions">
+      <a class="g-badge on-dark" href="https://search.google.com/local/reviews?placeid=ChIJsbRhELkYiGcRYlPw8QaCfw4" target="_blank" rel="noopener">
+        <span class="g-stars" aria-hidden="true">★★★★★</span>
+        <span><strong>5,0</strong> · <span data-lang data-fr="16 avis Google" data-en="16 Google reviews">16 avis Google</span></span>
+      </a>
+      <a href="#contact" class="cta-ghost" data-lang data-fr="Préférez écrire ? Écrivez-nous →" data-en="Prefer to write? Message us →">Préférez écrire ? Écrivez-nous →</a>
     </div>
   </div>
 </section>
@@ -2034,10 +2083,10 @@ const selfQs = (k, base, P) => {
       P ? "Does your partner's self-employment income exceed $30,000 a year?" : 'Does your self-employment income exceed $30,000 a year?', YNK, null, base, true),
     S('reg' + k, P ? 'Votre conjoint(e) est-il/elle déjà inscrit(e) aux taxes (TPS/TVQ) ?' : 'Êtes-vous déjà inscrit(e) aux taxes (TPS/TVQ) ?',
       P ? 'Is your partner already registered for GST/QST?' : 'Are you already registered for GST/QST?', YN2, null, yes, true),
-    S('regask' + k, P ? 'Souhaitez-vous que nous fassions son inscription aux taxes ?' : 'Souhaitez-vous que nous fassions votre inscription aux taxes ?',
-      P ? 'Do you want us to register your partner for GST/QST?' : 'Do you want us to register you for GST/QST?', YN2, null, s => yes(s) && s['reg' + k] === 1, true),
-    S('gst' + k, P ? 'Ajouter les déclarations TPS / TVQ de votre conjoint(e) à votre dossier ?' : 'Ajouter le service de déclarations TPS / TVQ ?',
-      P ? "Add your partner's GST/QST filings?" : 'Add the GST/QST filing service?',
+    S('regask' + k, P ? 'Souhaitez-vous que nous fassions son inscription aux taxes ? (service supplémentaire $)' : 'Souhaitez-vous que nous fassions votre inscription aux taxes ? (service supplémentaire $)',
+      P ? 'Do you want us to register your partner for GST/QST? (additional service $)' : 'Do you want us to register you for GST/QST? (additional service $)', YN2, null, s => yes(s) && s['reg' + k] === 1, true),
+    S('gst' + k, P ? 'Ajouter les déclarations TPS / TVQ de votre conjoint(e) à votre dossier ? (service supplémentaire $)' : 'Ajouter le service de déclarations TPS / TVQ ? (service supplémentaire $)',
+      P ? "Add your partner's GST/QST filings? (additional service $)" : 'Add the GST/QST filing service? (additional service $)',
       [['Oui, ajouter', 'Yes, add it'], ['Non, merci', 'No thanks']], null, yes, true),
     S('tx' + k, P ? 'Transactions par mois (conjoint(e))' : 'Combien de transactions par mois ?',
       P ? 'Transactions per month (partner)' : 'How many transactions per month?',
@@ -2082,7 +2131,7 @@ const FN = {
       est: (s, L) => {
         if (s.complex) return L === 'fr' ? 'sur soumission' : 'by quote';
         const r = t1Calc(s);
-        return (r.self ? (L === 'fr' ? 'dès ' : 'from ') : '') + fm(r.n, L) + TAX[L];
+        return (r.self ? (L === 'fr' ? 'dès ' : 'from ') : '') + fm(r.total, L) + TAX[L];
       },
       internal: s => {
         if (s.complex) return [];
@@ -2167,7 +2216,7 @@ function fnOptsHTML(it, s, L) {
     if (o.t === 'text') return `<div class="fn-g"><span class="fn-gl">${lab}</span><textarea class="fn-text" rows="3" data-k="${o.id}" data-o="${o.id}">${esc(s[o.id] || '')}</textarea></div>`;
     if (o.t === 'multi') return `<div class="fn-g"><span class="fn-gl">${lab}</span>${o.ch.map((c, i) => `<label class="fn-chk"><input type="checkbox" data-k="${o.id}:${i}" data-o="${o.id}" data-v="${i}" ${s[o.id][i] ? 'checked' : ''}><span>${esc(c[ix(L)])}</span>${c[2] ? `<em>${fm(c[2], L)}</em>` : ''}</label>`).join('')}</div>`;
     if (o.t === 'count') return `<div class="fn-g fn-count"><span class="fn-gl">${lab}</span><div class="stepper"><button type="button" data-k="${o.id}-" data-o="${o.id}" data-d="-1" aria-label="−">−</button><span>${s[o.id]}</span><button type="button" data-k="${o.id}+" data-o="${o.id}" data-d="1" aria-label="+">+</button></div></div>`;
-    if (o.t === 'tiers') return `<div class="fn-g"><span class="fn-gl">${lab}</span><div class="fn-tiers">${TIERS.map((t, i) => `<button type="button" class="fn-tier${s[o.id] === i ? ' active' : ''}" data-k="${o.id}:${i}" data-o="${o.id}" data-v="${i}" aria-pressed="${s[o.id] === i}"><span class="fn-tier-h"><b>${esc(t[L])}</b><span class="bars" aria-hidden="true">${[1, 2, 3, 4].map(k => `<i${k <= t.n ? ' class="on"' : ''}></i>`).join('')}</span></span><small>${esc(t['d' + L])}</small></button>`).join('')}</div></div>`;
+    if (o.t === 'tiers') return `<div class="fn-g"><span class="fn-gl">${lab}</span><div class="fn-tiers">${TIERS.map((t, i) => `<button type="button" class="fn-tier${s[o.id] === i ? ' active' : ''}" data-k="${o.id}:${i}" data-o="${o.id}" data-v="${i}" aria-pressed="${s[o.id] === i}"><span class="fn-tier-h"><b>${esc(t[L])}</b><span class="fn-dollars" aria-hidden="true"><b>${'$'.repeat(t.n)}</b>${'$'.repeat(4 - t.n)}</span></span><small>${esc(t['d' + L])}</small></button>`).join('')}</div></div>`;
     return '';
   }).join('');
 }
@@ -2291,6 +2340,10 @@ function renderOpts() {
 function renderFunnel() {
   const L = currentLang, fr = L === 'fr', $ = id => document.getElementById(id);
   ['fn-1', 'fn-2', 'fn-opt', 'fn-3', 'fn-4'].forEach(id => $(id).hidden = true);
+  const steps = fr ? ['Profil', 'Service', 'Détails', 'Demande'] : ['Profile', 'Service', 'Details', 'Request'];
+  const cur = !fn.seg ? 0 : fn.svc ? (fn.stage === 'form' ? 3 : 2) : 1;
+  $('fn-progress').hidden = !!fn.done;
+  $('fn-progress').innerHTML = steps.map((t, i) => `<li class="${i < cur ? 'done' : i === cur ? 'now' : ''}"><i>${i < cur ? '✓' : i + 1}</i><span>${t}</span></li>`).join('');
   if (fn.done) { $('fn-4').hidden = false; return; }
   if (!fn.seg) { $('fn-1').hidden = false; return; }
   const seg = FN[fn.seg], segName = seg[L], cat = fn.cat, catName = cat ? cat[L] : null;
@@ -2406,7 +2459,7 @@ const navScroll = () => document.querySelector('nav').classList.toggle('scrolled
 window.addEventListener('scroll', navScroll, { passive: true });
 navScroll();
 new IntersectionObserver(([e]) => document.querySelector('.call-fab').classList.toggle('show', !e.isIntersecting), { threshold: 0.05 })
-  .observe(document.querySelector('.hero-left'));
+  .observe(document.querySelector('.hero-main'));
 
 // Mobile menu
 const menuBtn = document.getElementById('menu-btn');
