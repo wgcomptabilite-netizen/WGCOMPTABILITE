@@ -1283,6 +1283,10 @@
   .quick-price { font-size: .82rem; color: var(--gold-deep); font-weight: 500; white-space: nowrap; }
   .quick .contact-pills { margin-top: 1.6rem; max-width: none; }
 
+  .panel-cta { margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; padding: 1.5rem 2rem; border-radius: var(--r); background: #fffdf8; border: 1px solid rgba(184,154,90,.35); }
+  .panel-cta p { font-size: .95rem; color: var(--navy); max-width: 520px; }
+  .panel-cta .cta-btn span { font-family: 'DM Sans', sans-serif; font-weight: 700; letter-spacing: .02em; text-transform: none; font-size: .95rem; }
+
   /* Tier cost meter */
   .tier-legend { font-size: .82rem; color: var(--text-muted); margin-bottom: 1rem; }
   .cost { display: flex; align-items: flex-end; gap: .9rem; margin: .4rem 0 1.5rem; }
@@ -1772,9 +1776,9 @@
         <span class="svc-num" data-lang data-fr="SERVICE COMPLET" data-en="FULL SERVICE"></span>
         <div class="svc-line"></div>
         <h3 class="svc-name" data-lang data-fr="Travailleur autonome" data-en="Self-employed"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Tout est inclus : votre tenue de livres, votre déclaration de revenus (Québec + fédéral) et vos déclarations TPS / TVQ." data-en="Everything included: your bookkeeping, your tax return (Quebec + federal) and your GST / QST filings."></p>
+        <p class="svc-desc offer-desc" data-lang data-fr="Tout est inclus : votre tenue de livres mensuelle, votre déclaration de revenus (Québec + fédéral) et vos déclarations TPS / TVQ." data-en="Everything included: your monthly bookkeeping, your tax return (Quebec + federal) and your GST / QST filings."></p>
         <ul class="tier-list">
-          <li data-lang data-fr="Tenue de livres : conciliation bancaire mensuelle" data-en="Bookkeeping: monthly bank reconciliation"></li>
+          <li data-lang data-fr="Tenue de livres mensuelle : conciliation bancaire" data-en="Monthly bookkeeping: bank reconciliation"></li>
           <li data-lang data-fr="Saisie et catégorisation des transactions" data-en="Transaction entry and categorization"></li>
           <li data-lang data-fr="Classement de vos reçus numérisés" data-en="Filing of your digital receipts"></li>
           <li data-lang data-fr="Déclaration de revenus Québec + fédéral : incluse" data-en="Tax return, Quebec + federal: included"></li>
@@ -1846,7 +1850,6 @@
         <li data-lang data-fr="Gestion des pièces justificatives numériques" data-en="Digital receipt and document management"></li>
         <li data-lang data-fr="Accès infonuagique à vos livres en tout temps" data-en="Cloud access to your books at any time"></li>
       </ul>
-      <a href="#contact" class="tier-cta" data-plan-fr="Tenue de livres — Essentiel" data-plan-en="Bookkeeping — Essential" data-lang data-fr="Choisir ce forfait →" data-en="Choose this plan →"></a>
     </div>
     <div class="tier">
       <span class="svc-num">FORFAIT 2</span>
@@ -1859,7 +1862,6 @@
         <li data-lang data-fr="Comptes fournisseurs : suivi et planification des paiements" data-en="Accounts payable: tracking and payment planning"></li>
         <li data-lang data-fr="Analyse financière semestrielle" data-en="Semi-annual financial analysis"></li>
       </ul>
-      <a href="#contact" class="tier-cta" data-plan-fr="Tenue de livres — Croissance" data-plan-en="Bookkeeping — Growth" data-lang data-fr="Choisir ce forfait →" data-en="Choose this plan →"></a>
     </div>
     <div class="tier">
       <span class="svc-num">FORFAIT 3</span>
@@ -1872,7 +1874,6 @@
         <li data-lang data-fr="Recommandations d'optimisation fiscale et opérationnelle" data-en="Tax and operational optimization recommendations"></li>
         <li data-lang data-fr="Suivi budgétaire et indicateurs clés" data-en="Budget tracking and key metrics"></li>
       </ul>
-      <a href="#contact" class="tier-cta" data-plan-fr="Tenue de livres — Stratégique" data-plan-en="Bookkeeping — Strategic" data-lang data-fr="Obtenir une soumission →" data-en="Get a quote →"></a>
     </div>
     <div class="tier">
       <span class="svc-num">FORFAIT 4</span>
@@ -1887,7 +1888,6 @@
         <li data-lang data-fr="Accompagnement pour le financement auprès des institutions financières" data-en="Support with financing and lenders"></li>
         <li data-lang data-fr="Soutien aux décisions stratégiques" data-en="Support for strategic decisions"></li>
       </ul>
-      <a href="#contact" class="tier-cta" data-plan-fr="Tenue de livres — CFO à temps partiel" data-plan-en="Bookkeeping — Fractional CFO" data-lang data-fr="Obtenir une soumission →" data-en="Get a quote →"></a>
     </div>
   </div>
     <div class="addon">
@@ -1901,6 +1901,10 @@
         <p class="tier-price" data-lang data-fr="20 $" data-en="$20"></p>
         <p class="price-unit" data-lang data-fr="+ taxes · par employé, par mois" data-en="+ tax · per employee, per month"></p>
       </div>
+    </div>
+    <div class="panel-cta">
+      <p data-lang data-fr="Vous savez quel forfait vous convient ? Appelez-nous : on confirme votre forfait et votre prix." data-en="Know which plan fits you? Call us: we'll confirm your plan and your price."></p>
+      <a href="tel:+14384986969" class="cta-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(438) 498-6969</span></a>
     </div>
     </div>
     <div class="svc-panel" data-svc="impots" hidden>
@@ -2218,7 +2222,7 @@ const FN = {
     { go: 'particuliers:t1', fr: 'Déclaration de revenus', en: 'Tax return',
       sfr: 'Québec + fédéral', sen: 'Quebec + federal', pfr: 'dès 100 $', pen: 'from $100' },
     { go: 'particuliers:ta', fr: 'Travailleur autonome', en: 'Self-employed',
-      sfr: 'Service complet : impôts + TPS/TVQ + tenue de livres', sen: 'Full service: taxes + GST/QST + bookkeeping', pfr: '110 $/mois', pen: '$110/mo' },
+      sfr: 'Service complet : impôts + TPS/TVQ + tenue de livres mensuelle', sen: 'Full service: taxes + GST/QST + monthly bookkeeping', pfr: '110 $/mois', pen: '$110/mo' },
     { tel: true, go: 'particuliers:retraite', fr: 'Planification, conseil et retraite', en: 'Planning, advice & retirement',
       sfr: 'Budget, REER / FERR / CRI, optimisation fiscale', sen: 'Budget, RRSP / RRIF / LIRA, tax optimization', pfr: '(438) 498-6969', pen: '(438) 498-6969' }
   ],
