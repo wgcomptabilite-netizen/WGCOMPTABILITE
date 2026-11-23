@@ -1366,6 +1366,42 @@
   .fn-two { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
   .fn-form input[type="text"], .fn-form input[type="email"], .fn-form input[type="tel"], .fn-form textarea { background: #fffdf8; padding: .65rem .85rem; }
   .fn-form .cta-btn { width: 100%; justify-content: center; margin-top: .2rem; }
+  .fn-step { scroll-margin-top: 96px; }
+  .fn-opts { display: flex; flex-direction: column; gap: 1.1rem; margin: .4rem 0 1rem; }
+  .fn-gl { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: .5rem; }
+  .fn-pills { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .fn-pills button { font-family: 'DM Sans', sans-serif; font-size: .85rem; cursor: pointer; color: var(--navy); background: #fffdf8; border: 1px solid rgba(14,27,46,.18); border-radius: 999px; padding: .6rem 1rem; min-height: 40px; transition: background .2s, color .2s, border-color .2s; }
+  .fn-pills button:hover { border-color: var(--gold); }
+  .fn-pills button.active { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+  .fn-chk { display: flex; align-items: center; gap: .65rem; font-size: .9rem; color: var(--navy); cursor: pointer; padding: .55rem .75rem; min-height: 44px; background: #fffdf8; border: 1px solid rgba(14,27,46,.12); border-radius: 12px; }
+  .fn-chk + .fn-chk { margin-top: .4rem; }
+  .fn-chk input { accent-color: var(--gold); width: 17px; height: 17px; flex-shrink: 0; }
+  .fn-chk span { flex: 1; line-height: 1.35; }
+  .fn-chk em { font-style: normal; font-size: .85rem; font-weight: 600; color: var(--gold-deep); white-space: nowrap; }
+  .fn-chk:has(input:checked) { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
+  .fn-count { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .fn-count .fn-gl { margin: 0; }
+  .fn-tiers { display: flex; flex-direction: column; gap: .55rem; }
+  .fn-tier { font-family: 'DM Sans', sans-serif; text-align: left; cursor: pointer; color: var(--navy); background: #fffdf8; border: 1px solid rgba(14,27,46,.14); border-radius: 14px; padding: .85rem 1rem; display: flex; flex-direction: column; gap: .35rem; transition: border-color .2s, box-shadow .2s, transform .2s var(--ease); }
+  .fn-tier:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .fn-tier.active { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold) inset; background: #fff; }
+  .fn-tier-h { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .fn-tier-h b { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; }
+  .fn-tier .bars { height: 24px; gap: 3px; }
+  .fn-tier .bars i { width: 8px; }
+  .fn-tier .bars i:nth-child(1) { height: 7px; } .fn-tier .bars i:nth-child(2) { height: 12px; }
+  .fn-tier .bars i:nth-child(3) { height: 18px; } .fn-tier .bars i:nth-child(4) { height: 24px; }
+  .fn-tier small { font-size: .8rem; line-height: 1.45; color: var(--text-muted); }
+  .fn-est { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; background: var(--navy); color: var(--cream); border-radius: 12px; padding: .8rem 1rem; margin-bottom: .8rem; font-size: .82rem; }
+  .fn-est strong { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--gold-light); text-align: right; }
+  .fn-note { font-size: .8rem; line-height: 1.5; color: var(--text-muted); border-left: 2px solid var(--gold); padding-left: .75rem; margin: 0 0 .9rem; }
+  .fn-next { width: 100%; justify-content: center; }
+  .fn-next:disabled { opacity: .45; cursor: not-allowed; }
+  .fn-recap { font-size: .85rem; line-height: 1.55; color: var(--navy); background: #fffdf8; border: 1px solid rgba(184,154,90,.35); border-radius: 12px; padding: .7rem .9rem; margin-bottom: 1rem; }
+  .fn-recap b { display: block; font-weight: 600; }
+  .fn-recap ul { list-style: none; margin: .3rem 0 0; padding: 0; color: var(--text-muted); }
+  .fn-recap li { padding-left: .9rem; position: relative; }
+  .fn-recap li::before { content: '–'; position: absolute; left: 0; color: var(--gold); }
   .fn-detail { display: inline-block; margin-top: .9rem; font-size: .8rem; color: var(--gold-text); text-decoration: none; padding: .4rem 0; }
   .fn-detail:hover { text-decoration: underline; }
 
@@ -1633,10 +1669,19 @@
         <div class="fn-cats" id="fn-cats" hidden></div>
         <div class="quick-list" id="fn-list"></div>
       </div>
+      <div class="fn-step" id="fn-opt" hidden>
+        <button type="button" class="fn-back" id="fn-backo"></button>
+        <h2 class="quick-title" id="fn-opt-title"></h2>
+        <p class="quick-sub" id="fn-opt-sub"></p>
+        <div class="fn-opts" id="fn-opts"></div>
+        <div class="fn-est" id="fn-est" hidden><span id="fn-est-lbl"></span><strong id="fn-est-val"></strong></div>
+        <p class="fn-note" id="fn-note"></p>
+        <button type="button" class="cta-btn fn-next" id="fn-next"><span id="fn-next-lbl"></span><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg></button>
+      </div>
       <div class="fn-step" id="fn-3" hidden>
         <button type="button" class="fn-back" id="fn-back3"></button>
         <h2 class="quick-title" data-lang data-fr="Votre demande" data-en="Your request">Votre demande</h2>
-        <p class="fn-chip" id="fn-chip"></p>
+        <div class="fn-recap" id="fn-recap"></div>
         <form class="fn-form" id="fn-form" action="https://formsubmit.co/wgcomptabilite@gmail.com" method="POST">
           <input type="hidden" name="_subject" id="fn-subject" value="Nouvelle demande — wgcomptabilite.ca">
           <input type="hidden" name="_template" value="table">
@@ -1644,6 +1689,7 @@
           <input type="hidden" name="_autoresponse" id="fn-autoresponse" value="">
           <input type="hidden" name="Profil" id="fn-profile" value="">
           <input type="hidden" name="Service" id="fn-service" value="">
+          <textarea name="Détails de la demande" id="fn-details" hidden tabindex="-1"></textarea>
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="fn-two">
             <div class="form-row">
@@ -1663,6 +1709,7 @@
             <label class="form-label" for="fn-notes" data-lang data-fr="Notes (facultatif)" data-en="Notes (optional)">Notes (facultatif)</label>
             <textarea rows="2" id="fn-notes" name="Notes" data-fr-placeholder="Échéance, situation, questions..." data-en-placeholder="Deadline, situation, questions..."></textarea>
           </div>
+          <p class="fn-note" id="fn-note2"></p>
           <p class="form-consent"><span data-lang data-fr="En envoyant, vous acceptez notre" data-en="By sending, you agree to our">En envoyant, vous acceptez notre</span> <a href="#" class="privacy-open" data-lang data-fr="politique de confidentialité" data-en="privacy policy">politique de confidentialité</a>.</p>
           <button type="submit" class="cta-btn"><span data-lang data-fr="Envoyer ma demande" data-en="Send my request">Envoyer ma demande</span><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg></button>
         </form>
@@ -1920,8 +1967,8 @@
         </ul>
       </div>
       <div class="offer-side">
-        <p class="tier-from" data-lang data-fr="Appelez-nous" data-en="Call us">Appelez-nous</p>
-        <a class="side-phone" href="tel:+14384986969">(438) 498-6969</a>
+        <p class="tier-from" data-lang data-fr="Prix confirmé au téléphone" data-en="Price confirmed by phone">Prix confirmé au téléphone</p>
+        <p class="tier-price" data-lang data-fr="Appeler" data-en="Call us">Appeler</p>
         <p class="price-unit" data-lang data-fr="Vincent Watts · CPA auditeur" data-en="Vincent Watts · CPA auditor">Vincent Watts · CPA auditeur</p>
         <a href="tel:+14384986969" class="cta-btn">
           <span data-lang data-fr="Appeler" data-en="Call">Appeler</span>
@@ -1938,14 +1985,15 @@
   <div class="grp-pills" id="biz-groups">
     <button type="button" class="active" data-group="tenue" data-lang data-fr="Tenue de livres" data-en="Bookkeeping">Tenue de livres</button>
     <button type="button" data-group="fisc" data-lang data-fr="Fiscalité" data-en="Tax">Fiscalité</button>
-    <button type="button" data-group="conseil" data-lang data-fr="Conseil" data-en="Advisory">Conseil</button>
+    <button type="button" data-group="conseil" data-lang data-fr="Conseil &amp; accompagnement" data-en="Advisory &amp; support">Conseil & accompagnement</button>
     <button type="button" data-group="audit" data-lang data-fr="Audit &amp; états financiers" data-en="Audit &amp; financial statements">Audit & états financiers</button>
   </div>
   <div class="svc-pills" id="biz-subs">
     <button type="button" class="active" data-svc="livres" data-sub-of="tenue" data-lang data-fr="Comparer les forfaits" data-en="Compare plans">Comparer les forfaits</button>
-    <button type="button" data-svc="paie" data-sub-of="tenue" data-lang data-fr="Paie" data-en="Payroll">Paie</button>
+    <button type="button" data-svc="paie" data-sub-of="conseil" hidden data-lang data-fr="Paie" data-en="Payroll">Paie</button>
     <button type="button" data-svc="impots" data-sub-of="fisc" hidden data-lang data-fr="Fin d&#39;année (T2 / T3)" data-en="Year-end (T2 / T3)">Fin d'année (T2 / T3)</button>
     <button type="button" data-svc="tpstvq" data-sub-of="fisc" hidden data-lang data-fr="TPS / TVQ" data-en="GST / QST">TPS / TVQ</button>
+    <button type="button" data-svc="optim" data-sub-of="fisc" hidden data-lang data-fr="Conseil et optimisation" data-en="Advice &amp; optimization">Conseil et optimisation</button>
     <button type="button" data-svc="ponctuels" data-sub-of="conseil" hidden data-lang data-fr="Démarrage d&#39;entreprise" data-en="Business start-up">Démarrage d'entreprise</button>
     <button type="button" data-svc="cfo" data-sub-of="conseil" hidden data-lang data-fr="CFO à temps partiel" data-en="Fractional CFO">CFO à temps partiel</button>
     <button type="button" data-svc="compilation" data-sub-of="audit" hidden data-lang data-fr="Mission de compilation" data-en="Compilation">Mission de compilation</button>
@@ -2005,21 +2053,33 @@
       </ul>
     </div>
   </div>
-    <div class="addon">
-      <div class="addon-main">
-        <span class="svc-num" data-lang data-fr="OPTION · TOUS LES FORFAITS" data-en="ADD-ON · ALL PLANS">OPTION · TOUS LES FORFAITS</span>
-        <h3 class="svc-name" data-lang data-fr="Paie" data-en="Payroll">Paie</h3>
-        <p class="svc-desc" data-lang data-fr="Ajoutez la paie à n'importe quel forfait de tenue de livres : calcul des salaires, remises des retenues à la source et relevés T4 et RL-1." data-en="Add payroll to any bookkeeping plan: pay calculations, source deduction remittances, and T4 and RL-1 slips.">Ajoutez la paie à n'importe quel forfait de tenue de livres : calcul des salaires, remises des retenues à la source et relevés T4 et RL-1.</p>
-      </div>
-      <div class="addon-price">
-        <p class="tier-from" data-lang data-fr="À partir de" data-en="Starting at">À partir de</p>
-        <p class="tier-price" data-lang data-fr="20 $" data-en="$20">20 $</p>
-        <p class="price-unit" data-lang data-fr="+ taxes · par employé, par mois" data-en="+ tax · per employee, per month">+ taxes · par employé, par mois</p>
-      </div>
-    </div>
     <div class="panel-cta">
       <p data-lang data-fr="Vous savez quel forfait vous convient ? Appelez-nous : on confirme votre forfait et votre prix." data-en="Know which plan fits you? Call us: we'll confirm your plan and your price.">Vous savez quel forfait vous convient ? Appelez-nous : on confirme votre forfait et votre prix.</p>
       <a href="tel:+14384986969" class="cta-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(438) 498-6969</span></a>
+    </div>
+    </div>
+    <div class="svc-panel" data-svc="optim" hidden>
+    <div class="offer">
+      <div class="offer-main">
+        <span class="svc-num" data-lang data-fr="FISCALITÉ · CONSEIL" data-en="TAX · ADVISORY">FISCALITÉ · CONSEIL</span>
+        <div class="svc-line"></div>
+        <h3 class="svc-name" data-lang data-fr="Conseil et optimisation fiscale" data-en="Tax advice &amp; optimization">Conseil et optimisation fiscale</h3>
+        <p class="svc-desc offer-desc" data-lang data-fr="Des conseils d&#39;un CPA pour payer le juste montant d&#39;impôt et structurer votre entreprise intelligemment." data-en="Advice from a CPA to pay the right amount of tax and structure your business wisely.">Des conseils d'un CPA pour payer le juste montant d'impôt et structurer votre entreprise intelligemment.</p>
+        <ul class="tier-list">
+          <li data-lang data-fr="Rémunération des actionnaires : salaire ou dividendes" data-en="Shareholder compensation: salary or dividends">Rémunération des actionnaires : salaire ou dividendes</li>
+          <li data-lang data-fr="Planification fiscale et réduction d&#39;impôt" data-en="Tax planning and tax reduction">Planification fiscale et réduction d'impôt</li>
+          <li data-lang data-fr="Structure de l&#39;entreprise : société, société de portefeuille" data-en="Business structure: corporation, holding company">Structure de l'entreprise : société, société de portefeuille</li>
+          <li data-lang data-fr="Planification de la relève ou de la vente de l&#39;entreprise" data-en="Succession or business sale planning">Planification de la relève ou de la vente de l'entreprise</li>
+        </ul>
+      </div>
+      <div class="offer-side">
+        <p class="tier-price" data-lang data-fr="Appeler" data-en="Call us">Appeler</p>
+        <p class="price-unit" data-lang data-fr="Prix confirmé au téléphone" data-en="Price confirmed by phone">Prix confirmé au téléphone</p>
+        <a href="#contact" class="cta-btn plan-cta" data-plan-fr="Conseil et optimisation fiscale" data-plan-en="Tax advice and optimization">
+          <span data-lang data-fr="Faire ma demande" data-en="Make a request">Faire ma demande</span>
+          <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
+        </a>
+      </div>
     </div>
     </div>
     <div class="svc-panel" data-svc="impots" hidden>
@@ -2072,10 +2132,10 @@
     <div class="svc-panel" data-svc="paie" hidden>
     <div class="offer">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="TENUE DE LIVRES · OPTION" data-en="BOOKKEEPING · ADD-ON">TENUE DE LIVRES · OPTION</span>
+        <span class="svc-num" data-lang data-fr="CONSEIL &amp; ACCOMPAGNEMENT · PAIE" data-en="ADVISORY &amp; SUPPORT · PAYROLL">CONSEIL & ACCOMPAGNEMENT · PAIE</span>
         <div class="svc-line"></div>
         <h3 class="svc-name" data-lang data-fr="Paie" data-en="Payroll">Paie</h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Votre paie gérée de A à Z : vos employés sont payés à temps et vos déclarations sont en règle. S&#39;ajoute à n&#39;importe quel forfait de tenue de livres." data-en="Your payroll handled end to end: your employees are paid on time and your filings are in order. Add it to any bookkeeping plan.">Votre paie gérée de A à Z : vos employés sont payés à temps et vos déclarations sont en règle. S'ajoute à n'importe quel forfait de tenue de livres.</p>
+        <p class="svc-desc offer-desc" data-lang data-fr="Votre paie gérée de A à Z : vos employés sont payés à temps et vos déclarations sont en règle." data-en="Your payroll handled end to end: your employees are paid on time and your filings are in order.">Votre paie gérée de A à Z : vos employés sont payés à temps et vos déclarations sont en règle.</p>
         <ul class="tier-list">
           <li data-lang data-fr="Calcul des salaires et des retenues" data-en="Pay and deduction calculations">Calcul des salaires et des retenues</li>
           <li data-lang data-fr="Remises des retenues à la source (fédéral et Québec)" data-en="Source deduction remittances (federal and Quebec)">Remises des retenues à la source (fédéral et Québec)</li>
@@ -2096,7 +2156,7 @@
     <div class="svc-panel" data-svc="cfo" hidden>
     <div class="offer">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="CONSEIL" data-en="ADVISORY">CONSEIL</span>
+        <span class="svc-num" data-lang data-fr="CONSEIL &amp; ACCOMPAGNEMENT · CFO" data-en="ADVISORY &amp; SUPPORT · CFO">CONSEIL & ACCOMPAGNEMENT · CFO</span>
         <div class="svc-line"></div>
         <h3 class="svc-name" data-lang data-fr="CFO à temps partiel" data-en="Fractional CFO">CFO à temps partiel</h3>
         <p class="svc-desc offer-desc" data-lang data-fr="Un directeur financier à vos côtés pour piloter votre croissance, sans le coût d&#39;un poste à temps plein." data-en="A finance leader by your side to steer your growth, without the cost of a full-time hire.">Un directeur financier à vos côtés pour piloter votre croissance, sans le coût d'un poste à temps plein.</p>
@@ -2168,7 +2228,7 @@
     <div class="svc-panel" data-svc="ponctuels" hidden>
     <div class="offer dark">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="CONSEIL · DÉMARRAGE" data-en="ADVISORY · START-UP">CONSEIL · DÉMARRAGE</span>
+        <span class="svc-num" data-lang data-fr="CONSEIL &amp; ACCOMPAGNEMENT · DÉMARRAGE" data-en="ADVISORY &amp; SUPPORT · START-UP">CONSEIL & ACCOMPAGNEMENT · DÉMARRAGE</span>
         <div class="svc-line"></div>
         <h3 class="svc-name" data-lang data-fr="Démarrage d'entreprise" data-en="Business startup">Démarrage d'entreprise</h3>
         <p class="svc-desc offer-desc" data-lang data-fr="Tout ce qu'il faut pour lancer votre entreprise du bon pied. Prix + taxes." data-en="Everything you need to start your business on the right foot. Prices + tax.">Tout ce qu'il faut pour lancer votre entreprise du bon pied. Prix + taxes.</p>
@@ -2412,6 +2472,7 @@ function showBizSvc(svc) {
   const grp = sub.dataset.subOf;
   document.querySelectorAll('#biz-groups button').forEach(b => b.classList.toggle('active', b.dataset.group === grp));
   document.querySelectorAll('#biz-subs button').forEach(b => { b.hidden = b.dataset.subOf !== grp; });
+  document.getElementById('biz-subs').style.display = document.querySelectorAll(`#biz-subs [data-sub-of="${grp}"]`).length > 1 ? '' : 'none';
   sub.click();
 }
 document.querySelectorAll('#biz-groups button').forEach(b => b.addEventListener('click', () => {
@@ -2429,86 +2490,206 @@ document.querySelectorAll('[data-goto]').forEach(card => card.addEventListener('
   goService(tab, svc, false);
 }));
 
-// Hero funnel: particulier / entreprise -> category -> service -> request form
+// Hero funnel: segment -> category -> service -> its options -> request form -> email
 const TAX = { fr: ' + taxes', en: ' + tax' };
+const fm = (n, L) => n.toLocaleString(L === 'fr' ? 'fr-CA' : 'en-CA', { style: 'currency', currency: 'CAD', minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
+const S = (id, fr, en, ch, def = 0) => ({ t: 'seg', id, fr, en, ch, def });
+const C = (id, fr, en, show) => ({ t: 'chk', id, fr, en, show });
+const M = (id, fr, en, ch, req = true) => ({ t: 'multi', id, fr, en, ch, req });
+const N = (id, fr, en, min, max, def) => ({ t: 'count', id, fr, en, min, max, def });
+const SITU = S('mode', 'Situation', 'Situation', [['Seul', 'Single'], ['En couple', 'Couple']]);
+const TIERS = [
+  { n: 1, fr: 'Essentiel', en: 'Essential', dfr: 'Conciliation bancaire mensuelle, saisie et catégorisation des transactions, pièces justificatives numériques, accès infonuagique.', den: 'Monthly bank reconciliation, transaction entry and categorization, digital receipts, cloud access.' },
+  { n: 2, fr: 'Croissance', en: 'Growth', dfr: 'Tout Essentiel, plus : comptes clients et fournisseurs, analyse financière semestrielle.', den: 'Everything in Essential, plus: accounts receivable and payable, semi-annual financial analysis.' },
+  { n: 3, fr: 'Stratégique', en: 'Strategic', dfr: 'Tout Croissance, plus : rencontre trimestrielle, optimisation fiscale et opérationnelle, suivi budgétaire et indicateurs clés.', den: 'Everything in Growth, plus: quarterly meeting, tax and operational optimization, budget tracking and key metrics.' },
+  { n: 4, fr: 'CFO à temps partiel', en: 'Fractional CFO', dfr: 'Tout Stratégique, plus : rencontres fréquentes, budgets et prévisions, tableau de bord, financement, décisions stratégiques.', den: 'Everything in Strategic, plus: frequent meetings, budgets and forecasts, dashboard, financing, strategic decisions.' }
+];
+const NOTE = {
+  fr: 'Les informations sélectionnées sont à titre informatif, pour mieux vous servir. Les forfaits et prix finaux sont toujours confirmés par téléphone.',
+  en: 'The selections are for information only, so we can serve you better. Final plans and prices are always confirmed by phone.'
+};
 const FN = {
   particuliers: { fr: 'Particulier', en: 'Individual', items: [
-    { fr: 'Déclaration de revenus', en: 'Tax return', dfr: 'Déclarations Québec + fédéral, produites dans les délais', den: 'Quebec + federal returns, filed on time', pfr: 'dès 100 $' + TAX.fr, pen: 'from $100' + TAX.en, go: 'particuliers:t1' },
-    { fr: 'Travailleur autonome', en: 'Self-employed', dfr: 'Service complet : impôts + TPS/TVQ + tenue de livres mensuelle', den: 'Full service: taxes + GST/QST + monthly bookkeeping', pfr: '110 $/mois' + TAX.fr, pen: '$110/mo' + TAX.en, go: 'particuliers:ta' },
-    { tel: true, fr: 'Planification, conseil et retraite', en: 'Planning, advice & retirement', dfr: 'Budget, REER / FERR / CRI, optimisation fiscale', den: 'Budget, RRSP / RRIF / LIRA, tax optimization', pfr: '(438) 498-6969', pen: '(438) 498-6969', go: 'particuliers:retraite' }
+    { fr: 'Déclaration de revenus', en: 'Tax return', dfr: 'Québec + fédéral, produites dans les délais', den: 'Quebec + federal, filed on time', pfr: 'dès 100 $' + TAX.fr, pen: 'from $100' + TAX.en, go: 'particuliers:t1',
+      opts: [SITU, C('self1', 'Je suis travailleur autonome', "I'm self-employed"), C('self2', 'Mon conjoint ou ma conjointe est travailleur autonome', 'My partner is self-employed', s => s.mode === 1), N('refs', 'Clients référés', 'Clients referred', 0, 20, 0), C('complex', 'Revenus locatifs, gains en capital ou autre situation complexe', 'Rental income, capital gains or another complex situation')],
+      est: (s, L) => { if (s.complex) return L === 'fr' ? 'sur soumission' : 'by quote'; const c = s.mode === 1, a = s.self1, b = c && s.self2; let n = a ? 250 : 100; if (c) { n += b ? 250 : 100; n -= 20; } n = Math.max(0, n - s.refs * 10); return ((a || b) ? (L === 'fr' ? 'dès ' : 'from ') : '') + fm(n, L) + TAX[L]; } },
+    { fr: 'Travailleur autonome', en: 'Self-employed', dfr: 'Service complet : impôts + TPS/TVQ + tenue de livres mensuelle', den: 'Full service: taxes + GST/QST + monthly bookkeeping', pfr: '110 $/mois' + TAX.fr, pen: '$110/mo' + TAX.en, go: 'particuliers:ta',
+      opts: [SITU, S('tax', 'Inscrit aux taxes (TPS/TVQ) ?', 'Registered for GST/QST?', [['Oui', 'Yes'], ['Non', 'No'], ['Je ne sais pas', "I don't know"]]), C('payroll', "J'ai aussi besoin de la paie (employés)", 'I also need payroll (employees)')],
+      est: (s, L) => (L === 'fr' ? '110 $/mois' : '$110/mo') + TAX[L] },
+    { fr: 'Planification, conseil et retraite', en: 'Planning, advice & retirement', dfr: 'Budget, REER / FERR / CRI, optimisation fiscale', den: 'Budget, RRSP / RRIF / LIRA, tax optimization', pfr: 'Appeler', pen: 'Call us', go: 'particuliers:retraite',
+      opts: [SITU, M('topics', 'Sujets qui vous intéressent', 'Topics of interest', [['Budget personnel', 'Personal budget'], ['Conseils personnalisés selon ma situation', 'Personalized advice'], ['Stratégie de retraite (REER, FERR, CRI)', 'Retirement strategy (RRSP, RRIF, LIRA)'], ['Projections et objectifs de retraite', 'Retirement projections and goals'], ['Optimisation fiscale de mes revenus à la retraite', 'Tax optimization of my retirement income']])] }
   ] },
   entreprises: { fr: 'Entreprise', en: 'Business', cats: [
-    { fr: 'Tenue de livres', en: 'Bookkeeping', dfr: 'Vos livres à jour toute l\'année, de la conciliation à la paie', den: 'Your books current all year, from reconciliation to payroll', items: [
-      { compare: true, fr: 'Comparer les forfaits', en: 'Compare plans', dfr: 'Essentiel, Croissance, Stratégique ou CFO : de la conciliation bancaire au suivi stratégique', den: 'Essential, Growth, Strategic or CFO: from bank reconciliation to strategic follow-up', pfr: 'Comparer →', pen: 'Compare →', go: 'entreprises:livres' },
-      { fr: 'Paie', en: 'Payroll', dfr: 'Calcul des salaires, remises à la source, relevés T4 et RL-1', den: 'Pay calculations, source remittances, T4 and RL-1 slips', pfr: 'dès 20 $/employé/mois' + TAX.fr, pen: 'from $20/employee/mo' + TAX.en, go: 'entreprises:paie' } ] },
-    { fr: 'Fiscalité', en: 'Tax', dfr: 'Sociétés, fiducies et taxes de vente', den: 'Corporations, trusts and sales taxes', items: [
-      { fr: 'Fin d\'année (T2 / T3)', en: 'Year-end (T2 / T3)', dfr: 'Déclarations fédérales et du Québec de votre société ou fiducie', den: 'Federal and Quebec returns for your corporation or trust', pfr: 'dès 1 000 $' + TAX.fr, pen: 'from $1,000' + TAX.en, go: 'entreprises:impots' },
-      { fr: 'TPS / TVQ', en: 'GST / QST', dfr: 'Déclarations mensuelles, trimestrielles ou annuelles, conciliées à vos livres', den: 'Monthly, quarterly or annual filings, reconciled with your books', pfr: 'sur soumission', pen: 'by quote', go: 'entreprises:tpstvq' } ] },
-    { fr: 'Conseil', en: 'Advisory', dfr: 'Démarrer, structurer et piloter votre entreprise', den: 'Start, structure and steer your business', items: [
-      { fr: 'Démarrage d\'entreprise', en: 'Business start-up', dfr: 'Enregistrement ou incorporation, compte bancaire, terminal de paiement', den: 'Registration or incorporation, bank account, payment terminal', pfr: 'dès 200 $' + TAX.fr, pen: 'from $200' + TAX.en, go: 'entreprises:ponctuels' },
-      { fr: 'CFO à temps partiel', en: 'Fractional CFO', dfr: 'Budgets, prévisions, tableau de bord et soutien aux décisions', den: 'Budgets, forecasts, dashboard and decision support', pfr: 'sur soumission', pen: 'by quote', go: 'entreprises:cfo' } ] },
+    { fr: 'Tenue de livres', en: 'Bookkeeping', dfr: 'Vos livres à jour toute l\'année : choisissez votre forfait', den: 'Your books current all year: pick your plan', items: [
+      { fr: 'Forfaits de tenue de livres', en: 'Bookkeeping plans', dfr: 'Cliquez le forfait qui vous ressemble. Plus le niveau est élevé, plus l\'accompagnement est complet.', den: 'Pick the plan that fits you. The higher the level, the more complete the support.', pfr: 'Investissement : $ à $$$$', pen: 'Investment: $ to $$$$', go: 'entreprises:livres',
+        opts: [{ t: 'tiers', id: 'tier', fr: 'Votre forfait', en: 'Your plan', req: true }],
+        est: (s, L) => s.tier == null ? null : (L === 'fr' ? 'Investissement : ' : 'Investment: ') + '$'.repeat(TIERS[s.tier].n) } ] },
+    { fr: 'Fiscalité', en: 'Tax', dfr: 'Déclarations, taxes de vente, conseil et optimisation', den: 'Returns, sales taxes, advice and optimization', items: [
+      { fr: 'Fin d\'année (T2 / T3)', en: 'Year-end (T2 / T3)', dfr: 'Déclarations fédérales et du Québec de votre société ou fiducie', den: 'Federal and Quebec returns for your corporation or trust', pfr: 'dès 1 000 $' + TAX.fr, pen: 'from $1,000' + TAX.en, go: 'entreprises:impots',
+        opts: [S('type', 'Type de déclaration', 'Return type', [['Société (T2 / CO-17)', 'Corporation (T2 / CO-17)'], ['Fiducie (T3 / TP-646)', 'Trust (T3 / TP-646)']])],
+        est: (s, L) => (L === 'fr' ? 'dès ' : 'from ') + fm(s.type === 1 ? 2000 : 1000, L) + TAX[L] },
+      { fr: 'TPS / TVQ', en: 'GST / QST', dfr: 'Déclarations mensuelles, trimestrielles ou annuelles, conciliées à vos livres', den: 'Monthly, quarterly or annual filings, reconciled with your books', pfr: 'sur soumission', pen: 'by quote', go: 'entreprises:tpstvq',
+        opts: [S('freq', 'Fréquence de déclaration', 'Filing frequency', [['Mensuelle', 'Monthly'], ['Trimestrielle', 'Quarterly'], ['Annuelle', 'Annual'], ['Je ne sais pas', "I don't know"]], 3)] },
+      { fr: 'Conseil et optimisation', en: 'Advice & optimization', dfr: 'Rémunération, planification fiscale, structure de l\'entreprise', den: 'Compensation, tax planning, business structure', pfr: 'Appeler', pen: 'Call us', go: 'entreprises:optim',
+        opts: [M('topics', 'Sujets qui vous intéressent', 'Topics of interest', [['Rémunération des actionnaires (salaire ou dividendes)', 'Shareholder compensation (salary or dividends)'], ['Planification fiscale et réduction d\'impôt', 'Tax planning and tax reduction'], ['Structure de l\'entreprise (société, société de portefeuille)', 'Business structure (corporation, holding company)'], ['Relève ou vente de l\'entreprise', 'Succession or business sale']])] } ] },
+    { fr: 'Conseil & accompagnement', en: 'Advisory & support', dfr: 'Démarrage, paie et direction financière', den: 'Start-up, payroll and financial leadership', items: [
+      { fr: 'Démarrage d\'entreprise', en: 'Business start-up', dfr: 'Création, compte bancaire, terminal de paiement : cochez ce qu\'il vous faut', den: 'Setup, bank account, payment terminal: tick what you need', pfr: 'dès 200 $' + TAX.fr, pen: 'from $200' + TAX.en, go: 'entreprises:ponctuels',
+        opts: [M('svcs', 'Services souhaités', 'Services needed', [['Création d\'entreprise — enregistrée', 'Business setup — registered', 200], ['Création d\'entreprise — incorporée', 'Business setup — incorporated', 700], ['Ouverture d\'un compte bancaire', 'Business bank account opening', 300], ['Commande d\'un terminal de paiement', 'Payment terminal order', 250]])],
+        est: (s, L) => { const P = [200, 700, 300, 250]; const t = P.reduce((a, p, i) => a + (s.svcs[i] ? p : 0), 0); return t ? fm(t, L) + TAX[L] : null; } },
+      { fr: 'Paie', en: 'Payroll', dfr: 'Calcul des salaires, remises à la source, relevés T4 et RL-1', den: 'Pay calculations, source remittances, T4 and RL-1 slips', pfr: 'dès 20 $/employé/mois' + TAX.fr, pen: 'from $20/employee/mo' + TAX.en, go: 'entreprises:paie',
+        opts: [N('emp', 'Nombre d\'employés', 'Number of employees', 1, 100, 1), S('freq', 'Fréquence de paie', 'Pay frequency', [['Hebdomadaire', 'Weekly'], ['Aux deux semaines', 'Every two weeks'], ['Mensuelle', 'Monthly']], 1)],
+        est: (s, L) => (L === 'fr' ? 'dès ' : 'from ') + fm(20 * s.emp, L) + (L === 'fr' ? '/mois' : '/mo') + TAX[L] },
+      { fr: 'CFO à temps partiel', en: 'Fractional CFO', dfr: 'Budgets, prévisions, tableau de bord et soutien aux décisions', den: 'Budgets, forecasts, dashboard and decision support', pfr: 'Appeler', pen: 'Call us', go: 'entreprises:cfo',
+        opts: [M('topics', 'Ce dont vous avez besoin', 'What you need', [['Budgets, prévisions et flux de trésorerie', 'Budgets, forecasts and cash flow'], ['Tableau de bord de performance', 'Performance dashboard'], ['Financement auprès des institutions financières', 'Financing with lenders'], ['Soutien aux décisions stratégiques', 'Strategic decision support'], ['Rencontres fréquentes', 'Frequent meetings']])] } ] },
     { fr: 'Audit & états financiers', en: 'Audit & financial statements', dfr: 'Des états financiers fiables pour prêteurs et partenaires', den: 'Reliable financial statements for lenders and partners', items: [
-      { fr: 'Mission de compilation', en: 'Compilation engagement', dfr: 'États financiers compilés, prêts pour vos institutions financières', den: 'Compiled financial statements, ready for your lenders', pfr: 'sur soumission', pen: 'by quote', go: 'entreprises:compilation' },
-      { fr: 'Audit', en: 'Audit', dfr: 'Audit de vos états financiers par un CPA auditeur', den: 'Audit of your financial statements by a CPA auditor', pfr: 'sur soumission', pen: 'by quote', go: 'entreprises:audit' } ] }
+      { fr: 'Mission de compilation', en: 'Compilation engagement', dfr: 'États financiers compilés, prêts pour vos institutions financières', den: 'Compiled financial statements, ready for your lenders', pfr: 'sur soumission', pen: 'by quote', go: 'entreprises:compilation',
+        opts: [S('who', 'Destinataire des états financiers', 'Who the statements are for', [['Institution financière', 'Lender'], ['Actionnaires ou associés', 'Shareholders or partners'], ['Autre', 'Other']])] },
+      { fr: 'Audit', en: 'Audit', dfr: 'Audit de vos états financiers par un CPA auditeur', den: 'Audit of your financial statements by a CPA auditor', pfr: 'sur soumission', pen: 'by quote', go: 'entreprises:audit',
+        opts: [S('why', 'Raison de l\'audit', 'Reason for the audit', [['Prêteur ou investisseur', 'Lender or investor'], ['Exigence légale ou contractuelle', 'Legal or contractual requirement'], ['Autre', 'Other']])] } ] }
   ] }
 };
-const fn = { seg: null, cat: null, svc: null, done: false };
-const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const fn = { seg: null, cat: null, svc: null, stage: '', sel: {}, done: false };
+const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+const ix = L => L === 'fr' ? 0 : 1;
+function fnDefaults(it) {
+  const s = {};
+  it.opts.forEach(o => { s[o.id] = o.t === 'seg' ? o.def : o.t === 'chk' ? false : o.t === 'multi' ? {} : o.t === 'count' ? o.def : undefined; });
+  return s;
+}
+function fnReady(it, s) {
+  return it.opts.every(o => !o.req || (o.t === 'multi' ? Object.values(s[o.id]).some(Boolean) : s[o.id] != null));
+}
+function fnLines(it, s, L) {
+  const out = [], yes = L === 'fr' ? 'Oui' : 'Yes', no = L === 'fr' ? 'Non' : 'No';
+  it.opts.forEach(o => {
+    if (o.show && !o.show(s)) return;
+    const lab = o[L], v = s[o.id];
+    if (o.t === 'seg') out.push(lab + ' : ' + o.ch[v][ix(L)]);
+    else if (o.t === 'chk') out.push(lab + ' : ' + (v ? yes : no));
+    else if (o.t === 'count') out.push(lab + ' : ' + v);
+    else if (o.t === 'tiers') { if (v != null) out.push(lab + ' : ' + TIERS[v][L] + ' (' + '$'.repeat(TIERS[v].n) + ')'); }
+    else if (o.t === 'multi') {
+      const sel = o.ch.filter((c, i) => v[i]).map(c => c[ix(L)] + (c[2] ? ' (' + fm(c[2], L) + ')' : ''));
+      if (sel.length) out.push(lab + ' : ' + sel.join(' ; '));
+    }
+  });
+  return out;
+}
+function fnOptsHTML(it, s, L) {
+  return it.opts.map(o => {
+    if (o.show && !o.show(s)) return '';
+    const lab = esc(o[L]);
+    if (o.t === 'seg') return `<div class="fn-g"><span class="fn-gl">${lab}</span><div class="fn-pills" role="group">${o.ch.map((c, i) => `<button type="button" data-k="${o.id}:${i}" data-o="${o.id}" data-v="${i}" aria-pressed="${s[o.id] === i}" class="${s[o.id] === i ? 'active' : ''}">${esc(c[ix(L)])}</button>`).join('')}</div></div>`;
+    if (o.t === 'chk') return `<label class="fn-chk"><input type="checkbox" data-k="${o.id}" data-o="${o.id}" ${s[o.id] ? 'checked' : ''}><span>${lab}</span></label>`;
+    if (o.t === 'multi') return `<div class="fn-g"><span class="fn-gl">${lab}</span>${o.ch.map((c, i) => `<label class="fn-chk"><input type="checkbox" data-k="${o.id}:${i}" data-o="${o.id}" data-v="${i}" ${s[o.id][i] ? 'checked' : ''}><span>${esc(c[ix(L)])}</span>${c[2] ? `<em>${fm(c[2], L)}</em>` : ''}</label>`).join('')}</div>`;
+    if (o.t === 'count') return `<div class="fn-g fn-count"><span class="fn-gl">${lab}</span><div class="stepper"><button type="button" data-k="${o.id}-" data-o="${o.id}" data-d="-1" aria-label="−">−</button><span>${s[o.id]}</span><button type="button" data-k="${o.id}+" data-o="${o.id}" data-d="1" aria-label="+">+</button></div></div>`;
+    if (o.t === 'tiers') return `<div class="fn-g"><span class="fn-gl">${lab}</span><div class="fn-tiers">${TIERS.map((t, i) => `<button type="button" class="fn-tier${s[o.id] === i ? ' active' : ''}" data-k="${o.id}:${i}" data-o="${o.id}" data-v="${i}" aria-pressed="${s[o.id] === i}"><span class="fn-tier-h"><b>${esc(t[L])}</b><span class="bars" aria-hidden="true">${[1, 2, 3, 4].map(k => `<i${k <= t.n ? ' class="on"' : ''}></i>`).join('')}</span></span><small>${esc(t['d' + L])}</small></button>`).join('')}</div></div>`;
+    return '';
+  }).join('');
+}
+function fnPriceText(it, L) { const e = it.est && it.est(fn.sel, L); return e || it['p' + L]; }
+function fnKeepInView(id) {
+  const el = document.getElementById(id), r = el.getBoundingClientRect();
+  if (r.top < 70 || r.top > innerHeight * 0.75) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function renderOpts() {
+  const L = currentLang, it = fn.svc, box = document.getElementById('fn-opts');
+  const focusKey = document.activeElement && document.activeElement.dataset ? document.activeElement.dataset.k : null;
+  box.innerHTML = fnOptsHTML(it, fn.sel, L);
+  if (focusKey) { const f = box.querySelector(`[data-k="${focusKey}"]`); if (f) f.focus(); }
+  const e = fnPriceText(it, L), est = document.getElementById('fn-est');
+  est.hidden = false;
+  document.getElementById('fn-est-lbl').textContent = it.est ? (L === 'fr' ? 'Estimation' : 'Estimate') : (L === 'fr' ? 'Prix' : 'Price');
+  document.getElementById('fn-est-val').textContent = e;
+  document.getElementById('fn-next').disabled = !fnReady(it, fn.sel);
+}
 function renderFunnel() {
-  const fr = currentLang === 'fr', $ = id => document.getElementById(id);
-  const L = (o, k = '') => o[(k ? k : '') + (fr ? (k ? 'fr' : 'fr') : (k ? 'en' : 'en'))];
-  ['fn-1', 'fn-2', 'fn-3', 'fn-4'].forEach(id => $(id).hidden = true);
+  const L = currentLang, fr = L === 'fr', $ = id => document.getElementById(id);
+  ['fn-1', 'fn-2', 'fn-opt', 'fn-3', 'fn-4'].forEach(id => $(id).hidden = true);
   if (fn.done) { $('fn-4').hidden = false; return; }
   if (!fn.seg) { $('fn-1').hidden = false; return; }
-  const seg = FN[fn.seg], segName = fr ? seg.fr : seg.en;
-  if (fn.svc) {
+  const seg = FN[fn.seg], segName = seg[L], cat = fn.cat, catName = cat ? cat[L] : null;
+  $('fn-note').textContent = NOTE[L]; $('fn-note2').textContent = NOTE[L];
+  $('fn-next-lbl').textContent = fr ? 'Continuer' : 'Continue';
+  if (fn.svc && fn.stage === 'form') {
+    const it = fn.svc;
     $('fn-3').hidden = false;
-    const catName = fn.cat ? (fr ? fn.cat.fr : fn.cat.en) : null;
-    $('fn-back3').textContent = '← ' + (fr ? 'Retour · ' : 'Back · ') + (catName || segName);
-    const it = fn.svc, price = fr ? it.pfr : it.pen;
-    $('fn-chip').textContent = [segName, catName, fr ? it.fr : it.en].filter(Boolean).join(' · ') + ' — ' + price;
+    $('fn-back3').textContent = '← ' + (fr ? 'Modifier mes choix' : 'Edit my choices');
+    const head = [segName, catName, it[L]].filter(Boolean).join(' · ');
+    const lines = fnLines(it, fn.sel, L);
+    $('fn-recap').innerHTML = `<b>${esc(head)}</b><ul>${lines.map(l => `<li>${esc(l)}</li>`).join('')}<li>${esc((it.est ? (fr ? 'Estimation' : 'Estimate') : (fr ? 'Prix' : 'Price')) + ' : ' + fnPriceText(it, L))}</li></ul>`;
     // The email we receive is always in French
+    const frLines = fnLines(it, fn.sel, 'fr');
     $('fn-profile').value = seg.fr;
-    $('fn-service').value = [fn.cat && fn.cat.fr, it.fr].filter(Boolean).join(' › ') + ' — ' + it.pfr;
+    $('fn-service').value = [cat && cat.fr, it.fr].filter(Boolean).join(' › ') + ' — ' + fnPriceText(it, 'fr');
     $('fn-subject').value = 'Nouvelle demande — ' + seg.fr + ' — ' + it.fr;
+    $('fn-details').value = frLines.concat(['Estimation / prix : ' + fnPriceText(it, 'fr'), 'Note : sélections à titre informatif ; forfaits et prix finaux confirmés par téléphone.']).join('\n');
+    return;
+  }
+  if (fn.svc) {
+    const it = fn.svc;
+    $('fn-opt').hidden = false;
+    $('fn-backo').textContent = '← ' + (fr ? 'Retour · ' : 'Back · ') + (catName && cat.items.length > 1 ? catName : segName);
+    $('fn-opt-title').textContent = it[L];
+    $('fn-opt-sub').textContent = it['d' + L];
+    renderOpts();
     return;
   }
   $('fn-2').hidden = false;
-  $('fn-back').textContent = '← ' + (fn.cat ? (segName + ' · ' + (fr ? fn.cat.fr : fn.cat.en)) : (fr ? 'Changer · ' : 'Change · ') + segName);
+  $('fn-back').textContent = '← ' + (cat ? (segName + ' · ' + catName) : (fr ? 'Changer · ' : 'Change · ') + segName);
   const cats = $('fn-cats'), list = $('fn-list');
-  if (fn.seg === 'entreprises' && !fn.cat) {
+  if (fn.seg === 'entreprises' && !cat) {
     $('fn-title').textContent = fr ? 'Que cherchez-vous ?' : 'What are you looking for?';
     $('fn-sub').textContent = fr ? 'Choisissez une catégorie.' : 'Choose a category.';
     cats.hidden = false; list.hidden = true;
-    cats.innerHTML = seg.cats.map((c, i) => `<button type="button" class="fn-cat" data-cat="${i}"><b>${esc(fr ? c.fr : c.en)}</b><span>${esc(fr ? c.dfr : c.den)}</span></button>`).join('');
+    cats.innerHTML = seg.cats.map((c, i) => `<button type="button" class="fn-cat" data-cat="${i}"><b>${esc(c[L])}</b><span>${esc(c['d' + L])}</span></button>`).join('');
     return;
   }
-  const items = fn.cat ? fn.cat.items : seg.items;
+  const items = cat ? cat.items : seg.items;
   $('fn-title').textContent = fr ? 'De quoi avez-vous besoin ?' : 'What do you need?';
-  $('fn-sub').textContent = fr ? 'Prix affichés d\'avance, taxes en sus. Cliquez pour faire votre demande.' : 'Prices shown upfront, taxes extra. Click to make your request.';
+  $('fn-sub').textContent = fr ? 'Choisissez un service, précisez votre situation, puis envoyez votre demande.' : 'Choose a service, tell us your situation, then send your request.';
   cats.hidden = true; list.hidden = false;
-  list.innerHTML = items.map((r, i) => {
-    const inner = `<span class="quick-name">${esc(fr ? r.fr : r.en)}<small>${esc(fr ? r.dfr : r.den)}</small></span><span class="quick-price${r.tel ? ' phone' : ''}">${esc(fr ? r.pfr : r.pen)}</span>`;
-    return r.tel ? `<a class="quick-row" href="tel:+14384986969">${inner}</a>` : `<button type="button" class="quick-row" data-i="${i}">${inner}</button>`;
-  }).join('');
+  list.innerHTML = items.map((r, i) => `<button type="button" class="quick-row" data-i="${i}"><span class="quick-name">${esc(r[L])}<small>${esc(r['d' + L])}</small></span><span class="quick-price">${esc(r['p' + L])}</span></button>`).join('');
 }
+function fnPick(it) { fn.svc = it; fn.sel = fnDefaults(it); fn.stage = 'opt'; renderFunnel(); fnKeepInView('fn-opt'); }
 document.getElementById('fn-1').addEventListener('click', e => {
   const c = e.target.closest('.fn-card'); if (!c) return;
   fn.seg = c.dataset.seg; fn.cat = null; fn.svc = null; renderFunnel();
 });
 document.getElementById('fn-cats').addEventListener('click', e => {
   const c = e.target.closest('.fn-cat'); if (!c) return;
-  fn.cat = FN.entreprises.cats[+c.dataset.cat]; renderFunnel();
+  fn.cat = FN.entreprises.cats[+c.dataset.cat];
+  if (fn.cat.items.length === 1) fnPick(fn.cat.items[0]); else renderFunnel();
 });
 document.getElementById('fn-list').addEventListener('click', e => {
   const b = e.target.closest('button.quick-row'); if (!b) return;
-  const it = (fn.cat ? fn.cat.items : FN[fn.seg].items)[+b.dataset.i];
-  if (it.compare) { const [t, v] = it.go.split(':'); goService(t, v); return; }
-  fn.svc = it; renderFunnel();
+  fnPick((fn.cat ? fn.cat.items : FN[fn.seg].items)[+b.dataset.i]);
 });
-function fnBack() { if (fn.svc) fn.svc = null; else if (fn.cat) fn.cat = null; else fn.seg = null; renderFunnel(); }
-document.getElementById('fn-back').addEventListener('click', fnBack);
-document.getElementById('fn-back3').addEventListener('click', fnBack);
+document.getElementById('fn-opts').addEventListener('click', e => {
+  const b = e.target.closest('button[data-o]'); if (!b) return;
+  const o = fn.svc.opts.find(x => x.id === b.dataset.o);
+  if (o.t === 'seg' || o.t === 'tiers') fn.sel[o.id] = +b.dataset.v;
+  else if (o.t === 'count') fn.sel[o.id] = Math.max(o.min, Math.min(o.max, fn.sel[o.id] + +b.dataset.d));
+  renderOpts();
+});
+document.getElementById('fn-opts').addEventListener('change', e => {
+  const i = e.target.closest('input[data-o]'); if (!i) return;
+  const o = fn.svc.opts.find(x => x.id === i.dataset.o);
+  if (o.t === 'chk') fn.sel[o.id] = i.checked; else fn.sel[o.id][+i.dataset.v] = i.checked;
+  renderOpts();
+});
+document.getElementById('fn-next').addEventListener('click', () => {
+  if (!fnReady(fn.svc, fn.sel)) return;
+  fn.stage = 'form'; renderFunnel(); fnKeepInView('fn-3');
+});
+function fnBack() {
+  if (fn.svc && fn.stage === 'form') fn.stage = 'opt';
+  else if (fn.svc) { fn.svc = null; if (fn.cat && fn.cat.items.length === 1) fn.cat = null; }
+  else if (fn.cat) fn.cat = null;
+  else fn.seg = null;
+  renderFunnel();
+}
+['fn-back', 'fn-backo', 'fn-back3'].forEach(id => document.getElementById(id).addEventListener('click', fnBack));
 document.getElementById('fn-detail').addEventListener('click', e => {
   e.preventDefault(); const [t, v] = fn.svc.go.split(':'); goService(t, v);
 });
