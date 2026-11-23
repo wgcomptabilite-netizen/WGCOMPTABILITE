@@ -1220,7 +1220,7 @@
 
 
   /* POLISH — warm, modern, smooth */
-  :root { --r: 16px; --gold-deep: #8a6d2f; --ease: cubic-bezier(.2,.7,.2,1); }
+  :root { --r: 16px; --gold-deep: #8a6d2f; --ease: cubic-bezier(.2,.7,.2,1); --ov: 56px; }
   html { scroll-padding-top: 5rem; }
   body { -webkit-font-smoothing: antialiased; }
   ::selection { background: var(--gold); color: var(--navy); }
@@ -1283,6 +1283,16 @@
   .quick-price { font-size: .82rem; color: var(--gold-deep); font-weight: 500; white-space: nowrap; }
   .quick .contact-pills { margin-top: 1.6rem; max-width: none; }
 
+  /* Tier cost meter */
+  .tier-legend { font-size: .82rem; color: var(--text-muted); margin-bottom: 1rem; }
+  .cost { display: flex; align-items: flex-end; gap: .9rem; margin: .4rem 0 1.5rem; }
+  .bars { display: flex; align-items: flex-end; gap: 4px; height: 40px; }
+  .bars i { display: block; width: 11px; border-radius: 3px; background: rgba(14,27,46,.12); }
+  .bars i:nth-child(1) { height: 11px; } .bars i:nth-child(2) { height: 19px; }
+  .bars i:nth-child(3) { height: 29px; } .bars i:nth-child(4) { height: 40px; }
+  .bars i.on { background: var(--gold); }
+  .cost-lbl { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); padding-bottom: 2px; }
+
   /* Funnel: particulier / entreprise */
   .fn-pick { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
   .fn-card {
@@ -1340,16 +1350,17 @@
 
   /* Stacked sheets: each section overlaps the previous one with a rounded edge + shadow */
   .about, .services, .pricing, .contact {
-    position: relative; margin-top: -28px;
-    border-radius: 28px 28px 0 0;
-    box-shadow: 0 -14px 34px rgba(14,27,46,.16);
-    padding-top: calc(6rem + 28px); padding-bottom: 6rem;
+    position: relative; margin-top: calc(var(--ov) * -1);
+    border-radius: calc(var(--ov) * .75) calc(var(--ov) * .75) 0 0;
+    box-shadow: 0 -22px 50px rgba(14,27,46,.30), 0 -2px 0 rgba(184,154,90,.45);
+    padding-top: calc(6rem + var(--ov)); padding-bottom: 6rem;
   }
-  .about { background: #0a1424; border-top: 1px solid rgba(184,154,90,.35); }
+  .about { background: #0a1424; }
   .services { background: #fffdf8; }
-  .pricing { background: var(--cream-dark); }
+  .pricing { background: #e7dfcf; }
   .contact { background: var(--cream); }
   .hero { position: relative; z-index: 0; }
+  .hero-left, .hero-right { padding-bottom: calc(4rem + var(--ov)); }
   /* Tighter rhythm = faster page */
   .section-header { margin-bottom: 3rem; }
   .about-intro { margin-top: -1rem; margin-bottom: 3rem; }
@@ -1371,9 +1382,9 @@
 
     .hero { grid-template-columns: 1fr; padding-top: 4.5rem; }
     .hero-left { padding: 4.5rem 2.5rem; }
-    .hero-right { padding: 4rem 2.5rem; }
+    .hero-right { padding: 4rem 2.5rem; padding-bottom: calc(4rem + var(--ov)); }
 
-    .services, .pricing, .about, .contact { padding: 5rem 2.5rem; padding-top: calc(5rem + 28px); }
+    .services, .pricing, .about, .contact { padding: 5rem 2.5rem; padding-top: calc(5rem + var(--ov)); }
     .price-grid { grid-template-columns: 1fr; }
     .tier-grid { grid-template-columns: repeat(2, 1fr); }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1430,7 +1441,7 @@
     .nav-right { gap: 0; }
 
     .hero-left { padding: 3.5rem 1.5rem; }
-    .hero-right { padding: 3.5rem 1.5rem; }
+    .hero-right { padding: 3.5rem 1.5rem; padding-bottom: calc(3.5rem + var(--ov)); }
     .hero-title { font-size: clamp(2.4rem, 9vw, 3.1rem); }
     .hero-subtitle { max-width: none; }
     .call-num { font-size: 1.4rem; }
@@ -1439,8 +1450,8 @@
     .fn-name { font-size: 1.45rem; }
     .hero-left::before { width: 240px; height: 240px; top: -60px; right: -60px; }
 
-    .services, .pricing, .about, .contact { padding: 4rem 1.5rem; padding-top: calc(4rem + 28px); }
-    .about, .services, .pricing, .contact { border-radius: 22px 22px 0 0; margin-top: -22px; }
+    :root { --ov: 36px; }
+    .services, .pricing, .about, .contact { padding: 4rem 1.5rem; padding-top: calc(4rem + var(--ov)); }
     .price-card { padding: 2.25rem 1.5rem; }
     .tier-grid { grid-template-columns: 1fr; }
     .tier { padding: 2rem 1.5rem; }
@@ -1579,7 +1590,7 @@
           <p class="member-role" data-lang data-fr="CPA auditeur" data-en="CPA auditor"></p>
         </div>
       </div>
-      <p class="member-bio" data-lang data-fr="Formé à HEC Montréal, Vincent a fait ses classes au cabinet EY, où il a obtenu son titre de CPA. Il a ensuite poursuivi sa carrière dans l'immobilier, où il a rencontré Anaël, avant qu'ils ne partent ensemble à leur compte." data-en="Trained at HEC Montréal, Vincent began his career at EY, where he earned his CPA designation. He then moved into real estate, where he met Anaël, before the two of them went out on their own."></p>
+      <p class="member-bio" data-lang data-fr="Formé à HEC Montréal, Vincent a fait ses classes au cabinet EY, où il a obtenu son titre de CPA auditeur. Il a ensuite poursuivi sa carrière dans l'immobilier. Aujourd'hui, il se spécialise dans l'accompagnement des particuliers, des entrepreneurs et des entreprises québécoises, pour les aider à atteindre leurs objectifs." data-en="Trained at HEC Montréal, Vincent began his career at EY, where he earned his CPA auditor designation. He then moved into real estate. Today, he specializes in helping individuals, entrepreneurs and Quebec businesses reach their goals."></p>
     </div>
     <div class="member">
       <div class="member-head">
@@ -1711,10 +1722,11 @@
         <p class="svc-desc offer-desc" data-lang data-fr="Vos déclarations fédérale et du Québec, produites avec rigueur et dans les délais." data-en="Your federal and Quebec returns, prepared carefully and on time."></p>
       <ul class="price-list">
         <li><span data-lang data-fr="Déclaration standard" data-en="Standard return"></span><span>100 $</span></li>
-        <li><span data-lang data-fr="Travailleur autonome" data-en="Self-employed"></span><span>150 $</span></li>
+        <li><span data-lang data-fr="Travailleur autonome" data-en="Self-employed"></span><span data-lang data-fr="dès 250 $" data-en="from $250"></span></li>
         <li><span data-lang data-fr="Rabais couple" data-en="Couple discount"></span><span>− 20 $</span></li>
         <li><span data-lang data-fr="Par client référé" data-en="Per client referred"></span><span>− 10 $</span></li>
       </ul>
+      <p class="price-note" data-lang data-fr="Client du forfait Travailleur autonome (110 $/mois) ? Votre déclaration de fin d&#39;année est incluse." data-en="On the Self-employed plan ($110/mo)? Your year-end return is included."></p>
       <p class="price-note" data-lang data-fr="Revenus locatifs, gains en capital ou autres situations complexes : sur soumission." data-en="Rental income, capital gains or other complex situations: custom quote."></p>
       <div class="calc" id="t1-calc">
         <span class="calc-title" data-lang data-fr="Estimez votre prix" data-en="Estimate your price"></span>
@@ -1754,11 +1766,13 @@
         <span class="svc-num" data-lang data-fr="TENUE DE LIVRES" data-en="BOOKKEEPING"></span>
         <div class="svc-line"></div>
         <h3 class="svc-name" data-lang data-fr="Travailleur autonome" data-en="Self-employed"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Des livres à jour toute l'année, pour un dossier prêt au moment de votre déclaration de revenus." data-en="Books kept current all year, so your file is ready at tax time."></p>
+        <p class="svc-desc offer-desc" data-lang data-fr="Des livres à jour toute l'année, avec votre déclaration de revenus de fin d'année et vos déclarations TPS / TVQ incluses." data-en="Books kept current all year, with your year-end tax return and GST / QST filings included."></p>
         <ul class="tier-list">
           <li data-lang data-fr="Conciliation bancaire mensuelle" data-en="Monthly bank reconciliation"></li>
           <li data-lang data-fr="Saisie et catégorisation des transactions" data-en="Transaction entry and categorization"></li>
           <li data-lang data-fr="Classement de vos reçus numérisés" data-en="Filing of your digital receipts"></li>
+          <li data-lang data-fr="Déclaration de revenus de fin d&#39;année : incluse" data-en="Year-end tax return: included"></li>
+          <li data-lang data-fr="Déclarations TPS / TVQ : incluses" data-en="GST / QST filings: included"></li>
           <li data-lang data-fr="Option paie : à partir de 20 $ par employé, par mois" data-en="Payroll add-on: from $20 per employee, per month"></li>
         </ul>
       </div>
@@ -1811,14 +1825,13 @@
     <button type="button" data-svc="ponctuels" data-lang data-fr="Services ponctuels" data-en="One-time services"></button>
   </div>
     <div class="svc-panel" data-svc="livres">
+  <p class="tier-legend" data-lang data-fr="Le coût augmente avec le niveau de service. Choisissez votre forfait, puis appelez-nous pour connaître votre prix." data-en="Cost rises with the service level. Pick your plan, then call us for your price."></p>
   <div class="tier-grid">
     <div class="tier">
       <span class="svc-num">FORFAIT 1</span>
       <div class="svc-line"></div>
       <h3 class="svc-name" data-lang data-fr="Essentiel" data-en="Essential"></h3>
-      <p class="tier-from" data-lang data-fr="À partir de" data-en="Starting at"></p>
-      <p class="tier-price" data-lang data-fr="200 $" data-en="$200"></p>
-      <p class="price-unit" data-lang data-fr="+ taxes · par mois" data-en="+ tax · per month"></p>
+      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $" data-en="Investment: $"></span></div>
       <ul class="tier-list">
         <li data-lang data-fr="Conciliation bancaire mensuelle" data-en="Monthly bank reconciliation"></li>
         <li data-lang data-fr="Saisie et catégorisation des transactions" data-en="Transaction entry and categorization"></li>
@@ -1831,9 +1844,7 @@
       <span class="svc-num">FORFAIT 2</span>
       <div class="svc-line"></div>
       <h3 class="svc-name" data-lang data-fr="Croissance" data-en="Growth"></h3>
-      <p class="tier-from" data-lang data-fr="À partir de" data-en="Starting at"></p>
-      <p class="tier-price" data-lang data-fr="450 $" data-en="$450"></p>
-      <p class="price-unit" data-lang data-fr="+ taxes · par mois" data-en="+ tax · per month"></p>
+      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $$" data-en="Investment: $$"></span></div>
       <p class="tier-inc" data-lang data-fr="Tout le forfait Essentiel, plus :" data-en="Everything in Essential, plus:"></p>
       <ul class="tier-list">
         <li data-lang data-fr="Comptes clients : facturation et suivi des encaissements" data-en="Accounts receivable: invoicing and collections follow-up"></li>
@@ -1846,9 +1857,7 @@
       <span class="svc-num">FORFAIT 3</span>
       <div class="svc-line"></div>
       <h3 class="svc-name" data-lang data-fr="Stratégique" data-en="Strategic"></h3>
-      <p class="tier-from">&nbsp;</p>
-      <p class="tier-price" data-lang data-fr="Sur soumission" data-en="Custom quote"></p>
-      <p class="price-unit" data-lang data-fr="Selon vos besoins" data-en="Based on your needs"></p>
+      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $$$" data-en="Investment: $$$"></span></div>
       <p class="tier-inc" data-lang data-fr="Tout le forfait Croissance, plus :" data-en="Everything in Growth, plus:"></p>
       <ul class="tier-list">
         <li data-lang data-fr="Rencontre trimestrielle" data-en="Quarterly meeting"></li>
@@ -1861,9 +1870,7 @@
       <span class="svc-num">FORFAIT 4</span>
       <div class="svc-line"></div>
       <h3 class="svc-name" data-lang data-fr="CFO à temps partiel" data-en="Fractional CFO"></h3>
-      <p class="tier-from">&nbsp;</p>
-      <p class="tier-price" data-lang data-fr="Sur soumission" data-en="Custom quote"></p>
-      <p class="price-unit" data-lang data-fr="Selon vos besoins" data-en="Based on your needs"></p>
+      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $$$$" data-en="Investment: $$$$"></span></div>
       <p class="tier-inc" data-lang data-fr="Tout le forfait Stratégique, plus :" data-en="Everything in Strategic, plus:"></p>
       <ul class="tier-list">
         <li data-lang data-fr="Rencontres fréquentes, selon vos besoins" data-en="Frequent meetings, as needed"></li>
@@ -2114,7 +2121,7 @@ function setLang(lang) {
 }
 
 // T1 price estimator
-const T1 = { base: 100, self: 150, couple: 20, referral: 10, tps: 0.05, tvq: 0.09975 };
+const T1 = { base: 100, self: 250, couple: 20, referral: 10, tps: 0.05, tvq: 0.09975 };
 let t1Mode = 'solo', t1Refs = 0, t1Last = 0;
 
 function fmtMoney(n) {
@@ -2134,8 +2141,10 @@ function renderT1() {
   t1Last = sub;
   const withTax = Math.round(sub * (1 + T1.tps + T1.tvq) * 100) / 100;
   document.getElementById('t1-ref').textContent = t1Refs;
-  document.getElementById('t1-total').textContent = fmtMoney(sub) + (currentLang === 'fr' ? ' + taxes' : ' + tax');
-  document.getElementById('t1-total-tx').textContent = '≈ ' + fmtMoney(withTax) + (currentLang === 'fr' ? ' taxes incluses' : ' tax included');
+  const fromSelf = document.getElementById('t1-self1').checked || (couple && document.getElementById('t1-self2').checked);
+  const pre = fromSelf ? (currentLang === 'fr' ? 'dès ' : 'from ') : '';
+  document.getElementById('t1-total').textContent = pre + fmtMoney(sub) + (currentLang === 'fr' ? ' + taxes' : ' + tax');
+  document.getElementById('t1-total-tx').textContent = '≈ ' + pre + fmtMoney(withTax) + (currentLang === 'fr' ? ' taxes incluses' : ' tax included');
 }
 
 document.querySelectorAll('#t1-calc .seg button').forEach(b => b.addEventListener('click', () => {
@@ -2171,7 +2180,7 @@ document.querySelectorAll('.tier-cta, .plan-cta').forEach(a => a.addEventListene
 // Pricing CTAs pre-fill the contact form
 document.getElementById('t1-cta').addEventListener('click', () => {
   const who = t1Mode === 'couple' ? (currentLang === 'fr' ? 'couple' : 'couple') : (currentLang === 'fr' ? 'seul' : 'single');
-  document.getElementById('input-service').value = (currentLang === 'fr' ? 'Déclaration T1 (' : 'T1 return (') + who + ') — ' + fmtMoney(t1Last) + (currentLang === 'fr' ? ' + taxes' : ' + tax');
+  document.getElementById('input-service').value = (currentLang === 'fr' ? 'Déclaration T1 (' : 'T1 return (') + who + ') — ' + (document.getElementById('t1-total').textContent.replace(/ \+ (taxes|tax)$/, '')) + (currentLang === 'fr' ? ' + taxes' : ' + tax');
 });
 
 
@@ -2203,7 +2212,7 @@ const FN = {
     { go: 'particuliers:retraite', fr: 'Planification & retraite',      en: 'Planning & retirement',  pfr: 'dès 200 $',            pen: 'from $200' }
   ],
   entreprises: [
-    { go: 'entreprises:livres',      fr: 'Tenue de livres',             en: 'Bookkeeping',            pfr: 'dès 200 $/mois',       pen: 'from $200/mo' },
+    { go: 'entreprises:livres',      fr: 'Tenue de livres',             en: 'Bookkeeping',            pfr: '4 forfaits',            pen: '4 plans' },
     { go: 'entreprises:impots',      fr: 'Fin d\'année (T2 / T3)',      en: 'Year-end (T2 / T3)',     pfr: 'dès 1 000 $',          pen: 'from $1,000' },
     { go: 'entreprises:tpstvq',      fr: 'Déclarations TPS / TVQ',      en: 'GST / QST returns',      pfr: 'sur soumission',       pen: 'by quote' },
     { go: 'entreprises:livres',      fr: 'Paie',                        en: 'Payroll',                pfr: 'dès 20 $/employé/mois', pen: 'from $20/employee/mo' },
