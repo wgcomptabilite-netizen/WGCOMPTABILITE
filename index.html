@@ -7,6 +7,14 @@
 <meta name="description" content="W&amp;G Comptabilité : tenue de livres, déclarations de revenus (T1, T2, T3), paie, TPS/TVQ et démarrage d'entreprise pour particuliers et PME de la Montérégie. Appel préliminaire gratuit.">
 <link rel="canonical" href="https://wgcomptabilite.ca/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="W&amp;G Comptabilité">
+<meta property="og:image" content="https://wgcomptabilite.ca/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="W&amp;G Comptabilité — cabinet CPA en Montérégie">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="W&amp;G Comptabilité | Comptable en Montérégie">
+<meta name="twitter:image" content="https://wgcomptabilite.ca/og.png">
 <meta property="og:locale" content="fr_CA">
 <meta property="og:url" content="https://wgcomptabilite.ca/">
 <meta property="og:title" content="W&amp;G Comptabilité | Comptable en Montérégie">
@@ -42,6 +50,10 @@
     "Beloeil",
     "McMasterville",
     "Saint-Basile-le-Grand",
+    "Chambly",
+    "Richelieu",
+    "Longueuil",
+    "Brossard",
     "Montérégie"
   ],
   "knowsLanguage": [
@@ -137,7 +149,11 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#0e1b2e">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -148,7 +164,7 @@
     --gold-light: #d4b87a;
     --cream: #f8f5ef;
     --cream-dark: #ede8df;
-    --text-muted: #7a7060;
+    --text-muted: #665c4b;
   }
 
   html { scroll-behavior: smooth; }
@@ -198,7 +214,7 @@
   }
 
   nav a {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 400;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -222,7 +238,7 @@
     border: none;
     padding: 0.35rem 0.75rem;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -279,7 +295,7 @@
   }
 
   .eyebrow {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
@@ -327,7 +343,7 @@
     background: var(--gold);
     color: var(--navy);
     padding: 0.9rem 2rem;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -343,7 +359,7 @@
   .cta-btn:hover svg { transform: translateX(3px); }
 
   .cta-ghost {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: rgba(248,245,239,0.7);
@@ -405,7 +421,7 @@
   }
 
   .section-label {
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
@@ -448,7 +464,7 @@
   .svc-more {
     margin-top: auto;
     padding-top: 1.5rem;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--gold);
@@ -485,7 +501,7 @@
   .review-title { font-size: 0.85rem; color: var(--navy); margin-bottom: 0.5rem; }
   .review-text { font-size: 0.82rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 1.25rem; }
   .review-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-  .review-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); border-bottom: 1px solid var(--gold); text-decoration: none; padding-bottom: 2px; }
+  .review-link { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); border-bottom: 1px solid var(--gold); text-decoration: none; padding-bottom: 2px; }
 
   .service-card:hover { background: var(--navy); }
   .service-card:hover .svc-num, .service-card:hover .svc-name { color: var(--cream); }
@@ -494,7 +510,7 @@
 
   .svc-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--gold);
     letter-spacing: 0.15em;
     margin-bottom: 2rem;
@@ -520,7 +536,7 @@
   }
 
   .svc-desc {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     line-height: 1.8;
     color: var(--text-muted);
     transition: color 0.25s;
@@ -563,7 +579,7 @@
   .price-card.dark .price-tag { color: var(--gold-light); font-size: 2.4rem; }
 
   .price-unit {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -594,7 +610,7 @@
   }
 
   .calc-title {
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--gold);
@@ -607,7 +623,7 @@
     border: none;
     padding: 0.5rem 1.1rem;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
     cursor: pointer;
   }
@@ -665,7 +681,7 @@
     color: var(--navy);
   }
 
-  .calc-total small { font-size: 0.75rem; color: var(--text-muted); }
+  .calc-total small { font-size: 0.8rem; color: var(--text-muted); }
 
   .price-card .cta-btn { margin-top: auto; }
 
@@ -682,7 +698,7 @@
     border: none;
     padding: 0.75rem 1.5rem;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -708,7 +724,7 @@
   }
 
   .tier-from {
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -727,7 +743,7 @@
   .tier .price-unit { margin-bottom: 1.5rem; }
 
   .tier-inc {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-style: italic;
     color: var(--gold);
     margin-bottom: 0.6rem;
@@ -754,7 +770,7 @@
 
   .tier-cta {
     margin-top: auto;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--navy);
@@ -770,7 +786,7 @@
   [hidden] { display: none !important; }
 
   .price-sub {
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
@@ -791,7 +807,7 @@
   .biz-grid .price-list { margin-bottom: 0.75rem; }
 
   .price-note {
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
     margin-bottom: 1.75rem;
   }
@@ -814,7 +830,7 @@
     border-radius: 999px;
     padding: 0.55rem 1.1rem;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     color: var(--navy);
     cursor: pointer;
     white-space: nowrap;
@@ -898,7 +914,7 @@
 
   .pillars-label {
     margin: 3.5rem 0 1.25rem;
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
@@ -1030,7 +1046,7 @@
   }
 
   .member-role {
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--gold);
@@ -1066,7 +1082,7 @@
   }
 
   .contact-label {
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--gold);
@@ -1080,9 +1096,9 @@
   .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
 
   .form-row { display: flex; flex-direction: column; gap: 0.4rem; }
-  .form-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+  .form-label { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
 
-  input[type="text"], input[type="email"], textarea {
+  input[type="text"], input[type="email"], input[type="tel"], textarea {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.88rem;
     padding: 0.75rem 1rem;
@@ -1104,7 +1120,7 @@
     border: none;
     padding: 0.9rem 2.25rem;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     cursor: pointer;
@@ -1135,13 +1151,13 @@
   .footer-logo span { color: var(--gold); }
 
   .footer-copy {
-    font-size: 0.72rem;
-    color: rgba(248,245,239,0.3);
+    font-size: 0.8rem;
+    color: rgba(248,245,239,0.68);
     letter-spacing: 0.08em;
   }
 
   .footer-cpa {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: var(--gold);
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1176,13 +1192,13 @@
 
   .pricing-disclaimer {
     margin-top: 1.75rem;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     line-height: 1.7;
     color: var(--text-muted);
     max-width: 720px;
   }
 
-  .form-consent { font-size: 0.72rem; color: var(--text-muted); }
+  .form-consent { font-size: 0.8rem; color: var(--text-muted); }
   .form-consent a, .footer-copy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 
   .privacy {
@@ -1206,7 +1222,7 @@
 
   .privacy p { font-size: 0.84rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 0.9rem; }
   .privacy strong { color: var(--navy); font-weight: 500; }
-  .privacy .privacy-date { font-size: 0.72rem; margin: 1.25rem 0 0; }
+  .privacy .privacy-date { font-size: 0.8rem; margin: 1.25rem 0 0; }
 
   .privacy-close {
     position: absolute;
@@ -1220,7 +1236,7 @@
 
 
   /* POLISH — warm, modern, smooth */
-  :root { --r: 16px; --gold-deep: #8a6d2f; --ease: cubic-bezier(.2,.7,.2,1); --ov: 56px; }
+  :root { --r: 16px; --gold-deep: #75591f; --gold-text: #75591f; --ease: cubic-bezier(.2,.7,.2,1); --ov: 56px; }
   html { scroll-padding-top: 5rem; }
   body { -webkit-font-smoothing: antialiased; }
   ::selection { background: var(--gold); color: var(--navy); }
@@ -1255,7 +1271,7 @@
   .call-ico { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: var(--gold-light); display: grid; place-items: center; flex-shrink: 0; }
   .call-ico svg { width: 19px; height: 19px; }
   .call-txt { display: flex; flex-direction: column; min-width: 0; flex: 1; }
-  .call-who { font-size: .8rem; color: rgba(14,27,46,.75); }
+  .call-who { font-size: .8rem; color: rgba(14,27,46,.92); }
   .call-num { font-family: 'DM Sans', sans-serif; font-size: 1.5rem; font-weight: 700; line-height: 1.2; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
   .call-arrow { width: 18px; height: 18px; flex-shrink: 0; opacity: .55; transition: transform .25s var(--ease), opacity .25s; }
   .call-card:hover .call-arrow { transform: translateX(4px); opacity: 1; }
@@ -1287,6 +1303,27 @@
   .panel-cta p { font-size: .95rem; color: var(--navy); max-width: 520px; }
   .panel-cta .cta-btn span { font-family: 'DM Sans', sans-serif; font-weight: 700; letter-spacing: .02em; text-transform: none; font-size: .95rem; }
 
+  /* Accessible gold on light backgrounds */
+  .section-label, .svc-num, .svc-more, .tier-inc, .price-sub, .calc-title, .contact-label,
+  .price-list li span:last-child, .tier-list li::before { color: var(--gold-text); }
+  .tier-list li::before { background: var(--gold); }
+  .about .section-label, .addon .svc-num, .tier-strip .svc-num, .offer.dark .svc-num, .price-card.dark .svc-num,
+  .offer.dark .price-list li span:last-child { color: var(--gold); }
+  .tier-cta, .review-link { border-bottom-color: var(--gold); }
+  .tier-cta:hover { color: var(--gold-text); }
+  .footer-copy a { color: rgba(248,245,239,.85); }
+
+  /* Comfortable tap targets */
+  .menu-btn { width: 44px; height: 44px; padding: 0 12px; }
+  .lang-btn { padding: .6rem .9rem; min-height: 38px; }
+  a.contact-val { display: block; padding: .3rem 0; }
+  .cta-ghost { display: inline-block; padding: .7rem 0 .4rem; }
+  .review-link { display: inline-block; padding: .75rem 0 .5rem; }
+  .footer-copy a { display: inline-block; padding: .7rem .25rem; }
+  .svc-pills button { padding: .7rem 1.15rem; }
+  .seg button { padding: .7rem 1.25rem; }
+  .stepper button { width: 40px; height: 38px; }
+
   /* Tier cost meter */
   .tier-legend { font-size: .82rem; color: var(--text-muted); margin-bottom: 1rem; }
   .cost { display: flex; align-items: flex-end; gap: .9rem; margin: .4rem 0 1.5rem; }
@@ -1295,12 +1332,12 @@
   .bars i:nth-child(1) { height: 11px; } .bars i:nth-child(2) { height: 19px; }
   .bars i:nth-child(3) { height: 29px; } .bars i:nth-child(4) { height: 40px; }
   .bars i.on { background: var(--gold); }
-  .cost-lbl { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); padding-bottom: 2px; }
+  .cost-lbl { font-size: 0.8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); padding-bottom: 2px; }
 
   .side-phone { font-family: 'DM Sans', sans-serif; font-size: 1.9rem; font-weight: 700; letter-spacing: .02em; font-variant-numeric: tabular-nums; color: var(--navy); text-decoration: none; line-height: 1.1; margin-bottom: .4rem; display: block; }
   .side-phone:hover { color: var(--gold-deep); }
   .quick-name { flex: 1; min-width: 0; }
-  .quick-name small { display: block; font-weight: 400; font-size: .74rem; line-height: 1.4; color: var(--text-muted); margin-top: .15rem; }
+  .quick-name small { display: block; font-weight: 400; font-size: 0.8rem; line-height: 1.4; color: var(--text-muted); margin-top: .15rem; }
   .quick-price.phone { color: var(--navy); font-weight: 600; }
 
   /* Funnel: particulier / entreprise */
@@ -1316,8 +1353,8 @@
   .fn-ico { width: 42px; height: 42px; border-radius: 50%; background: var(--navy); color: var(--gold-light); display: grid; place-items: center; margin-bottom: .6rem; }
   .fn-ico svg { width: 20px; height: 20px; }
   .fn-name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; line-height: 1.1; }
-  .fn-desc { font-size: .78rem; line-height: 1.5; color: var(--text-muted); }
-  .fn-back { background: none; border: none; font-family: 'DM Sans', sans-serif; font-size: .78rem; color: var(--gold-deep); cursor: pointer; padding: 0; margin-bottom: .9rem; }
+  .fn-desc { font-size: 0.8rem; line-height: 1.5; color: var(--text-muted); }
+  .fn-back { background: none; border: none; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: var(--gold-deep); cursor: pointer; padding: 0; margin-bottom: .9rem; }
   .fn-back:hover { text-decoration: underline; }
   .fn-step { animation: rise .45s var(--ease) both; }
 
@@ -1341,7 +1378,7 @@
   .menu-btn { border-radius: 10px; }
   .member-photo { border-radius: 50%; }
   .pill-icon { border-radius: 50%; }
-  input[type="text"], input[type="email"], textarea { border-radius: 12px; }
+  input[type="text"], input[type="email"], input[type="tel"], textarea { border-radius: 12px; }
   input:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(184,154,90,.2); }
 
   /* Motion */
@@ -1435,7 +1472,7 @@
       background: var(--gold);
       color: var(--navy);
       padding: 0.85rem 1.25rem;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -1499,9 +1536,9 @@
       <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
     </ul>
     <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn active" onclick="setLang('fr')" aria-label="FR – Français">FR</button>
       <div class="lang-divider"></div>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('en')" aria-label="EN – English">EN</button>
     </div>
   </div>
 </nav>
@@ -1509,16 +1546,16 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="eyebrow" data-lang data-fr="Cabinet CPA · Tenue de livres · Fiscalité · Montérégie" data-en="CPA firm · Bookkeeping · Tax · Montérégie"></p>
+    <p class="eyebrow" data-lang data-fr="Cabinet CPA · Tenue de livres · Fiscalité · Montérégie" data-en="CPA firm · Bookkeeping · Tax · Montérégie">Cabinet CPA · Tenue de livres · Fiscalité · Montérégie</p>
     <h1 class="hero-title">
-      <span data-lang data-fr="Un appel, <em>et on s'occupe du reste.</em>" data-en="One call, <em>and we take care of the rest.</em>"></span>
+      <span data-lang data-fr="Un appel, <em>et on s'occupe du reste.</em>" data-en="One call, <em>and we take care of the rest.</em>">Un appel, <em>et on s'occupe du reste.</em></span>
     </h1>
-    <p class="hero-subtitle" data-lang data-fr="Impôts, tenue de livres, TPS/TVQ, paie : parlez directement à Vincent ou à Anaël." data-en="Taxes, bookkeeping, GST/QST, payroll: talk directly to Vincent or Anaël."></p>
+    <p class="hero-subtitle" data-lang data-fr="Impôts, tenue de livres, TPS/TVQ, paie : parlez directement à Vincent ou à Anaël." data-en="Taxes, bookkeeping, GST/QST, payroll: talk directly to Vincent or Anaël.">Impôts, tenue de livres, TPS/TVQ, paie : parlez directement à Vincent ou à Anaël.</p>
     <div class="call-cards">
       <a class="call-card" href="tel:+14384986969">
         <span class="call-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
         <span class="call-txt">
-          <span class="call-who" data-lang data-fr="Appeler Vincent · CPA auditeur" data-en="Call Vincent · CPA auditor"></span>
+          <span class="call-who" data-lang data-fr="Appeler Vincent · CPA auditeur" data-en="Call Vincent · CPA auditor">Appeler Vincent · CPA auditeur</span>
           <span class="call-num">(438) 498-6969</span>
         </span>
         <svg class="call-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
@@ -1526,43 +1563,43 @@
       <a class="call-card" href="tel:+14388388658">
         <span class="call-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
         <span class="call-txt">
-          <span class="call-who" data-lang data-fr="Appeler Anaël · Construction &amp; immobilier" data-en="Call Anaël · Construction &amp; real estate"></span>
+          <span class="call-who" data-lang data-fr="Appeler Anaël · Construction &amp; immobilier" data-en="Call Anaël · Construction &amp; real estate">Appeler Anaël · Construction & immobilier</span>
           <span class="call-num">(438) 838-8658</span>
         </span>
         <svg class="call-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
       </a>
     </div>
-    <p class="call-note" data-lang data-fr="Appel préliminaire gratuit · sans engagement" data-en="Free preliminary call · no obligation"></p>
+    <p class="call-note" data-lang data-fr="Appel préliminaire gratuit · sans engagement" data-en="Free preliminary call · no obligation">Appel préliminaire gratuit · sans engagement</p>
     <div class="hero-actions">
       <a class="g-badge on-dark" href="https://search.google.com/local/reviews?placeid=ChIJsbRhELkYiGcRYlPw8QaCfw4" target="_blank" rel="noopener">
         <span class="g-stars" aria-hidden="true">★★★★★</span>
-        <span><strong>5,0</strong> · <span data-lang data-fr="16 avis Google" data-en="16 Google reviews"></span></span>
+        <span><strong>5,0</strong> · <span data-lang data-fr="16 avis Google" data-en="16 Google reviews">16 avis Google</span></span>
       </a>
-      <a href="#contact" class="cta-ghost" data-lang data-fr="Préférez écrire ? Écrivez-nous →" data-en="Prefer to write? Message us →"></a>
+      <a href="#contact" class="cta-ghost" data-lang data-fr="Préférez écrire ? Écrivez-nous →" data-en="Prefer to write? Message us →">Préférez écrire ? Écrivez-nous →</a>
     </div>
   </div>
 
   <div class="hero-right">
     <div class="quick">
       <div class="fn-step" id="fn-1">
-        <h2 class="quick-title" data-lang data-fr="Vous êtes…" data-en="You are…"></h2>
-        <p class="quick-sub" data-lang data-fr="Choisissez pour voir les services et les prix qui vous concernent." data-en="Choose to see the services and prices that fit you."></p>
+        <h2 class="quick-title" data-lang data-fr="Vous êtes…" data-en="You are…">Vous êtes…</h2>
+        <p class="quick-sub" data-lang data-fr="Choisissez pour voir les services et les prix qui vous concernent." data-en="Choose to see the services and prices that fit you.">Choisissez pour voir les services et les prix qui vous concernent.</p>
         <div class="fn-pick">
           <button type="button" class="fn-card" data-seg="particuliers">
             <span class="fn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
-            <span class="fn-name" data-lang data-fr="Particulier" data-en="Individual"></span>
-            <span class="fn-desc" data-lang data-fr="Impôts, travail autonome, planification et retraite" data-en="Taxes, self-employed, planning and retirement"></span>
+            <span class="fn-name" data-lang data-fr="Particulier" data-en="Individual">Particulier</span>
+            <span class="fn-desc" data-lang data-fr="Impôts, travail autonome, planification et retraite" data-en="Taxes, self-employed, planning and retirement">Impôts, travail autonome, planification et retraite</span>
           </button>
           <button type="button" class="fn-card" data-seg="entreprises">
             <span class="fn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16"/><path d="M14 10h5a1 1 0 0 1 1 1v10"/><path d="M8 8h2M8 12h2M8 16h2M3 21h18"/></svg></span>
-            <span class="fn-name" data-lang data-fr="Entreprise" data-en="Business"></span>
-            <span class="fn-desc" data-lang data-fr="Livres, fiscalité, paie, démarrage" data-en="Books, tax, payroll, start-up"></span>
+            <span class="fn-name" data-lang data-fr="Entreprise" data-en="Business">Entreprise</span>
+            <span class="fn-desc" data-lang data-fr="Livres, fiscalité, paie, démarrage" data-en="Books, tax, payroll, start-up">Livres, fiscalité, paie, démarrage</span>
           </button>
         </div>
       </div>
       <div class="fn-step" id="fn-2" hidden>
         <button type="button" class="fn-back" id="fn-back"></button>
-        <h2 class="quick-title" data-lang data-fr="De quoi avez-vous besoin ?" data-en="What do you need?"></h2>
+        <h2 class="quick-title" data-lang data-fr="De quoi avez-vous besoin ?" data-en="What do you need?">De quoi avez-vous besoin ?</h2>
         <p class="quick-sub" id="fn-sub"></p>
         <div class="quick-list" id="fn-list"></div>
       </div>
@@ -1587,53 +1624,53 @@
 <!-- ABOUT -->
 <section class="about" id="apropos">
   <div class="section-header reveal">
-    <span class="section-label" data-lang data-fr="01 — À propos" data-en="01 — About"></span>
-    <h2 class="section-title" data-lang data-fr="Deux professionnels de la Montérégie" data-en="Two professionals from Montérégie"></h2>
+    <span class="section-label" data-lang data-fr="01 — À propos" data-en="01 — About">01 — À propos</span>
+    <h2 class="section-title" data-lang data-fr="Deux professionnels de la Montérégie" data-en="Two professionals from Montérégie">Deux professionnels de la Montérégie</h2>
   </div>
-  <p class="about-intro reveal" data-lang data-fr="Vincent et Anaël sont deux jeunes professionnels qui ont grandi en Montérégie. Leurs chemins se sont croisés dans l'immobilier, puis ils ont choisi de se lancer à leur compte en fondant W&amp;G Comptabilité." data-en="Vincent and Anaël are two young professionals who grew up in Montérégie. Their paths crossed in real estate, and they then chose to go out on their own by founding W&amp;G Comptabilité."></p>
+  <p class="about-intro reveal" data-lang data-fr="Vincent et Anaël sont deux jeunes professionnels qui ont grandi en Montérégie. Leurs chemins se sont croisés dans l'immobilier, puis ils ont choisi de se lancer à leur compte en fondant W&amp;G Comptabilité." data-en="Vincent and Anaël are two young professionals who grew up in Montérégie. Their paths crossed in real estate, and they then chose to go out on their own by founding W&amp;G Comptabilité.">Vincent et Anaël sont deux jeunes professionnels qui ont grandi en Montérégie. Leurs chemins se sont croisés dans l'immobilier, puis ils ont choisi de se lancer à leur compte en fondant W&G Comptabilité.</p>
   <div class="team-grid reveal">
     <div class="member">
       <div class="member-head">
         <div class="member-photo">W</div>
         <div>
           <h3 class="member-name">Vincent Watts</h3>
-          <p class="member-role" data-lang data-fr="CPA auditeur" data-en="CPA auditor"></p>
+          <p class="member-role" data-lang data-fr="CPA auditeur" data-en="CPA auditor">CPA auditeur</p>
         </div>
       </div>
-      <p class="member-bio" data-lang data-fr="Formé à HEC Montréal, Vincent a fait ses classes au cabinet EY, où il a obtenu son titre de CPA auditeur. Il a ensuite poursuivi sa carrière dans l'immobilier. Aujourd'hui, il se spécialise dans l'accompagnement des particuliers, des entrepreneurs et des entreprises québécoises, pour les aider à atteindre leurs objectifs." data-en="Trained at HEC Montréal, Vincent began his career at EY, where he earned his CPA auditor designation. He then moved into real estate. Today, he specializes in helping individuals, entrepreneurs and Quebec businesses reach their goals."></p>
+      <p class="member-bio" data-lang data-fr="Formé à HEC Montréal, Vincent a fait ses classes au cabinet EY, où il a obtenu son titre de CPA auditeur. Il a ensuite poursuivi sa carrière dans l'immobilier. Aujourd'hui, il se spécialise dans l'accompagnement des particuliers, des entrepreneurs et des entreprises québécoises, pour les aider à atteindre leurs objectifs." data-en="Trained at HEC Montréal, Vincent began his career at EY, where he earned his CPA auditor designation. He then moved into real estate. Today, he specializes in helping individuals, entrepreneurs and Quebec businesses reach their goals.">Formé à HEC Montréal, Vincent a fait ses classes au cabinet EY, où il a obtenu son titre de CPA auditeur. Il a ensuite poursuivi sa carrière dans l'immobilier. Aujourd'hui, il se spécialise dans l'accompagnement des particuliers, des entrepreneurs et des entreprises québécoises, pour les aider à atteindre leurs objectifs.</p>
     </div>
     <div class="member">
       <div class="member-head">
         <div class="member-photo">G</div>
         <div>
           <h3 class="member-name">Anaël Gagné</h3>
-          <p class="member-role" data-lang data-fr="Construction &amp; immobilier" data-en="Construction &amp; real estate"></p>
+          <p class="member-role" data-lang data-fr="Construction &amp; immobilier" data-en="Construction &amp; real estate">Construction & immobilier</p>
         </div>
       </div>
-      <p class="member-bio" data-lang data-fr="Anaël s'est lancé directement sur le marché du travail, en tenue de livres et en gestion de projets dans la construction et l'immobilier. Tombé en amour avec le milieu, il a acquis son premier immeuble à revenus. Aujourd'hui, il exerce en comptabilité avec une spécialisation dans tous les domaines de la construction et de l'immobilier." data-en="Anaël went straight into the workforce, doing bookkeeping and project management in construction and real estate. He fell in love with the industry and bought his first income property. Today he practises accounting with a specialization in every area of construction and real estate."></p>
+      <p class="member-bio" data-lang data-fr="Anaël s'est lancé directement sur le marché du travail, en tenue de livres et en gestion de projets dans la construction et l'immobilier. Tombé en amour avec le milieu, il a acquis son premier immeuble à revenus. Aujourd'hui, il exerce en comptabilité avec une spécialisation dans tous les domaines de la construction et de l'immobilier." data-en="Anaël went straight into the workforce, doing bookkeeping and project management in construction and real estate. He fell in love with the industry and bought his first income property. Today he practises accounting with a specialization in every area of construction and real estate.">Anaël s'est lancé directement sur le marché du travail, en tenue de livres et en gestion de projets dans la construction et l'immobilier. Tombé en amour avec le milieu, il a acquis son premier immeuble à revenus. Aujourd'hui, il exerce en comptabilité avec une spécialisation dans tous les domaines de la construction et de l'immobilier.</p>
     </div>
   </div>
   <div class="mission reveal">
-    <span class="section-label" data-lang data-fr="Notre mission" data-en="Our mission"></span>
-    <p class="mission-title" data-lang data-fr="Plus qu'un comptable : un <em>partenaire d'affaires.</em>" data-en="More than an accountant: a <em>business partner.</em>"></p>
-    <p class="mission-body" data-lang data-fr="Notre mission est de transcender le rôle traditionnel du comptable. À l'ère numérique, notre rôle ne se limite plus à parler de chiffres. Nous voulons être un véritable partenaire d'affaires pour nos clients : les accompagner dans tous leurs enjeux comptables et financiers, leur fournir les outils dont ils ont besoin et demeurer proactifs, à l'avant-garde des avancées technologiques." data-en="Our mission is to go beyond the traditional role of the accountant. In the digital era, our role is no longer just about numbers. We want to be a true business partner for our clients: supporting them through all their accounting and financial challenges, giving them the tools they need, and staying proactive, at the forefront of technology."></p>
+    <span class="section-label" data-lang data-fr="Notre mission" data-en="Our mission">Notre mission</span>
+    <p class="mission-title" data-lang data-fr="Plus qu'un comptable : un <em>partenaire d'affaires.</em>" data-en="More than an accountant: a <em>business partner.</em>">Plus qu'un comptable : un <em>partenaire d'affaires.</em></p>
+    <p class="mission-body" data-lang data-fr="Notre mission est de transcender le rôle traditionnel du comptable. À l'ère numérique, notre rôle ne se limite plus à parler de chiffres. Nous voulons être un véritable partenaire d'affaires pour nos clients : les accompagner dans tous leurs enjeux comptables et financiers, leur fournir les outils dont ils ont besoin et demeurer proactifs, à l'avant-garde des avancées technologiques." data-en="Our mission is to go beyond the traditional role of the accountant. In the digital era, our role is no longer just about numbers. We want to be a true business partner for our clients: supporting them through all their accounting and financial challenges, giving them the tools they need, and staying proactive, at the forefront of technology.">Notre mission est de transcender le rôle traditionnel du comptable. À l'ère numérique, notre rôle ne se limite plus à parler de chiffres. Nous voulons être un véritable partenaire d'affaires pour nos clients : les accompagner dans tous leurs enjeux comptables et financiers, leur fournir les outils dont ils ont besoin et demeurer proactifs, à l'avant-garde des avancées technologiques.</p>
   </div>
-  <p class="pillars-label reveal" data-lang data-fr="Nos piliers" data-en="Our pillars"></p>
+  <p class="pillars-label reveal" data-lang data-fr="Nos piliers" data-en="Our pillars">Nos piliers</p>
   <div class="pillars reveal">
     <div class="pillar">
       <span class="pillar-num">01</span>
-      <h4 class="pillar-name" data-lang data-fr="Confiance &amp; honnêteté" data-en="Trust &amp; honesty"></h4>
-      <p class="pillar-desc" data-lang data-fr="Une relation transparente, des conseils francs et des engagements tenus." data-en="A transparent relationship, straightforward advice, and commitments we keep."></p>
+      <h4 class="pillar-name" data-lang data-fr="Confiance &amp; honnêteté" data-en="Trust &amp; honesty">Confiance & honnêteté</h4>
+      <p class="pillar-desc" data-lang data-fr="Une relation transparente, des conseils francs et des engagements tenus." data-en="A transparent relationship, straightforward advice, and commitments we keep.">Une relation transparente, des conseils francs et des engagements tenus.</p>
     </div>
     <div class="pillar">
       <span class="pillar-num">02</span>
-      <h4 class="pillar-name" data-lang data-fr="Efficience" data-en="Efficiency"></h4>
-      <p class="pillar-desc" data-lang data-fr="Des processus automatisés et des outils modernes pour des résultats rapides et justes." data-en="Automated processes and modern tools for fast, accurate results."></p>
+      <h4 class="pillar-name" data-lang data-fr="Efficience" data-en="Efficiency">Efficience</h4>
+      <p class="pillar-desc" data-lang data-fr="Des processus automatisés et des outils modernes pour des résultats rapides et justes." data-en="Automated processes and modern tools for fast, accurate results.">Des processus automatisés et des outils modernes pour des résultats rapides et justes.</p>
     </div>
     <div class="pillar">
       <span class="pillar-num">03</span>
-      <h4 class="pillar-name" data-lang data-fr="Collaboration &amp; écoute" data-en="Collaboration &amp; listening"></h4>
-      <p class="pillar-desc" data-lang data-fr="On prend le temps de comprendre votre réalité pour bâtir des solutions avec vous." data-en="We take the time to understand your reality and build solutions with you."></p>
+      <h4 class="pillar-name" data-lang data-fr="Collaboration &amp; écoute" data-en="Collaboration &amp; listening">Collaboration & écoute</h4>
+      <p class="pillar-desc" data-lang data-fr="On prend le temps de comprendre votre réalité pour bâtir des solutions avec vous." data-en="We take the time to understand your reality and build solutions with you.">On prend le temps de comprendre votre réalité pour bâtir des solutions avec vous.</p>
     </div>
   </div>
 </section>
@@ -1641,65 +1678,65 @@
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="section-header reveal">
-    <span class="section-label" data-lang data-fr="02 — Services" data-en="02 — Services"></span>
-    <h2 class="section-title" data-lang data-fr="Ce que nous offrons" data-en="What we offer"></h2>
+    <span class="section-label" data-lang data-fr="02 — Services" data-en="02 — Services">02 — Services</span>
+    <h2 class="section-title" data-lang data-fr="Ce que nous offrons" data-en="What we offer">Ce que nous offrons</h2>
   </div>
   <div class="services-grid reveal">
     <a class="service-card" href="#tarifs" data-goto="entreprises:livres">
       <span class="svc-num">01</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Tenue de livres" data-en="Bookkeeping"></h3>
-      <p class="svc-desc" data-lang data-fr="Conciliation bancaire, saisie des transactions, comptes clients et fournisseurs : des livres toujours à jour." data-en="Bank reconciliation, transaction entry, receivables and payables: books that are always current."></p>
-      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →"></span>
+      <h3 class="svc-name" data-lang data-fr="Tenue de livres" data-en="Bookkeeping">Tenue de livres</h3>
+      <p class="svc-desc" data-lang data-fr="Conciliation bancaire, saisie des transactions, comptes clients et fournisseurs : des livres toujours à jour." data-en="Bank reconciliation, transaction entry, receivables and payables: books that are always current.">Conciliation bancaire, saisie des transactions, comptes clients et fournisseurs : des livres toujours à jour.</p>
+      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →">Voir les tarifs →</span>
     </a>
     <a class="service-card" href="#tarifs" data-goto="particuliers:t1">
       <span class="svc-num">02</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Déclarations fiscales" data-en="Tax returns"></h3>
-      <p class="svc-desc" data-lang data-fr="Particuliers, travailleurs autonomes, sociétés et fiducies (T1, T2, T3), produites avec rigueur et dans les délais." data-en="Individuals, self-employed, corporations and trusts (T1, T2, T3), prepared carefully and on time."></p>
-      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →"></span>
+      <h3 class="svc-name" data-lang data-fr="Déclarations fiscales" data-en="Tax returns">Déclarations fiscales</h3>
+      <p class="svc-desc" data-lang data-fr="Particuliers, travailleurs autonomes, sociétés et fiducies (T1, T2, T3), produites avec rigueur et dans les délais." data-en="Individuals, self-employed, corporations and trusts (T1, T2, T3), prepared carefully and on time.">Particuliers, travailleurs autonomes, sociétés et fiducies (T1, T2, T3), produites avec rigueur et dans les délais.</p>
+      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →">Voir les tarifs →</span>
     </a>
     <a class="service-card" href="#tarifs" data-goto="entreprises:livres">
       <span class="svc-num">03</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Paie" data-en="Payroll"></h3>
-      <p class="svc-desc" data-lang data-fr="Calcul des salaires, remises des retenues à la source et relevés T4 et RL-1, offerte avec tous nos forfaits." data-en="Pay calculations, source deduction remittances, and T4 and RL-1 slips, available with every plan."></p>
-      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →"></span>
+      <h3 class="svc-name" data-lang data-fr="Paie" data-en="Payroll">Paie</h3>
+      <p class="svc-desc" data-lang data-fr="Calcul des salaires, remises des retenues à la source et relevés T4 et RL-1, offerte avec tous nos forfaits." data-en="Pay calculations, source deduction remittances, and T4 and RL-1 slips, available with every plan.">Calcul des salaires, remises des retenues à la source et relevés T4 et RL-1, offerte avec tous nos forfaits.</p>
+      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →">Voir les tarifs →</span>
     </a>
     <a class="service-card" href="#tarifs" data-goto="entreprises:tpstvq">
       <span class="svc-num">04</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="TPS / TVQ" data-en="GST / QST"></h3>
-      <p class="svc-desc" data-lang data-fr="Vos déclarations de taxes de vente produites à temps et conciliées avec vos livres." data-en="Your sales tax returns filed on time and reconciled with your books."></p>
-      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →"></span>
+      <h3 class="svc-name" data-lang data-fr="TPS / TVQ" data-en="GST / QST">TPS / TVQ</h3>
+      <p class="svc-desc" data-lang data-fr="Vos déclarations de taxes de vente produites à temps et conciliées avec vos livres." data-en="Your sales tax returns filed on time and reconciled with your books.">Vos déclarations de taxes de vente produites à temps et conciliées avec vos livres.</p>
+      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →">Voir les tarifs →</span>
     </a>
     <a class="service-card" href="#tarifs" data-goto="entreprises:compilation">
       <span class="svc-num">05</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Mission de compilation" data-en="Compilation engagement"></h3>
-      <p class="svc-desc" data-lang data-fr="Des états financiers compilés, prêts pour vos institutions financières et vos partenaires." data-en="Compiled financial statements, ready for your lenders and partners."></p>
-      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →"></span>
+      <h3 class="svc-name" data-lang data-fr="Mission de compilation" data-en="Compilation engagement">Mission de compilation</h3>
+      <p class="svc-desc" data-lang data-fr="Des états financiers compilés, prêts pour vos institutions financières et vos partenaires." data-en="Compiled financial statements, ready for your lenders and partners.">Des états financiers compilés, prêts pour vos institutions financières et vos partenaires.</p>
+      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →">Voir les tarifs →</span>
     </a>
     <a class="service-card" href="#tarifs" data-goto="particuliers:retraite">
       <span class="svc-num">06</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement"></h3>
-      <p class="svc-desc" data-lang data-fr="Budget, conseils personnalisés et stratégie REER, FERR et CRI pour atteindre vos objectifs." data-en="Budget, personalized advice, and RRSP, RRIF and LIRA strategy to reach your goals."></p>
-      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →"></span>
+      <h3 class="svc-name" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement">Planification, conseil et retraite</h3>
+      <p class="svc-desc" data-lang data-fr="Budget, conseils personnalisés et stratégie REER, FERR et CRI pour atteindre vos objectifs." data-en="Budget, personalized advice, and RRSP, RRIF and LIRA strategy to reach your goals.">Budget, conseils personnalisés et stratégie REER, FERR et CRI pour atteindre vos objectifs.</p>
+      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →">Voir les tarifs →</span>
     </a>
     <a class="service-card" href="#tarifs" data-goto="entreprises:ponctuels">
       <span class="svc-num">07</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Démarrage d'entreprise" data-en="Business startup"></h3>
-      <p class="svc-desc" data-lang data-fr="Immatriculation ou incorporation, compte bancaire et terminal de paiement : on vous lance du bon pied." data-en="Registration or incorporation, bank account and payment terminal: we get you started right."></p>
-      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →"></span>
+      <h3 class="svc-name" data-lang data-fr="Démarrage d'entreprise" data-en="Business startup">Démarrage d'entreprise</h3>
+      <p class="svc-desc" data-lang data-fr="Immatriculation ou incorporation, compte bancaire et terminal de paiement : on vous lance du bon pied." data-en="Registration or incorporation, bank account and payment terminal: we get you started right.">Immatriculation ou incorporation, compte bancaire et terminal de paiement : on vous lance du bon pied.</p>
+      <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →">Voir les tarifs →</span>
     </a>
     <a class="service-card featured" href="#contact">
       <span class="svc-num">08</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Appel préliminaire" data-en="Introductory call"></h3>
-      <p class="svc-desc" data-lang data-fr="Toujours gratuit. Parlez-nous de votre situation, sans engagement." data-en="Always free. Tell us about your situation, no commitment."></p>
-      <span class="svc-more" data-lang data-fr="Nous joindre →" data-en="Contact us →"></span>
+      <h3 class="svc-name" data-lang data-fr="Appel préliminaire" data-en="Introductory call">Appel préliminaire</h3>
+      <p class="svc-desc" data-lang data-fr="Toujours gratuit. Parlez-nous de votre situation, sans engagement." data-en="Always free. Tell us about your situation, no commitment.">Toujours gratuit. Parlez-nous de votre situation, sans engagement.</p>
+      <span class="svc-more" data-lang data-fr="Nous joindre →" data-en="Contact us →">Nous joindre →</span>
     </a>
   </div>
 </section>
@@ -1707,47 +1744,47 @@
 <!-- PRICING -->
 <section class="pricing" id="tarifs">
   <div class="section-header reveal">
-    <span class="section-label" data-lang data-fr="03 — Tarifs" data-en="03 — Pricing"></span>
-    <h2 class="section-title" data-lang data-fr="Nos tarifs" data-en="Our pricing"></h2>
+    <span class="section-label" data-lang data-fr="03 — Tarifs" data-en="03 — Pricing">03 — Tarifs</span>
+    <h2 class="section-title" data-lang data-fr="Nos tarifs" data-en="Our pricing">Nos tarifs</h2>
   </div>
   <div class="reveal">
   <div class="price-tabs">
-    <button type="button" class="active" data-tab="particuliers" data-lang data-fr="Particuliers" data-en="Individuals"></button>
-    <button type="button" data-tab="entreprises" data-lang data-fr="Entreprises" data-en="Businesses"></button>
+    <button type="button" class="active" data-tab="particuliers" data-lang data-fr="Particuliers" data-en="Individuals">Particuliers</button>
+    <button type="button" data-tab="entreprises" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</button>
   </div>
 
   <!-- PARTICULIERS -->
   <div class="price-panel" data-panel="particuliers">
   <div class="svc-pills">
-    <button type="button" class="active" data-svc="t1" data-lang data-fr="Déclaration de revenus" data-en="Tax return"></button>
-    <button type="button" data-svc="ta" data-lang data-fr="Travailleur autonome" data-en="Self-employed"></button>
-    <button type="button" data-svc="retraite" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement"></button>
+    <button type="button" class="active" data-svc="t1" data-lang data-fr="Déclaration de revenus" data-en="Tax return">Déclaration de revenus</button>
+    <button type="button" data-svc="ta" data-lang data-fr="Travailleur autonome" data-en="Self-employed">Travailleur autonome</button>
+    <button type="button" data-svc="retraite" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement">Planification, conseil et retraite</button>
   </div>
     <div class="svc-panel" data-svc="t1">
     <div class="offer">
       <div class="offer-main">
         <span class="svc-num">T1 · TP-1</span>
         <div class="svc-line"></div>
-        <h3 class="svc-name" data-lang data-fr="Déclaration de revenus" data-en="Personal tax return"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Vos déclarations fédérale et du Québec, produites avec rigueur et dans les délais." data-en="Your federal and Quebec returns, prepared carefully and on time."></p>
+        <h3 class="svc-name" data-lang data-fr="Déclaration de revenus" data-en="Personal tax return">Déclaration de revenus</h3>
+        <p class="svc-desc offer-desc" data-lang data-fr="Vos déclarations fédérale et du Québec, produites avec rigueur et dans les délais." data-en="Your federal and Quebec returns, prepared carefully and on time.">Vos déclarations fédérale et du Québec, produites avec rigueur et dans les délais.</p>
       <ul class="price-list">
-        <li><span data-lang data-fr="Déclaration standard" data-en="Standard return"></span><span>100 $</span></li>
-        <li><span data-lang data-fr="Travailleur autonome" data-en="Self-employed"></span><span data-lang data-fr="dès 250 $" data-en="from $250"></span></li>
-        <li><span data-lang data-fr="Rabais couple" data-en="Couple discount"></span><span>− 20 $</span></li>
-        <li><span data-lang data-fr="Par client référé" data-en="Per client referred"></span><span>− 10 $</span></li>
+        <li><span data-lang data-fr="Déclaration standard" data-en="Standard return">Déclaration standard</span><span>100 $</span></li>
+        <li><span data-lang data-fr="Travailleur autonome" data-en="Self-employed">Travailleur autonome</span><span data-lang data-fr="dès 250 $" data-en="from $250">dès 250 $</span></li>
+        <li><span data-lang data-fr="Rabais couple" data-en="Couple discount">Rabais couple</span><span>− 20 $</span></li>
+        <li><span data-lang data-fr="Par client référé" data-en="Per client referred">Par client référé</span><span>− 10 $</span></li>
       </ul>
-      <p class="price-note" data-lang data-fr="Client du forfait Travailleur autonome (110 $/mois) ? Votre déclaration de fin d&#39;année est incluse." data-en="On the Self-employed plan ($110/mo)? Your year-end return is included."></p>
-      <p class="price-note" data-lang data-fr="Revenus locatifs, gains en capital ou autres situations complexes : sur soumission." data-en="Rental income, capital gains or other complex situations: custom quote."></p>
+      <p class="price-note" data-lang data-fr="Client du forfait Travailleur autonome (110 $/mois) ? Votre déclaration de fin d&#39;année est incluse." data-en="On the Self-employed plan ($110/mo)? Your year-end return is included.">Client du forfait Travailleur autonome (110 $/mois) ? Votre déclaration de fin d'année est incluse.</p>
+      <p class="price-note" data-lang data-fr="Revenus locatifs, gains en capital ou autres situations complexes : sur soumission." data-en="Rental income, capital gains or other complex situations: custom quote.">Revenus locatifs, gains en capital ou autres situations complexes : sur soumission.</p>
       <div class="calc" id="t1-calc">
-        <span class="calc-title" data-lang data-fr="Estimez votre prix" data-en="Estimate your price"></span>
+        <span class="calc-title" data-lang data-fr="Estimez votre prix" data-en="Estimate your price">Estimez votre prix</span>
         <div class="seg">
-          <button type="button" class="active" data-mode="solo" data-lang data-fr="Seul" data-en="Single"></button>
-          <button type="button" data-mode="couple" data-lang data-fr="En couple" data-en="Couple"></button>
+          <button type="button" class="active" data-mode="solo" data-lang data-fr="Seul" data-en="Single">Seul</button>
+          <button type="button" data-mode="couple" data-lang data-fr="En couple" data-en="Couple">En couple</button>
         </div>
-        <label class="chk"><input type="checkbox" id="t1-self1"> <span data-lang data-fr="Je suis travailleur autonome" data-en="I'm self-employed"></span></label>
-        <label class="chk" id="t1-self2-wrap" hidden><input type="checkbox" id="t1-self2"> <span data-lang data-fr="Mon conjoint ou ma conjointe est travailleur autonome" data-en="My partner is self-employed"></span></label>
+        <label class="chk"><input type="checkbox" id="t1-self1"> <span data-lang data-fr="Je suis travailleur autonome" data-en="I'm self-employed">Je suis travailleur autonome</span></label>
+        <label class="chk" id="t1-self2-wrap" hidden><input type="checkbox" id="t1-self2"> <span data-lang data-fr="Mon conjoint ou ma conjointe est travailleur autonome" data-en="My partner is self-employed">Mon conjoint ou ma conjointe est travailleur autonome</span></label>
         <div class="calc-row">
-          <span data-lang data-fr="Clients référés" data-en="Clients referred"></span>
+          <span data-lang data-fr="Clients référés" data-en="Clients referred">Clients référés</span>
           <div class="stepper">
             <button type="button" id="t1-ref-minus" aria-label="−">−</button>
             <span id="t1-ref">0</span>
@@ -1755,16 +1792,16 @@
           </div>
         </div>
         <div class="calc-total">
-          <strong id="t1-total">100 $</strong>
-          <small id="t1-total-tx"></small>
+          <strong id="t1-total">100 $ + taxes</strong>
+          <small id="t1-total-tx">≈ 114,98 $ taxes incluses</small>
         </div>
       </div>
       </div>
       <div class="offer-side">
         <p class="tier-price">100 $</p>
-        <p class="price-unit" data-lang data-fr="+ taxes · par déclaration" data-en="+ tax · per return"></p>
+        <p class="price-unit" data-lang data-fr="+ taxes · par déclaration" data-en="+ tax · per return">+ taxes · par déclaration</p>
         <a href="#contact" class="cta-btn" id="t1-cta">
-          <span data-lang data-fr="Faire ma déclaration" data-en="File my return"></span>
+          <span data-lang data-fr="Faire ma déclaration" data-en="File my return">Faire ma déclaration</span>
           <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
         </a>
       </div>
@@ -1773,26 +1810,26 @@
     <div class="svc-panel" data-svc="ta" hidden>
     <div class="offer">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="SERVICE COMPLET" data-en="FULL SERVICE"></span>
+        <span class="svc-num" data-lang data-fr="SERVICE COMPLET" data-en="FULL SERVICE">SERVICE COMPLET</span>
         <div class="svc-line"></div>
-        <h3 class="svc-name" data-lang data-fr="Travailleur autonome" data-en="Self-employed"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Tout est inclus : votre tenue de livres mensuelle, votre déclaration de revenus (Québec + fédéral) et vos déclarations TPS / TVQ." data-en="Everything included: your monthly bookkeeping, your tax return (Quebec + federal) and your GST / QST filings."></p>
+        <h3 class="svc-name" data-lang data-fr="Travailleur autonome" data-en="Self-employed">Travailleur autonome</h3>
+        <p class="svc-desc offer-desc" data-lang data-fr="Tout est inclus : votre tenue de livres mensuelle, votre déclaration de revenus (Québec + fédéral) et vos déclarations TPS / TVQ." data-en="Everything included: your monthly bookkeeping, your tax return (Quebec + federal) and your GST / QST filings.">Tout est inclus : votre tenue de livres mensuelle, votre déclaration de revenus (Québec + fédéral) et vos déclarations TPS / TVQ.</p>
         <ul class="tier-list">
-          <li data-lang data-fr="Tenue de livres mensuelle : conciliation bancaire" data-en="Monthly bookkeeping: bank reconciliation"></li>
-          <li data-lang data-fr="Saisie et catégorisation des transactions" data-en="Transaction entry and categorization"></li>
-          <li data-lang data-fr="Classement de vos reçus numérisés" data-en="Filing of your digital receipts"></li>
-          <li data-lang data-fr="Déclaration de revenus Québec + fédéral : incluse" data-en="Tax return, Quebec + federal: included"></li>
-          <li data-lang data-fr="Déclarations TPS / TVQ : incluses" data-en="GST / QST filings: included"></li>
-          <li data-lang data-fr="Option paie : à partir de 20 $ par employé, par mois" data-en="Payroll add-on: from $20 per employee, per month"></li>
+          <li data-lang data-fr="Tenue de livres mensuelle : conciliation bancaire" data-en="Monthly bookkeeping: bank reconciliation">Tenue de livres mensuelle : conciliation bancaire</li>
+          <li data-lang data-fr="Saisie et catégorisation des transactions" data-en="Transaction entry and categorization">Saisie et catégorisation des transactions</li>
+          <li data-lang data-fr="Classement de vos reçus numérisés" data-en="Filing of your digital receipts">Classement de vos reçus numérisés</li>
+          <li data-lang data-fr="Déclaration de revenus Québec + fédéral : incluse" data-en="Tax return, Quebec + federal: included">Déclaration de revenus Québec + fédéral : incluse</li>
+          <li data-lang data-fr="Déclarations TPS / TVQ : incluses" data-en="GST / QST filings: included">Déclarations TPS / TVQ : incluses</li>
+          <li data-lang data-fr="Option paie : à partir de 20 $ par employé, par mois" data-en="Payroll add-on: from $20 per employee, per month">Option paie : à partir de 20 $ par employé, par mois</li>
         </ul>
       </div>
       <div class="offer-side">
         
-        <p class="tier-from" data-lang data-fr="Tout inclus" data-en="All-inclusive"></p>
-        <p class="tier-price" data-lang data-fr="110 $" data-en="$110"></p>
-        <p class="price-unit" data-lang data-fr="+ taxes · par mois" data-en="+ tax · per month"></p>
+        <p class="tier-from" data-lang data-fr="Tout inclus" data-en="All-inclusive">Tout inclus</p>
+        <p class="tier-price" data-lang data-fr="110 $" data-en="$110">110 $</p>
+        <p class="price-unit" data-lang data-fr="+ taxes · par mois" data-en="+ tax · per month">+ taxes · par mois</p>
         <a href="#contact" class="cta-btn plan-cta" data-plan-fr="Tenue de livres — Travailleur autonome" data-plan-en="Bookkeeping — Self-employed">
-          <span data-lang data-fr="Choisir ce forfait" data-en="Choose this plan"></span>
+          <span data-lang data-fr="Choisir ce forfait" data-en="Choose this plan">Choisir ce forfait</span>
           <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
         </a>
       </div>
@@ -1801,27 +1838,27 @@
     <div class="svc-panel" data-svc="retraite" hidden>
     <div class="offer">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="PARTICULIERS" data-en="INDIVIDUALS"></span>
+        <span class="svc-num" data-lang data-fr="PARTICULIERS" data-en="INDIVIDUALS">PARTICULIERS</span>
         <div class="svc-line"></div>
-        <h3 class="svc-name" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Un portrait clair de votre situation, des conseils adaptés et un plan concret pour atteindre vos objectifs, aujourd&#39;hui comme à la retraite." data-en="A clear picture of where you stand, tailored advice and a concrete plan to reach your goals, today and in retirement."></p>
+        <h3 class="svc-name" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement">Planification, conseil et retraite</h3>
+        <p class="svc-desc offer-desc" data-lang data-fr="Un portrait clair de votre situation, des conseils adaptés et un plan concret pour atteindre vos objectifs, aujourd&#39;hui comme à la retraite." data-en="A clear picture of where you stand, tailored advice and a concrete plan to reach your goals, today and in retirement.">Un portrait clair de votre situation, des conseils adaptés et un plan concret pour atteindre vos objectifs, aujourd'hui comme à la retraite.</p>
         <ul class="tier-list">
-          <li data-lang data-fr="Budget personnel" data-en="Personal budget"></li>
-          <li data-lang data-fr="Conseils personnalisés selon votre situation" data-en="Personalized advice for your situation"></li>
-          <li data-lang data-fr="Stratégie de retraite : REER, FERR, CRI" data-en="Retirement strategy: RRSP, RRIF, LIRA"></li>
-          <li data-lang data-fr="Projections et objectifs de retraite" data-en="Retirement projections and goals"></li>
-          <li data-lang data-fr="Optimisation fiscale de vos revenus à la retraite" data-en="Tax optimization of your retirement income"></li>
+          <li data-lang data-fr="Budget personnel" data-en="Personal budget">Budget personnel</li>
+          <li data-lang data-fr="Conseils personnalisés selon votre situation" data-en="Personalized advice for your situation">Conseils personnalisés selon votre situation</li>
+          <li data-lang data-fr="Stratégie de retraite : REER, FERR, CRI" data-en="Retirement strategy: RRSP, RRIF, LIRA">Stratégie de retraite : REER, FERR, CRI</li>
+          <li data-lang data-fr="Projections et objectifs de retraite" data-en="Retirement projections and goals">Projections et objectifs de retraite</li>
+          <li data-lang data-fr="Optimisation fiscale de vos revenus à la retraite" data-en="Tax optimization of your retirement income">Optimisation fiscale de vos revenus à la retraite</li>
         </ul>
       </div>
       <div class="offer-side">
-        <p class="tier-from" data-lang data-fr="Appelez-nous" data-en="Call us"></p>
+        <p class="tier-from" data-lang data-fr="Appelez-nous" data-en="Call us">Appelez-nous</p>
         <a class="side-phone" href="tel:+14384986969">(438) 498-6969</a>
-        <p class="price-unit" data-lang data-fr="Vincent Watts · CPA auditeur" data-en="Vincent Watts · CPA auditor"></p>
+        <p class="price-unit" data-lang data-fr="Vincent Watts · CPA auditeur" data-en="Vincent Watts · CPA auditor">Vincent Watts · CPA auditeur</p>
         <a href="tel:+14384986969" class="cta-btn">
-          <span data-lang data-fr="Appeler" data-en="Call"></span>
+          <span data-lang data-fr="Appeler" data-en="Call">Appeler</span>
           <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
         </a>
-        <a href="#contact" class="tier-cta" style="margin-top:1.25rem" data-plan-fr="Planification, conseil et retraite" data-plan-en="Planning, advice &amp; retirement" data-lang data-fr="Ou écrivez-nous →" data-en="Or write to us →"></a>
+        <a href="#contact" class="tier-cta" style="margin-top:1.25rem" data-plan-fr="Planification, conseil et retraite" data-plan-en="Planning, advice &amp; retirement" data-lang data-fr="Ou écrivez-nous →" data-en="Or write to us →">Ou écrivez-nous →</a>
       </div>
     </div>
     </div>
@@ -1830,101 +1867,101 @@
   <!-- ENTREPRISES -->
   <div class="price-panel" data-panel="entreprises" hidden>
   <div class="svc-pills">
-    <button type="button" class="active" data-svc="livres" data-lang data-fr="Tenue de livres" data-en="Bookkeeping"></button>
-    <button type="button" data-svc="impots" data-lang data-fr="Déclarations fiscales" data-en="Tax returns"></button>
-    <button type="button" data-svc="tpstvq" data-lang data-fr="TPS / TVQ" data-en="GST / QST"></button>
-    <button type="button" data-svc="compilation" data-lang data-fr="Mission de compilation" data-en="Compilation"></button>
-    <button type="button" data-svc="ponctuels" data-lang data-fr="Services ponctuels" data-en="One-time services"></button>
+    <button type="button" class="active" data-svc="livres" data-lang data-fr="Tenue de livres" data-en="Bookkeeping">Tenue de livres</button>
+    <button type="button" data-svc="impots" data-lang data-fr="Déclarations fiscales" data-en="Tax returns">Déclarations fiscales</button>
+    <button type="button" data-svc="tpstvq" data-lang data-fr="TPS / TVQ" data-en="GST / QST">TPS / TVQ</button>
+    <button type="button" data-svc="compilation" data-lang data-fr="Mission de compilation" data-en="Compilation">Mission de compilation</button>
+    <button type="button" data-svc="ponctuels" data-lang data-fr="Services ponctuels" data-en="One-time services">Services ponctuels</button>
   </div>
     <div class="svc-panel" data-svc="livres">
-  <p class="tier-legend" data-lang data-fr="Le coût augmente avec le niveau de service. Choisissez votre forfait, puis appelez-nous pour connaître votre prix." data-en="Cost rises with the service level. Pick your plan, then call us for your price."></p>
+  <p class="tier-legend" data-lang data-fr="Le coût augmente avec le niveau de service. Choisissez votre forfait, puis appelez-nous pour connaître votre prix." data-en="Cost rises with the service level. Pick your plan, then call us for your price.">Le coût augmente avec le niveau de service. Choisissez votre forfait, puis appelez-nous pour connaître votre prix.</p>
   <div class="tier-grid">
     <div class="tier">
       <span class="svc-num">FORFAIT 1</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Essentiel" data-en="Essential"></h3>
-      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $" data-en="Investment: $"></span></div>
+      <h3 class="svc-name" data-lang data-fr="Essentiel" data-en="Essential">Essentiel</h3>
+      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $" data-en="Investment: $">Investissement : $</span></div>
       <ul class="tier-list">
-        <li data-lang data-fr="Conciliation bancaire mensuelle" data-en="Monthly bank reconciliation"></li>
-        <li data-lang data-fr="Saisie et catégorisation des transactions" data-en="Transaction entry and categorization"></li>
-        <li data-lang data-fr="Gestion des pièces justificatives numériques" data-en="Digital receipt and document management"></li>
-        <li data-lang data-fr="Accès infonuagique à vos livres en tout temps" data-en="Cloud access to your books at any time"></li>
+        <li data-lang data-fr="Conciliation bancaire mensuelle" data-en="Monthly bank reconciliation">Conciliation bancaire mensuelle</li>
+        <li data-lang data-fr="Saisie et catégorisation des transactions" data-en="Transaction entry and categorization">Saisie et catégorisation des transactions</li>
+        <li data-lang data-fr="Gestion des pièces justificatives numériques" data-en="Digital receipt and document management">Gestion des pièces justificatives numériques</li>
+        <li data-lang data-fr="Accès infonuagique à vos livres en tout temps" data-en="Cloud access to your books at any time">Accès infonuagique à vos livres en tout temps</li>
       </ul>
     </div>
     <div class="tier">
       <span class="svc-num">FORFAIT 2</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Croissance" data-en="Growth"></h3>
-      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $$" data-en="Investment: $$"></span></div>
-      <p class="tier-inc" data-lang data-fr="Tout le forfait Essentiel, plus :" data-en="Everything in Essential, plus:"></p>
+      <h3 class="svc-name" data-lang data-fr="Croissance" data-en="Growth">Croissance</h3>
+      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $$" data-en="Investment: $$">Investissement : $$</span></div>
+      <p class="tier-inc" data-lang data-fr="Tout le forfait Essentiel, plus :" data-en="Everything in Essential, plus:">Tout le forfait Essentiel, plus :</p>
       <ul class="tier-list">
-        <li data-lang data-fr="Comptes clients : facturation et suivi des encaissements" data-en="Accounts receivable: invoicing and collections follow-up"></li>
-        <li data-lang data-fr="Comptes fournisseurs : suivi et planification des paiements" data-en="Accounts payable: tracking and payment planning"></li>
-        <li data-lang data-fr="Analyse financière semestrielle" data-en="Semi-annual financial analysis"></li>
+        <li data-lang data-fr="Comptes clients : facturation et suivi des encaissements" data-en="Accounts receivable: invoicing and collections follow-up">Comptes clients : facturation et suivi des encaissements</li>
+        <li data-lang data-fr="Comptes fournisseurs : suivi et planification des paiements" data-en="Accounts payable: tracking and payment planning">Comptes fournisseurs : suivi et planification des paiements</li>
+        <li data-lang data-fr="Analyse financière semestrielle" data-en="Semi-annual financial analysis">Analyse financière semestrielle</li>
       </ul>
     </div>
     <div class="tier">
       <span class="svc-num">FORFAIT 3</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Stratégique" data-en="Strategic"></h3>
-      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $$$" data-en="Investment: $$$"></span></div>
-      <p class="tier-inc" data-lang data-fr="Tout le forfait Croissance, plus :" data-en="Everything in Growth, plus:"></p>
+      <h3 class="svc-name" data-lang data-fr="Stratégique" data-en="Strategic">Stratégique</h3>
+      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $$$" data-en="Investment: $$$">Investissement : $$$</span></div>
+      <p class="tier-inc" data-lang data-fr="Tout le forfait Croissance, plus :" data-en="Everything in Growth, plus:">Tout le forfait Croissance, plus :</p>
       <ul class="tier-list">
-        <li data-lang data-fr="Rencontre trimestrielle" data-en="Quarterly meeting"></li>
-        <li data-lang data-fr="Recommandations d'optimisation fiscale et opérationnelle" data-en="Tax and operational optimization recommendations"></li>
-        <li data-lang data-fr="Suivi budgétaire et indicateurs clés" data-en="Budget tracking and key metrics"></li>
+        <li data-lang data-fr="Rencontre trimestrielle" data-en="Quarterly meeting">Rencontre trimestrielle</li>
+        <li data-lang data-fr="Recommandations d'optimisation fiscale et opérationnelle" data-en="Tax and operational optimization recommendations">Recommandations d'optimisation fiscale et opérationnelle</li>
+        <li data-lang data-fr="Suivi budgétaire et indicateurs clés" data-en="Budget tracking and key metrics">Suivi budgétaire et indicateurs clés</li>
       </ul>
     </div>
     <div class="tier">
       <span class="svc-num">FORFAIT 4</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="CFO à temps partiel" data-en="Fractional CFO"></h3>
-      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $$$$" data-en="Investment: $$$$"></span></div>
-      <p class="tier-inc" data-lang data-fr="Tout le forfait Stratégique, plus :" data-en="Everything in Strategic, plus:"></p>
+      <h3 class="svc-name" data-lang data-fr="CFO à temps partiel" data-en="Fractional CFO">CFO à temps partiel</h3>
+      <div class="cost"><span class="bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="cost-lbl" data-lang data-fr="Investissement : $$$$" data-en="Investment: $$$$">Investissement : $$$$</span></div>
+      <p class="tier-inc" data-lang data-fr="Tout le forfait Stratégique, plus :" data-en="Everything in Strategic, plus:">Tout le forfait Stratégique, plus :</p>
       <ul class="tier-list">
-        <li data-lang data-fr="Rencontres fréquentes, selon vos besoins" data-en="Frequent meetings, as needed"></li>
-        <li data-lang data-fr="Budgets, prévisions et flux de trésorerie" data-en="Budgets, forecasts and cash flow"></li>
-        <li data-lang data-fr="Tableau de bord de performance" data-en="Performance dashboard"></li>
-        <li data-lang data-fr="Accompagnement pour le financement auprès des institutions financières" data-en="Support with financing and lenders"></li>
-        <li data-lang data-fr="Soutien aux décisions stratégiques" data-en="Support for strategic decisions"></li>
+        <li data-lang data-fr="Rencontres fréquentes, selon vos besoins" data-en="Frequent meetings, as needed">Rencontres fréquentes, selon vos besoins</li>
+        <li data-lang data-fr="Budgets, prévisions et flux de trésorerie" data-en="Budgets, forecasts and cash flow">Budgets, prévisions et flux de trésorerie</li>
+        <li data-lang data-fr="Tableau de bord de performance" data-en="Performance dashboard">Tableau de bord de performance</li>
+        <li data-lang data-fr="Accompagnement pour le financement auprès des institutions financières" data-en="Support with financing and lenders">Accompagnement pour le financement auprès des institutions financières</li>
+        <li data-lang data-fr="Soutien aux décisions stratégiques" data-en="Support for strategic decisions">Soutien aux décisions stratégiques</li>
       </ul>
     </div>
   </div>
     <div class="addon">
       <div class="addon-main">
-        <span class="svc-num" data-lang data-fr="OPTION · TOUS LES FORFAITS" data-en="ADD-ON · ALL PLANS"></span>
-        <h3 class="svc-name" data-lang data-fr="Paie" data-en="Payroll"></h3>
-        <p class="svc-desc" data-lang data-fr="Ajoutez la paie à n'importe quel forfait de tenue de livres : calcul des salaires, remises des retenues à la source et relevés T4 et RL-1." data-en="Add payroll to any bookkeeping plan: pay calculations, source deduction remittances, and T4 and RL-1 slips."></p>
+        <span class="svc-num" data-lang data-fr="OPTION · TOUS LES FORFAITS" data-en="ADD-ON · ALL PLANS">OPTION · TOUS LES FORFAITS</span>
+        <h3 class="svc-name" data-lang data-fr="Paie" data-en="Payroll">Paie</h3>
+        <p class="svc-desc" data-lang data-fr="Ajoutez la paie à n'importe quel forfait de tenue de livres : calcul des salaires, remises des retenues à la source et relevés T4 et RL-1." data-en="Add payroll to any bookkeeping plan: pay calculations, source deduction remittances, and T4 and RL-1 slips.">Ajoutez la paie à n'importe quel forfait de tenue de livres : calcul des salaires, remises des retenues à la source et relevés T4 et RL-1.</p>
       </div>
       <div class="addon-price">
-        <p class="tier-from" data-lang data-fr="À partir de" data-en="Starting at"></p>
-        <p class="tier-price" data-lang data-fr="20 $" data-en="$20"></p>
-        <p class="price-unit" data-lang data-fr="+ taxes · par employé, par mois" data-en="+ tax · per employee, per month"></p>
+        <p class="tier-from" data-lang data-fr="À partir de" data-en="Starting at">À partir de</p>
+        <p class="tier-price" data-lang data-fr="20 $" data-en="$20">20 $</p>
+        <p class="price-unit" data-lang data-fr="+ taxes · par employé, par mois" data-en="+ tax · per employee, per month">+ taxes · par employé, par mois</p>
       </div>
     </div>
     <div class="panel-cta">
-      <p data-lang data-fr="Vous savez quel forfait vous convient ? Appelez-nous : on confirme votre forfait et votre prix." data-en="Know which plan fits you? Call us: we'll confirm your plan and your price."></p>
+      <p data-lang data-fr="Vous savez quel forfait vous convient ? Appelez-nous : on confirme votre forfait et votre prix." data-en="Know which plan fits you? Call us: we'll confirm your plan and your price.">Vous savez quel forfait vous convient ? Appelez-nous : on confirme votre forfait et votre prix.</p>
       <a href="tel:+14384986969" class="cta-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(438) 498-6969</span></a>
     </div>
     </div>
     <div class="svc-panel" data-svc="impots" hidden>
     <div class="offer">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="T2 · T3" data-en="T2 · T3"></span>
+        <span class="svc-num" data-lang data-fr="T2 · T3" data-en="T2 · T3">T2 · T3</span>
         <div class="svc-line"></div>
-        <h3 class="svc-name" data-lang data-fr="Déclarations fiscales" data-en="Tax returns"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Déclarations fédérales et du Québec de votre société ou de votre fiducie." data-en="Federal and Quebec returns for your corporation or trust."></p>
+        <h3 class="svc-name" data-lang data-fr="Déclarations fiscales" data-en="Tax returns">Déclarations fiscales</h3>
+        <p class="svc-desc offer-desc" data-lang data-fr="Déclarations fédérales et du Québec de votre société ou de votre fiducie." data-en="Federal and Quebec returns for your corporation or trust.">Déclarations fédérales et du Québec de votre société ou de votre fiducie.</p>
         <ul class="price-list">
-          <li><span data-lang data-fr="T2 · CO-17 — Sociétés" data-en="T2 · CO-17 — Corporations"></span><span data-lang data-fr="À partir de 1 000 $" data-en="From $1,000"></span></li>
-          <li><span data-lang data-fr="T3 · TP-646 — Fiducies" data-en="T3 · TP-646 — Trusts"></span><span data-lang data-fr="À partir de 2 000 $" data-en="From $2,000"></span></li>
+          <li><span data-lang data-fr="T2 · CO-17 — Sociétés" data-en="T2 · CO-17 — Corporations">T2 · CO-17 — Sociétés</span><span data-lang data-fr="À partir de 1 000 $" data-en="From $1,000">À partir de 1 000 $</span></li>
+          <li><span data-lang data-fr="T3 · TP-646 — Fiducies" data-en="T3 · TP-646 — Trusts">T3 · TP-646 — Fiducies</span><span data-lang data-fr="À partir de 2 000 $" data-en="From $2,000">À partir de 2 000 $</span></li>
         </ul>
       </div>
       <div class="offer-side">
-        <p class="tier-from" data-lang data-fr="À partir de" data-en="Starting at"></p>
-        <p class="tier-price" data-lang data-fr="1 000 $" data-en="$1,000"></p>
-        <p class="price-unit" data-lang data-fr="+ taxes · selon la complexité" data-en="+ tax · based on complexity"></p>
+        <p class="tier-from" data-lang data-fr="À partir de" data-en="Starting at">À partir de</p>
+        <p class="tier-price" data-lang data-fr="1 000 $" data-en="$1,000">1 000 $</p>
+        <p class="price-unit" data-lang data-fr="+ taxes · selon la complexité" data-en="+ tax · based on complexity">+ taxes · selon la complexité</p>
         <a href="#contact" class="cta-btn plan-cta" data-plan-fr="Déclaration fiscale d'entreprise (T2 / T3)" data-plan-en="Business tax return (T2 / T3)">
-          <span data-lang data-fr="Obtenir une soumission" data-en="Get a quote"></span>
+          <span data-lang data-fr="Obtenir une soumission" data-en="Get a quote">Obtenir une soumission</span>
           <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
         </a>
       </div>
@@ -1933,22 +1970,22 @@
     <div class="svc-panel" data-svc="tpstvq" hidden>
     <div class="offer">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="TPS · TVQ" data-en="GST · QST"></span>
+        <span class="svc-num" data-lang data-fr="TPS · TVQ" data-en="GST · QST">TPS · TVQ</span>
         <div class="svc-line"></div>
-        <h3 class="svc-name" data-lang data-fr="Déclarations TPS / TVQ" data-en="GST / QST returns"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Vos déclarations de taxes de vente produites à temps, conciliées avec vos livres." data-en="Your sales tax returns filed on time and reconciled with your books."></p>
+        <h3 class="svc-name" data-lang data-fr="Déclarations TPS / TVQ" data-en="GST / QST returns">Déclarations TPS / TVQ</h3>
+        <p class="svc-desc offer-desc" data-lang data-fr="Vos déclarations de taxes de vente produites à temps, conciliées avec vos livres." data-en="Your sales tax returns filed on time and reconciled with your books.">Vos déclarations de taxes de vente produites à temps, conciliées avec vos livres.</p>
         <ul class="tier-list">
-          <li data-lang data-fr="Déclarations mensuelles, trimestrielles ou annuelles" data-en="Monthly, quarterly or annual filings"></li>
-          <li data-lang data-fr="Calcul des crédits de taxe sur les intrants (CTI / RTI)" data-en="Input tax credit calculation (ITC / ITR)"></li>
-          <li data-lang data-fr="Conciliation avec vos livres" data-en="Reconciliation with your books"></li>
+          <li data-lang data-fr="Déclarations mensuelles, trimestrielles ou annuelles" data-en="Monthly, quarterly or annual filings">Déclarations mensuelles, trimestrielles ou annuelles</li>
+          <li data-lang data-fr="Calcul des crédits de taxe sur les intrants (CTI / RTI)" data-en="Input tax credit calculation (ITC / ITR)">Calcul des crédits de taxe sur les intrants (CTI / RTI)</li>
+          <li data-lang data-fr="Conciliation avec vos livres" data-en="Reconciliation with your books">Conciliation avec vos livres</li>
         </ul>
       </div>
       <div class="offer-side">
         
-        <p class="tier-price" data-lang data-fr="Sur soumission" data-en="Custom quote"></p>
-        <p class="price-unit" data-lang data-fr="Selon vos besoins" data-en="Based on your needs"></p>
+        <p class="tier-price" data-lang data-fr="Sur soumission" data-en="Custom quote">Sur soumission</p>
+        <p class="price-unit" data-lang data-fr="Selon vos besoins" data-en="Based on your needs">Selon vos besoins</p>
         <a href="#contact" class="cta-btn plan-cta" data-plan-fr="Déclarations TPS / TVQ — soumission" data-plan-en="GST / QST returns — quote">
-          <span data-lang data-fr="Obtenir une soumission" data-en="Get a quote"></span>
+          <span data-lang data-fr="Obtenir une soumission" data-en="Get a quote">Obtenir une soumission</span>
           <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
         </a>
       </div>
@@ -1957,22 +1994,22 @@
     <div class="svc-panel" data-svc="compilation" hidden>
     <div class="offer">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="ÉTATS FINANCIERS" data-en="FINANCIAL STATEMENTS"></span>
+        <span class="svc-num" data-lang data-fr="ÉTATS FINANCIERS" data-en="FINANCIAL STATEMENTS">ÉTATS FINANCIERS</span>
         <div class="svc-line"></div>
-        <h3 class="svc-name" data-lang data-fr="Mission de compilation" data-en="Compilation engagement"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Des états financiers compilés, prêts pour vos institutions financières, vos partenaires et vos déclarations fiscales." data-en="Compiled financial statements, ready for your lenders, partners and tax filings."></p>
+        <h3 class="svc-name" data-lang data-fr="Mission de compilation" data-en="Compilation engagement">Mission de compilation</h3>
+        <p class="svc-desc offer-desc" data-lang data-fr="Des états financiers compilés, prêts pour vos institutions financières, vos partenaires et vos déclarations fiscales." data-en="Compiled financial statements, ready for your lenders, partners and tax filings.">Des états financiers compilés, prêts pour vos institutions financières, vos partenaires et vos déclarations fiscales.</p>
         <ul class="tier-list">
-          <li data-lang data-fr="Bilan et état des résultats" data-en="Balance sheet and income statement"></li>
-          <li data-lang data-fr="Notes et ajustements de fin d'exercice" data-en="Year-end notes and adjustments"></li>
-          <li data-lang data-fr="Documents prêts pour la banque et vos partenaires" data-en="Ready for your bank and partners"></li>
+          <li data-lang data-fr="Bilan et état des résultats" data-en="Balance sheet and income statement">Bilan et état des résultats</li>
+          <li data-lang data-fr="Notes et ajustements de fin d'exercice" data-en="Year-end notes and adjustments">Notes et ajustements de fin d'exercice</li>
+          <li data-lang data-fr="Documents prêts pour la banque et vos partenaires" data-en="Ready for your bank and partners">Documents prêts pour la banque et vos partenaires</li>
         </ul>
       </div>
       <div class="offer-side">
         
-        <p class="tier-price" data-lang data-fr="Sur soumission" data-en="Custom quote"></p>
-        <p class="price-unit" data-lang data-fr="Selon vos besoins" data-en="Based on your needs"></p>
+        <p class="tier-price" data-lang data-fr="Sur soumission" data-en="Custom quote">Sur soumission</p>
+        <p class="price-unit" data-lang data-fr="Selon vos besoins" data-en="Based on your needs">Selon vos besoins</p>
         <a href="#contact" class="cta-btn plan-cta" data-plan-fr="Mission de compilation — soumission" data-plan-en="Compilation engagement — quote">
-          <span data-lang data-fr="Obtenir une soumission" data-en="Get a quote"></span>
+          <span data-lang data-fr="Obtenir une soumission" data-en="Get a quote">Obtenir une soumission</span>
           <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
         </a>
       </div>
@@ -1981,23 +2018,23 @@
     <div class="svc-panel" data-svc="ponctuels" hidden>
     <div class="offer dark">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="SERVICES PONCTUELS" data-en="ONE-TIME SERVICES"></span>
+        <span class="svc-num" data-lang data-fr="SERVICES PONCTUELS" data-en="ONE-TIME SERVICES">SERVICES PONCTUELS</span>
         <div class="svc-line"></div>
-        <h3 class="svc-name" data-lang data-fr="Démarrage d'entreprise" data-en="Business startup"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Tout ce qu'il faut pour lancer votre entreprise du bon pied. Prix + taxes." data-en="Everything you need to start your business on the right foot. Prices + tax."></p>
+        <h3 class="svc-name" data-lang data-fr="Démarrage d'entreprise" data-en="Business startup">Démarrage d'entreprise</h3>
+        <p class="svc-desc offer-desc" data-lang data-fr="Tout ce qu'il faut pour lancer votre entreprise du bon pied. Prix + taxes." data-en="Everything you need to start your business on the right foot. Prices + tax.">Tout ce qu'il faut pour lancer votre entreprise du bon pied. Prix + taxes.</p>
         <ul class="price-list">
-          <li><span data-lang data-fr="Création d'entreprise — enregistrée" data-en="Business setup — registered"></span><span data-lang data-fr="200 $" data-en="$200"></span></li>
-          <li><span data-lang data-fr="Création d'entreprise — incorporée" data-en="Business setup — incorporated"></span><span data-lang data-fr="700 $" data-en="$700"></span></li>
-          <li><span data-lang data-fr="Ouverture d'un compte bancaire" data-en="Business bank account opening"></span><span data-lang data-fr="300 $" data-en="$300"></span></li>
-          <li><span data-lang data-fr="Commande d'un terminal de paiement" data-en="Payment terminal order"></span><span data-lang data-fr="250 $" data-en="$250"></span></li>
+          <li><span data-lang data-fr="Création d'entreprise — enregistrée" data-en="Business setup — registered">Création d'entreprise — enregistrée</span><span data-lang data-fr="200 $" data-en="$200">200 $</span></li>
+          <li><span data-lang data-fr="Création d'entreprise — incorporée" data-en="Business setup — incorporated">Création d'entreprise — incorporée</span><span data-lang data-fr="700 $" data-en="$700">700 $</span></li>
+          <li><span data-lang data-fr="Ouverture d'un compte bancaire" data-en="Business bank account opening">Ouverture d'un compte bancaire</span><span data-lang data-fr="300 $" data-en="$300">300 $</span></li>
+          <li><span data-lang data-fr="Commande d'un terminal de paiement" data-en="Payment terminal order">Commande d'un terminal de paiement</span><span data-lang data-fr="250 $" data-en="$250">250 $</span></li>
         </ul>
       </div>
       <div class="offer-side">
         
-        <p class="tier-price" data-lang data-fr="Gratuit" data-en="Free"></p>
-        <p class="price-unit" data-lang data-fr="Appel préliminaire · toujours gratuit" data-en="Introductory call · always free"></p>
+        <p class="tier-price" data-lang data-fr="Gratuit" data-en="Free">Gratuit</p>
+        <p class="price-unit" data-lang data-fr="Appel préliminaire · toujours gratuit" data-en="Introductory call · always free">Appel préliminaire · toujours gratuit</p>
         <a href="#contact" class="cta-btn plan-cta" data-plan-fr="Appel préliminaire gratuit" data-plan-en="Free introductory call">
-          <span data-lang data-fr="Réserver mon appel" data-en="Book my call"></span>
+          <span data-lang data-fr="Réserver mon appel" data-en="Book my call">Réserver mon appel</span>
           <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
         </a>
       </div>
@@ -2005,40 +2042,44 @@
     </div>
   </div>
 
-  <p class="pricing-disclaimer" data-lang data-fr="Prix à titre indicatif, avant taxes, sous réserve de l&#39;analyse de votre dossier. Le prix final vous est toujours confirmé avant le début du mandat." data-en="Prices are a guide, before tax, and subject to a review of your file. The final price is always confirmed with you before we start."></p>
+  <p class="pricing-disclaimer" data-lang data-fr="Prix à titre indicatif, avant taxes, sous réserve de l&#39;analyse de votre dossier. Le prix final vous est toujours confirmé avant le début du mandat." data-en="Prices are a guide, before tax, and subject to a review of your file. The final price is always confirmed with you before we start.">Prix à titre indicatif, avant taxes, sous réserve de l'analyse de votre dossier. Le prix final vous est toujours confirmé avant le début du mandat.</p>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-info reveal">
-    <span class="section-label" data-lang data-fr="04 — Contact" data-en="04 — Contact"></span>
-    <h2 class="section-title" style="margin-top:0.5rem;" data-lang data-fr="Parlons de votre situation." data-en="Let's talk about your situation."></h2>
+    <span class="section-label" data-lang data-fr="04 — Contact" data-en="04 — Contact">04 — Contact</span>
+    <h2 class="section-title" style="margin-top:0.5rem;" data-lang data-fr="Parlons de votre situation." data-en="Let's talk about your situation.">Parlons de votre situation.</h2>
     <div class="contact-detail">
       <div class="contact-row">
-        <span class="contact-label" data-lang data-fr="Téléphone" data-en="Phone"></span>
+        <span class="contact-label" data-lang data-fr="Téléphone" data-en="Phone">Téléphone</span>
         <a class="contact-val" href="tel:+14384986969">(438) 498-6969 · Vincent Watts</a>
         <a class="contact-val" href="tel:+14388388658">(438) 838-8658 · Anaël Gagné</a>
       </div>
       <div class="contact-row">
-        <span class="contact-label" data-lang data-fr="Courriel" data-en="Email"></span>
+        <span class="contact-label" data-lang data-fr="Courriel" data-en="Email">Courriel</span>
         <a class="contact-val" href="mailto:wgcomptabilite@gmail.com">wgcomptabilite@gmail.com</a>
       </div>
       <div class="contact-row">
-        <span class="contact-label" data-lang data-fr="Adresse" data-en="Address"></span>
+        <span class="contact-label" data-lang data-fr="Adresse" data-en="Address">Adresse</span>
         <span class="contact-val">156, rue Gervais, Otterburn Park (Québec)</span>
       </div>
       <div class="contact-row">
-        <span class="contact-label" data-lang data-fr="Langues" data-en="Languages"></span>
-        <span class="contact-val" data-lang data-fr="Français · English" data-en="English · Français"></span>
+        <span class="contact-label" data-lang data-fr="Territoire" data-en="Service area">Territoire</span>
+        <span class="contact-val" data-lang data-fr="Otterburn Park, Beloeil, Mont-Saint-Hilaire, Chambly, Richelieu, Longueuil, Brossard et toute la Montérégie, ainsi qu&#39;à distance partout au Québec." data-en="Otterburn Park, Beloeil, Mont-Saint-Hilaire, Chambly, Richelieu, Longueuil, Brossard and all of Montérégie, as well as remotely across Quebec.">Otterburn Park, Beloeil, Mont-Saint-Hilaire, Chambly, Richelieu, Longueuil, Brossard et toute la Montérégie, ainsi qu'à distance partout au Québec.</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label" data-lang data-fr="Langues" data-en="Languages">Langues</span>
+        <span class="contact-val" data-lang data-fr="Français · English" data-en="English · Français">Français · English</span>
       </div>
     </div>
     <div class="review-box">
-      <p class="review-title"><span class="g-stars" aria-hidden="true">★★★★★</span> <span data-lang data-fr="5,0 sur Google · 16 avis" data-en="5.0 on Google · 16 reviews"></span></p>
-      <p class="review-text" data-lang data-fr="Vous êtes client? Votre avis aide d&#39;autres entrepreneurs de la région à nous trouver." data-en="Already a client? Your review helps other local business owners find us."></p>
+      <p class="review-title"><span class="g-stars" aria-hidden="true">★★★★★</span> <span data-lang data-fr="5,0 sur Google · 16 avis" data-en="5.0 on Google · 16 reviews">5,0 sur Google · 16 avis</span></p>
+      <p class="review-text" data-lang data-fr="Vous êtes client? Votre avis aide d&#39;autres entrepreneurs de la région à nous trouver." data-en="Already a client? Your review helps other local business owners find us.">Vous êtes client? Votre avis aide d'autres entrepreneurs de la région à nous trouver.</p>
       <div class="review-actions">
-        <a class="cta-btn" href="https://search.google.com/local/writereview?placeid=ChIJsbRhELkYiGcRYlPw8QaCfw4" target="_blank" rel="noopener"><span data-lang data-fr="Laisser un avis" data-en="Leave a review"></span></a>
-        <a class="review-link" href="https://search.google.com/local/reviews?placeid=ChIJsbRhELkYiGcRYlPw8QaCfw4" target="_blank" rel="noopener" data-lang data-fr="Lire les avis" data-en="Read reviews"></a>
+        <a class="cta-btn" href="https://search.google.com/local/writereview?placeid=ChIJsbRhELkYiGcRYlPw8QaCfw4" target="_blank" rel="noopener"><span data-lang data-fr="Laisser un avis" data-en="Leave a review">Laisser un avis</span></a>
+        <a class="review-link" href="https://search.google.com/local/reviews?placeid=ChIJsbRhELkYiGcRYlPw8QaCfw4" target="_blank" rel="noopener" data-lang data-fr="Lire les avis" data-en="Read reviews">Lire les avis</a>
       </div>
     </div>
   </div>
@@ -2050,44 +2091,48 @@
     <input type="hidden" name="_autoresponse" id="fs-autoresponse" value="">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
     <div class="form-row">
-      <label class="form-label" for="input-name" data-lang data-fr="Nom complet" data-en="Full name"></label>
+      <label class="form-label" for="input-name" data-lang data-fr="Nom complet" data-en="Full name">Nom complet</label>
       <input type="text" id="input-name" name="Nom" required placeholder="Jean Tremblay">
     </div>
     <div class="form-row">
-      <label class="form-label" for="input-email" data-lang data-fr="Courriel" data-en="Email"></label>
+      <label class="form-label" for="input-email" data-lang data-fr="Courriel" data-en="Email">Courriel</label>
       <input type="email" id="input-email" name="email" required placeholder="jean@exemple.ca">
     </div>
     <div class="form-row">
-      <label class="form-label" for="input-service" data-lang data-fr="Service recherché" data-en="Service needed"></label>
+      <label class="form-label" for="input-phone" data-lang data-fr="Téléphone (facultatif)" data-en="Phone (optional)">Téléphone (facultatif)</label>
+      <input type="tel" id="input-phone" name="Téléphone" autocomplete="tel" placeholder="(438) 000-0000">
+    </div>
+    <div class="form-row">
+      <label class="form-label" for="input-service" data-lang data-fr="Service recherché" data-en="Service needed">Service recherché</label>
       <input type="text" id="input-service" name="Service" data-fr-placeholder="Tenue de livres, déclaration T1, paie..." data-en-placeholder="Bookkeeping, T1 return, payroll...">
     </div>
     <div class="form-row">
-      <label class="form-label" for="input-msg" data-lang data-fr="Message" data-en="Message"></label>
+      <label class="form-label" for="input-msg" data-lang data-fr="Message" data-en="Message">Message</label>
       <textarea rows="4" id="input-msg" name="Message" data-fr-placeholder="Décrivez brièvement votre situation..." data-en-placeholder="Briefly describe your situation..."></textarea>
     </div>
-    <p class="form-consent"><span data-lang data-fr="En envoyant ce formulaire, vous acceptez notre" data-en="By sending this form, you agree to our"></span> <a href="#" class="privacy-open" data-lang data-fr="politique de confidentialité" data-en="privacy policy"></a>.</p>
-    <button type="submit" class="submit-btn" id="submit-btn" data-lang data-fr="Envoyer le message" data-en="Send message"></button>
+    <p class="form-consent"><span data-lang data-fr="En envoyant ce formulaire, vous acceptez notre" data-en="By sending this form, you agree to our">En envoyant ce formulaire, vous acceptez notre</span> <a href="#" class="privacy-open" data-lang data-fr="politique de confidentialité" data-en="privacy policy">politique de confidentialité</a>.</p>
+    <button type="submit" class="submit-btn" id="submit-btn" data-lang data-fr="Envoyer le message" data-en="Send message">Envoyer le message</button>
   </form>
   <div class="form-thanks" id="form-thanks" hidden>
-    <p class="mission-title" style="color:var(--navy);margin-top:0;" data-lang data-fr="Merci, c&#39;est bien reçu!" data-en="Thank you, we got it!"></p>
-    <p class="svc-desc" style="font-size:0.9rem;" data-lang data-fr="Nous vous répondrons très bientôt. Une copie de votre message vous a été envoyée par courriel." data-en="We will get back to you shortly. A copy of your message was sent to your email."></p>
+    <p class="mission-title" style="color:var(--navy);margin-top:0;" data-lang data-fr="Merci, c&#39;est bien reçu!" data-en="Thank you, we got it!">Merci, c'est bien reçu!</p>
+    <p class="svc-desc" style="font-size:0.9rem;" data-lang data-fr="Nous vous répondrons très bientôt. Une copie de votre message vous a été envoyée par courriel." data-en="We will get back to you shortly. A copy of your message was sent to your email.">Nous vous répondrons très bientôt. Une copie de votre message vous a été envoyée par courriel.</p>
   </div>
 </section>
 
 <!-- PRIVACY -->
 <dialog class="privacy" id="privacy">
   <button type="button" class="privacy-close" id="privacy-close" aria-label="Fermer">×</button>
-  <h2 class="privacy-title" data-lang data-fr="Politique de confidentialité" data-en="Privacy policy"></h2>
-  <div data-lang data-fr="<p>Lorsque vous utilisez notre formulaire de contact, nous recueillons votre nom, votre courriel et le contenu de votre message, uniquement pour répondre à votre demande et vous offrir nos services.</p><p>Le formulaire est transmis par courriel au moyen de FormSubmit, un service tiers dont les serveurs peuvent être situés à l&#39;extérieur du Québec. Nous ne vendons ni ne partageons vos renseignements à d&#39;autres fins. Ce site n&#39;utilise aucun témoin (cookie) de suivi.</p><p>Vous pouvez en tout temps demander l&#39;accès à vos renseignements, leur correction ou leur suppression en communiquant avec notre responsable de la protection des renseignements personnels : <strong>Vincent Watts, CPA auditeur</strong>, wgcomptabilite@gmail.com, (438) 498-6969.</p><p class=&quot;privacy-date&quot;>Dernière mise à jour : 20 novembre 2026</p>" data-en="<p>When you use our contact form, we collect your name, email and message, only to answer your request and offer our services.</p><p>The form is sent by email through FormSubmit, a third-party service whose servers may be located outside Quebec. We never sell your information or share it for other purposes. This site uses no tracking cookies.</p><p>You may ask at any time to access, correct or delete your information by contacting our person in charge of the protection of personal information: <strong>Vincent Watts, CPA auditor</strong>, wgcomptabilite@gmail.com, (438) 498-6969.</p><p class=&quot;privacy-date&quot;>Last updated: November 20, 2026</p>"></div>
+  <h2 class="privacy-title" data-lang data-fr="Politique de confidentialité" data-en="Privacy policy">Politique de confidentialité</h2>
+  <div data-lang data-fr="<p>Lorsque vous utilisez notre formulaire de contact, nous recueillons votre nom, votre courriel et le contenu de votre message, uniquement pour répondre à votre demande et vous offrir nos services.</p><p>Le formulaire est transmis par courriel au moyen de FormSubmit, un service tiers dont les serveurs peuvent être situés à l&#39;extérieur du Québec. Nous ne vendons ni ne partageons vos renseignements à d&#39;autres fins. Ce site n&#39;utilise aucun témoin (cookie) de suivi.</p><p>Vous pouvez en tout temps demander l&#39;accès à vos renseignements, leur correction ou leur suppression en communiquant avec notre responsable de la protection des renseignements personnels : <strong>Vincent Watts, CPA auditeur</strong>, wgcomptabilite@gmail.com, (438) 498-6969.</p><p class=&quot;privacy-date&quot;>Dernière mise à jour : 20 novembre 2026</p>" data-en="<p>When you use our contact form, we collect your name, email and message, only to answer your request and offer our services.</p><p>The form is sent by email through FormSubmit, a third-party service whose servers may be located outside Quebec. We never sell your information or share it for other purposes. This site uses no tracking cookies.</p><p>You may ask at any time to access, correct or delete your information by contacting our person in charge of the protection of personal information: <strong>Vincent Watts, CPA auditor</strong>, wgcomptabilite@gmail.com, (438) 498-6969.</p><p class=&quot;privacy-date&quot;>Last updated: November 20, 2026</p>"><p>Lorsque vous utilisez notre formulaire de contact, nous recueillons votre nom, votre courriel et le contenu de votre message, uniquement pour répondre à votre demande et vous offrir nos services.</p><p>Le formulaire est transmis par courriel au moyen de FormSubmit, un service tiers dont les serveurs peuvent être situés à l'extérieur du Québec. Nous ne vendons ni ne partageons vos renseignements à d'autres fins. Ce site n'utilise aucun témoin (cookie) de suivi.</p><p>Vous pouvez en tout temps demander l'accès à vos renseignements, leur correction ou leur suppression en communiquant avec notre responsable de la protection des renseignements personnels : <strong>Vincent Watts, CPA auditeur</strong>, wgcomptabilite@gmail.com, (438) 498-6969.</p><p class="privacy-date">Dernière mise à jour : 20 novembre 2026</p></div>
 </dialog>
 
-<a class="call-fab" href="tel:+14384986969"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-lang data-fr="Appeler" data-en="Call"></span></a>
+<a class="call-fab" href="tel:+14384986969"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.91 10a16 16 0 0 0 6.07 6.07l.42-.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-lang data-fr="Appeler" data-en="Call">Appeler</span></a>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">W<span>&</span>G Comptabilité</div>
-  <p class="footer-cpa" data-lang data-fr="Vincent Watts, CPA auditeur · Membre de l&#39;Ordre des CPA du Québec" data-en="Vincent Watts, CPA auditor · Member of the Ordre des CPA du Québec"></p>
-  <p class="footer-copy">© 2026 W&amp;G Comptabilité · <a href="#" class="privacy-open" data-lang data-fr="Confidentialité" data-en="Privacy"></a></p>
+  <p class="footer-cpa" data-lang data-fr="Vincent Watts, CPA auditeur · Membre de l&#39;Ordre des CPA du Québec" data-en="Vincent Watts, CPA auditor · Member of the Ordre des CPA du Québec">Vincent Watts, CPA auditeur · Membre de l'Ordre des CPA du Québec</p>
+  <p class="footer-copy">© 2026 W&amp;G Comptabilité · <a href="#" class="privacy-open" data-lang data-fr="Confidentialité" data-en="Privacy">Confidentialité</a></p>
 </footer>
 
 <script>
@@ -2287,6 +2332,14 @@ document.querySelectorAll('.privacy-open').forEach(a => a.addEventListener('clic
 }));
 document.getElementById('privacy-close').addEventListener('click', () => privacyDlg.close());
 privacyDlg.addEventListener('click', e => { if (e.target === privacyDlg) privacyDlg.close(); });
+
+// aria-pressed on toggle-style buttons (tabs, pills, segments, language)
+function syncPressed() {
+  document.querySelectorAll('.price-tabs button, .svc-pills button, .seg button').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')));
+  document.querySelectorAll('.lang-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')));
+}
+document.addEventListener('click', () => requestAnimationFrame(syncPressed));
+syncPressed();
 
 setLang('fr');
 </script>
