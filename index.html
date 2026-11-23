@@ -122,7 +122,7 @@
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Planification et retraite"
+        "name": "Planification, conseil et retraite"
       }
     },
     {
@@ -1293,6 +1293,12 @@
   .bars i.on { background: var(--gold); }
   .cost-lbl { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); padding-bottom: 2px; }
 
+  .side-phone { font-family: 'DM Sans', sans-serif; font-size: 1.9rem; font-weight: 700; letter-spacing: .02em; font-variant-numeric: tabular-nums; color: var(--navy); text-decoration: none; line-height: 1.1; margin-bottom: .4rem; display: block; }
+  .side-phone:hover { color: var(--gold-deep); }
+  .quick-name { flex: 1; min-width: 0; }
+  .quick-name small { display: block; font-weight: 400; font-size: .74rem; line-height: 1.4; color: var(--text-muted); margin-top: .15rem; }
+  .quick-price.phone { color: var(--navy); font-weight: 600; }
+
   /* Funnel: particulier / entreprise */
   .fn-pick { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
   .fn-card {
@@ -1541,7 +1547,7 @@
           <button type="button" class="fn-card" data-seg="particuliers">
             <span class="fn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
             <span class="fn-name" data-lang data-fr="Particulier" data-en="Individual"></span>
-            <span class="fn-desc" data-lang data-fr="Impôts, travail autonome, retraite" data-en="Taxes, self-employed, retirement"></span>
+            <span class="fn-desc" data-lang data-fr="Impôts, travail autonome, planification et retraite" data-en="Taxes, self-employed, planning and retirement"></span>
           </button>
           <button type="button" class="fn-card" data-seg="entreprises">
             <span class="fn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16"/><path d="M14 10h5a1 1 0 0 1 1 1v10"/><path d="M8 8h2M8 12h2M8 16h2M3 21h18"/></svg></span>
@@ -1673,8 +1679,8 @@
     <a class="service-card" href="#tarifs" data-goto="particuliers:retraite">
       <span class="svc-num">06</span>
       <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Planification &amp; retraite" data-en="Planning &amp; retirement"></h3>
-      <p class="svc-desc" data-lang data-fr="Budget, stratégie REER, FERR et CRI et projections pour atteindre vos objectifs." data-en="Budget, RRSP, RRIF and LIRA strategy, and projections to reach your goals."></p>
+      <h3 class="svc-name" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement"></h3>
+      <p class="svc-desc" data-lang data-fr="Budget, conseils personnalisés et stratégie REER, FERR et CRI pour atteindre vos objectifs." data-en="Budget, personalized advice, and RRSP, RRIF and LIRA strategy to reach your goals."></p>
       <span class="svc-more" data-lang data-fr="Voir les tarifs →" data-en="See pricing →"></span>
     </a>
     <a class="service-card" href="#tarifs" data-goto="entreprises:ponctuels">
@@ -1711,7 +1717,7 @@
   <div class="svc-pills">
     <button type="button" class="active" data-svc="t1" data-lang data-fr="Déclaration de revenus" data-en="Tax return"></button>
     <button type="button" data-svc="ta" data-lang data-fr="Travailleur autonome" data-en="Self-employed"></button>
-    <button type="button" data-svc="retraite" data-lang data-fr="Planification &amp; retraite" data-en="Planning &amp; retirement"></button>
+    <button type="button" data-svc="retraite" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement"></button>
   </div>
     <div class="svc-panel" data-svc="t1">
     <div class="offer">
@@ -1763,21 +1769,22 @@
     <div class="svc-panel" data-svc="ta" hidden>
     <div class="offer">
       <div class="offer-main">
-        <span class="svc-num" data-lang data-fr="TENUE DE LIVRES" data-en="BOOKKEEPING"></span>
+        <span class="svc-num" data-lang data-fr="SERVICE COMPLET" data-en="FULL SERVICE"></span>
         <div class="svc-line"></div>
         <h3 class="svc-name" data-lang data-fr="Travailleur autonome" data-en="Self-employed"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Des livres à jour toute l'année, avec votre déclaration de revenus de fin d'année et vos déclarations TPS / TVQ incluses." data-en="Books kept current all year, with your year-end tax return and GST / QST filings included."></p>
+        <p class="svc-desc offer-desc" data-lang data-fr="Tout est inclus : votre tenue de livres, votre déclaration de revenus (Québec + fédéral) et vos déclarations TPS / TVQ." data-en="Everything included: your bookkeeping, your tax return (Quebec + federal) and your GST / QST filings."></p>
         <ul class="tier-list">
-          <li data-lang data-fr="Conciliation bancaire mensuelle" data-en="Monthly bank reconciliation"></li>
+          <li data-lang data-fr="Tenue de livres : conciliation bancaire mensuelle" data-en="Bookkeeping: monthly bank reconciliation"></li>
           <li data-lang data-fr="Saisie et catégorisation des transactions" data-en="Transaction entry and categorization"></li>
           <li data-lang data-fr="Classement de vos reçus numérisés" data-en="Filing of your digital receipts"></li>
-          <li data-lang data-fr="Déclaration de revenus de fin d&#39;année : incluse" data-en="Year-end tax return: included"></li>
+          <li data-lang data-fr="Déclaration de revenus Québec + fédéral : incluse" data-en="Tax return, Quebec + federal: included"></li>
           <li data-lang data-fr="Déclarations TPS / TVQ : incluses" data-en="GST / QST filings: included"></li>
           <li data-lang data-fr="Option paie : à partir de 20 $ par employé, par mois" data-en="Payroll add-on: from $20 per employee, per month"></li>
         </ul>
       </div>
       <div class="offer-side">
         
+        <p class="tier-from" data-lang data-fr="Tout inclus" data-en="All-inclusive"></p>
         <p class="tier-price" data-lang data-fr="110 $" data-en="$110"></p>
         <p class="price-unit" data-lang data-fr="+ taxes · par mois" data-en="+ tax · per month"></p>
         <a href="#contact" class="cta-btn plan-cta" data-plan-fr="Tenue de livres — Travailleur autonome" data-plan-en="Bookkeeping — Self-employed">
@@ -1792,24 +1799,25 @@
       <div class="offer-main">
         <span class="svc-num" data-lang data-fr="PARTICULIERS" data-en="INDIVIDUALS"></span>
         <div class="svc-line"></div>
-        <h3 class="svc-name" data-lang data-fr="Planification &amp; retraite" data-en="Planning &amp; retirement"></h3>
-        <p class="svc-desc offer-desc" data-lang data-fr="Un portrait clair de votre situation et un plan concret pour atteindre vos objectifs, aujourd&#39;hui comme à la retraite." data-en="A clear picture of where you stand and a concrete plan to reach your goals, today and in retirement."></p>
-        <ul class="price-list">
-          <li><span data-lang data-fr="Budget" data-en="Budget"></span><span data-lang data-fr="À partir de 200 $" data-en="From $200"></span></li>
-          <li><span data-lang data-fr="Stratégie de retraite — REER, FERR, CRI" data-en="Retirement strategy — RRSP, RRIF, LIRA"></span><span data-lang data-fr="450 $" data-en="$450"></span></li>
-          <li><span data-lang data-fr="Projections et objectifs de retraite" data-en="Retirement projections and goals"></span><span data-lang data-fr="Sur soumission" data-en="Custom quote"></span></li>
-          <li><span data-lang data-fr="Optimisation fiscale de vos revenus à la retraite" data-en="Tax optimization of your retirement income"></span><span data-lang data-fr="Sur soumission" data-en="Custom quote"></span></li>
+        <h3 class="svc-name" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement"></h3>
+        <p class="svc-desc offer-desc" data-lang data-fr="Un portrait clair de votre situation, des conseils adaptés et un plan concret pour atteindre vos objectifs, aujourd&#39;hui comme à la retraite." data-en="A clear picture of where you stand, tailored advice and a concrete plan to reach your goals, today and in retirement."></p>
+        <ul class="tier-list">
+          <li data-lang data-fr="Budget personnel" data-en="Personal budget"></li>
+          <li data-lang data-fr="Conseils personnalisés selon votre situation" data-en="Personalized advice for your situation"></li>
+          <li data-lang data-fr="Stratégie de retraite : REER, FERR, CRI" data-en="Retirement strategy: RRSP, RRIF, LIRA"></li>
+          <li data-lang data-fr="Projections et objectifs de retraite" data-en="Retirement projections and goals"></li>
+          <li data-lang data-fr="Optimisation fiscale de vos revenus à la retraite" data-en="Tax optimization of your retirement income"></li>
         </ul>
-        <p class="price-note" data-lang data-fr="+ taxes" data-en="+ tax"></p>
       </div>
       <div class="offer-side">
-        <p class="tier-from" data-lang data-fr="À partir de" data-en="Starting at"></p>
-        <p class="tier-price" data-lang data-fr="200 $" data-en="$200"></p>
-        <p class="price-unit" data-lang data-fr="+ taxes" data-en="+ tax"></p>
-        <a href="#contact" class="cta-btn plan-cta" data-plan-fr="Planification &amp; retraite" data-plan-en="Planning &amp; retirement">
-          <span data-lang data-fr="Commencer" data-en="Get started"></span>
+        <p class="tier-from" data-lang data-fr="Appelez-nous" data-en="Call us"></p>
+        <a class="side-phone" href="tel:+14384986969">(438) 498-6969</a>
+        <p class="price-unit" data-lang data-fr="Vincent Watts · CPA auditeur" data-en="Vincent Watts · CPA auditor"></p>
+        <a href="tel:+14384986969" class="cta-btn">
+          <span data-lang data-fr="Appeler" data-en="Call"></span>
           <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg>
         </a>
+        <a href="#contact" class="tier-cta" style="margin-top:1.25rem" data-plan-fr="Planification, conseil et retraite" data-plan-en="Planning, advice &amp; retirement" data-lang data-fr="Ou écrivez-nous →" data-en="Or write to us →"></a>
       </div>
     </div>
     </div>
@@ -2207,9 +2215,12 @@ document.querySelectorAll('[data-goto]').forEach(card => card.addEventListener('
 // Hero funnel: particulier / entreprise, then the services of that side
 const FN = {
   particuliers: [
-    { go: 'particuliers:t1',       fr: 'Déclaration de revenus (T1)',   en: 'Tax return (T1)',        pfr: 'dès 100 $',            pen: 'from $100' },
-    { go: 'particuliers:ta',       fr: 'Travailleur autonome',          en: 'Self-employed',          pfr: 'dès 110 $/mois',       pen: 'from $110/mo' },
-    { go: 'particuliers:retraite', fr: 'Planification & retraite',      en: 'Planning & retirement',  pfr: 'dès 200 $',            pen: 'from $200' }
+    { go: 'particuliers:t1', fr: 'Déclaration de revenus', en: 'Tax return',
+      sfr: 'Québec + fédéral', sen: 'Quebec + federal', pfr: 'dès 100 $', pen: 'from $100' },
+    { go: 'particuliers:ta', fr: 'Travailleur autonome', en: 'Self-employed',
+      sfr: 'Service complet : impôts + TPS/TVQ + tenue de livres', sen: 'Full service: taxes + GST/QST + bookkeeping', pfr: '110 $/mois', pen: '$110/mo' },
+    { tel: true, go: 'particuliers:retraite', fr: 'Planification, conseil et retraite', en: 'Planning, advice & retirement',
+      sfr: 'Budget, REER / FERR / CRI, optimisation fiscale', sen: 'Budget, RRSP / RRIF / LIRA, tax optimization', pfr: '(438) 498-6969', pen: '(438) 498-6969' }
   ],
   entreprises: [
     { go: 'entreprises:livres',      fr: 'Tenue de livres',             en: 'Bookkeeping',            pfr: '4 forfaits',            pen: '4 plans' },
@@ -2230,12 +2241,14 @@ function renderFunnel() {
   document.getElementById('fn-back').textContent = '← ' + (fr ? 'Changer · ' : 'Change · ') + label;
   document.getElementById('fn-sub').textContent = fr ? 'Prix affichés d\'avance, taxes en sus. Cliquez pour voir le détail.' : 'Prices shown upfront, taxes extra. Click for details.';
   document.getElementById('fn-list').innerHTML = FN[fnSeg].map(r =>
-    `<a class="quick-row" href="#tarifs" data-go="${r.go}"><span class="quick-name">${fr ? r.fr : r.en}</span><span class="quick-price">${fr ? r.pfr : r.pen}</span></a>`).join('');
+    r.tel
+      ? `<a class="quick-row" href="tel:+14384986969"><span class="quick-name">${fr ? r.fr : r.en}<small>${fr ? r.sfr : r.sen}</small></span><span class="quick-price phone">${r.pfr}</span></a>`
+      : `<a class="quick-row" href="#tarifs" data-go="${r.go}"><span class="quick-name">${fr ? r.fr : r.en}${r.sfr ? `<small>${fr ? r.sfr : r.sen}</small>` : ''}</span><span class="quick-price">${fr ? r.pfr : r.pen}</span></a>`).join('');
 }
 document.querySelectorAll('.fn-card').forEach(c => c.addEventListener('click', () => { fnSeg = c.dataset.seg; renderFunnel(); }));
 document.getElementById('fn-back').addEventListener('click', () => { fnSeg = null; renderFunnel(); });
 document.getElementById('fn-list').addEventListener('click', e => {
-  const a = e.target.closest('.quick-row'); if (!a) return;
+  const a = e.target.closest('.quick-row'); if (!a || !a.dataset.go) return;
   e.preventDefault();
   const [tab, svc] = a.dataset.go.split(':');
   document.querySelector(`.price-tabs [data-tab="${tab}"]`).click();
