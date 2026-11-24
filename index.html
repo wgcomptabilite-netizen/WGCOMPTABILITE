@@ -1836,6 +1836,13 @@ a.contact-val{display:inline-flex;align-items:center;min-height:44px}
 
 /* card titles unified at 1.6rem */
 .svc-cards .svc-name,.pillar-name,.member-name,.svc-call-title{font-size:1.6rem}
+
+  /* ===== Round 18: mission opens the page ===== */
+  .hero-main .hero-subtitle.hero-mission { max-width: 680px; margin: 0 auto 2rem; line-height: 1.8; color: rgba(248,245,239,.78); }
+  .hero-lead { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.35rem, 2.6vw, 1.7rem); line-height: 1.25; color: var(--cream); max-width: 640px; margin: 0 auto 1.4rem; padding-top: 1.6rem; position: relative; text-wrap: balance; }
+  .hero-lead::before { content: ''; position: absolute; top: 0; left: 50%; width: 56px; height: 1px; margin-left: -28px; background: var(--gold); }
+  .hero-lead em { font-style: italic; color: var(--gold-light); }
+  .hero-main .hero-title { font-size: clamp(2.2rem, 4.8vw, 3.5rem); }
 </style>
 </head>
 <body>
@@ -1867,9 +1874,10 @@ a.contact-val{display:inline-flex;align-items:center;min-height:44px}
   <div class="hero-main">
     <p class="eyebrow" data-lang data-fr="Cabinet CPA · Montérégie" data-en="CPA firm · Montérégie">Cabinet CPA · Montérégie</p>
     <h1 class="hero-title">
-      <span data-lang data-fr="Dites-nous <em>ce qu'il vous faut.</em>" data-en="Tell us <em>what you need.</em>">Dites-nous <em>ce qu'il vous faut.</em></span>
+      <span data-lang data-fr="Plus qu'un comptable : un <em>partenaire d'affaires.</em>" data-en="More than an accountant: a <em>business partner.</em>">Plus qu'un comptable : un <em>partenaire d'affaires.</em></span>
     </h1>
-    <p class="hero-subtitle" data-lang data-fr="Quelques questions pour mieux vous connaître, gratuit et sans engagement. Nous vous rappelons pour en discuter." data-en="A few questions so we can get to know you, free and with no obligation. We'll call you back to talk it over.">Quelques questions pour mieux vous connaître, gratuit et sans engagement. Nous vous rappelons pour en discuter.</p>
+    <p class="hero-subtitle hero-mission" data-lang data-fr="Notre mission est de transcender le rôle traditionnel du comptable. À l'ère numérique, notre rôle ne se limite plus à parler de chiffres. Nous voulons être un véritable partenaire d'affaires pour nos clients : les accompagner dans tous leurs enjeux comptables et financiers, leur fournir les outils dont ils ont besoin et demeurer proactifs, à l'avant-garde des avancées technologiques." data-en="Our mission is to go beyond the traditional role of the accountant. In the digital era, our role is no longer just about numbers. We want to be a true business partner for our clients: supporting them through all their accounting and financial challenges, giving them the tools they need, and staying proactive, at the forefront of technology.">Notre mission est de transcender le rôle traditionnel du comptable. À l'ère numérique, notre rôle ne se limite plus à parler de chiffres. Nous voulons être un véritable partenaire d'affaires pour nos clients : les accompagner dans tous leurs enjeux comptables et financiers, leur fournir les outils dont ils ont besoin et demeurer proactifs, à l'avant-garde des avancées technologiques.</p>
+    <p class="hero-lead" data-lang data-fr="Dites-nous <em>ce qu'il vous faut.</em> Quelques questions, gratuit et sans engagement : nous vous rappelons." data-en="Tell us <em>what you need.</em> A few questions, free and no obligation: we'll call you back.">Dites-nous <em>ce qu'il vous faut.</em> Quelques questions, gratuit et sans engagement : nous vous rappelons.</p>
     <div class="quick" id="soumission">
       <ol class="fn-progress" id="fn-progress" aria-label="Progression"></ol>
       <div class="fn-step" id="fn-1">
@@ -1986,29 +1994,6 @@ a.contact-val{display:inline-flex;align-items:center;min-height:44px}
       <p class="member-bio" data-lang data-fr="Anaël s'est lancé directement sur le marché du travail, en tenue de livres et en gestion de projets dans la construction et l'immobilier. Tombé en amour avec le milieu, il a acquis son premier immeuble à revenus. Aujourd'hui, il exerce en comptabilité avec une spécialisation dans tous les domaines de la construction et de l'immobilier." data-en="Anaël went straight into the workforce, doing bookkeeping and project management in construction and real estate. He fell in love with the industry and bought his first income property. Today he practises accounting with a specialization in every area of construction and real estate.">Anaël s'est lancé directement sur le marché du travail, en tenue de livres et en gestion de projets dans la construction et l'immobilier. Tombé en amour avec le milieu, il a acquis son premier immeuble à revenus. Aujourd'hui, il exerce en comptabilité avec une spécialisation dans tous les domaines de la construction et de l'immobilier.</p>
     </div>
   </div>
-  <div class="mission reveal">
-    <span class="section-label" data-lang data-fr="Notre mission" data-en="Our mission">Notre mission</span>
-    <p class="mission-title" data-lang data-fr="Plus qu'un comptable : un <em>partenaire d'affaires.</em>" data-en="More than an accountant: a <em>business partner.</em>">Plus qu'un comptable : un <em>partenaire d'affaires.</em></p>
-    <p class="mission-body" data-lang data-fr="Notre mission est de transcender le rôle traditionnel du comptable. À l'ère numérique, notre rôle ne se limite plus à parler de chiffres. Nous voulons être un véritable partenaire d'affaires pour nos clients : les accompagner dans tous leurs enjeux comptables et financiers, leur fournir les outils dont ils ont besoin et demeurer proactifs, à l'avant-garde des avancées technologiques." data-en="Our mission is to go beyond the traditional role of the accountant. In the digital era, our role is no longer just about numbers. We want to be a true business partner for our clients: supporting them through all their accounting and financial challenges, giving them the tools they need, and staying proactive, at the forefront of technology.">Notre mission est de transcender le rôle traditionnel du comptable. À l'ère numérique, notre rôle ne se limite plus à parler de chiffres. Nous voulons être un véritable partenaire d'affaires pour nos clients : les accompagner dans tous leurs enjeux comptables et financiers, leur fournir les outils dont ils ont besoin et demeurer proactifs, à l'avant-garde des avancées technologiques.</p>
-  </div>
-  <p class="pillars-label reveal" data-lang data-fr="Nos piliers" data-en="Our pillars">Nos piliers</p>
-  <div class="pillars reveal">
-    <div class="pillar">
-      <span class="pillar-num">01</span>
-      <h4 class="pillar-name" data-lang data-fr="Confiance &amp; honnêteté" data-en="Trust &amp; honesty">Confiance & honnêteté</h4>
-      <p class="pillar-desc" data-lang data-fr="Une relation transparente, des conseils francs et des engagements tenus." data-en="A transparent relationship, straightforward advice, and commitments we keep.">Une relation transparente, des conseils francs et des engagements tenus.</p>
-    </div>
-    <div class="pillar">
-      <span class="pillar-num">02</span>
-      <h4 class="pillar-name" data-lang data-fr="Efficience" data-en="Efficiency">Efficience</h4>
-      <p class="pillar-desc" data-lang data-fr="Des processus automatisés et des outils modernes pour des résultats rapides et justes." data-en="Automated processes and modern tools for fast, accurate results.">Des processus automatisés et des outils modernes pour des résultats rapides et justes.</p>
-    </div>
-    <div class="pillar">
-      <span class="pillar-num">03</span>
-      <h4 class="pillar-name" data-lang data-fr="Collaboration &amp; écoute" data-en="Collaboration &amp; listening">Collaboration & écoute</h4>
-      <p class="pillar-desc" data-lang data-fr="On prend le temps de comprendre votre réalité pour bâtir des solutions avec vous." data-en="We take the time to understand your reality and build solutions with you.">On prend le temps de comprendre votre réalité pour bâtir des solutions avec vous.</p>
-    </div>
-  </div>
 </section>
 
 <!-- SERVICES -->
@@ -2034,9 +2019,10 @@ a.contact-val{display:inline-flex;align-items:center;min-height:44px}
       <a class="service-card" href="#soumission" data-goto="particuliers:ta">
         <h4 class="svc-name" data-lang data-fr="Travailleur autonome" data-en="Self-employed">Travailleur autonome</h4>
         <ul class="svc-list">
-        <li data-lang data-fr="Déclaration de revenus" data-en="Income tax return">Déclaration de revenus</li>
+        <li data-lang data-fr="Déclaration de fin d'année" data-en="Year-end tax return">Déclaration de fin d'année</li>
+        <li data-lang data-fr="Accompagnement comptable complet" data-en="Full accounting support">Accompagnement comptable complet</li>
         <li data-lang data-fr="Déclarations TPS / TVQ" data-en="GST / QST returns">Déclarations TPS / TVQ</li>
-        <li data-lang data-fr="Tenue de livres mensuelle" data-en="Monthly bookkeeping">Tenue de livres mensuelle</li>
+        <li data-lang data-fr="Services connexes (incorporation, compte bancaire, terminal)" data-en="Related services (incorporation, bank account, terminal)">Services connexes (incorporation, compte bancaire, terminal)</li>
       </ul>
       </a>
       <a class="service-card" href="#soumission" data-goto="particuliers:retraite">
@@ -2319,9 +2305,36 @@ const FN = {
         if (!r.extras.length) return [];
         return ['', 'Ajouts internes (non affichés au client) :'].concat(r.extras.map(e => '- ' + e[0] + ' : + ' + e[1] + ' $'), ['Total estimé interne : ' + r.total + ' $ + taxes']);
       } },
-    { fr: 'Travailleur autonome', en: 'Self-employed', dfr: 'Service complet : impôts + TPS/TVQ + tenue de livres mensuelle', den: 'Full service: taxes + GST/QST + monthly bookkeeping', pfr: '110 $/mois' + TAX.fr, pen: '$110/mo' + TAX.en, go: 'particuliers:ta',
-      opts: [S('tax', 'Inscrit aux taxes (TPS/TVQ) ?', 'Registered for GST/QST?', [['Oui', 'Yes'], ['Non', 'No'], ['Je ne sais pas', "I don't know"]]), C('payroll', "J'ai aussi besoin de la paie (employés)", 'I also need payroll (employees)')],
-      est: (s, L) => (L === 'fr' ? '110 $/mois' : '$110/mo') + TAX[L] },
+    { fr: 'Travailleur autonome', en: 'Self-employed', dfr: 'Impôts, accompagnement complet, TPS/TVQ et services connexes', den: 'Taxes, full accounting support, GST/QST and related services', pfr: '4 options', pen: '4 options', go: 'particuliers:ta',
+      sub: [
+        { fr: 'Déclaration de fin d\'année', en: 'Year-end tax return', dfr: 'Vos déclarations fédérale et du Québec de travailleur autonome', den: 'Your federal and Quebec self-employed returns', pfr: 'à partir de 250 $' + TAX.fr, pen: 'from $250' + TAX.en, go: 'particuliers:ta-fin',
+          force: { self1: true }, fixed: ['Vous : travailleur autonome', 'You: self-employed'],
+          opts: [SITU].concat(
+            selfQs('1', s => s.self1, false),
+            [C('self2', 'Mon conjoint ou ma conjointe est travailleur autonome', 'My partner is self-employed', s => s.mode === 1)],
+            selfQs('2', s => s.mode === 1 && s.self2, true),
+            [N('refs', 'Clients référés', 'Clients referred', 0, 20, 0), C('complex', 'Revenus locatifs, gains en capital ou autre situation complexe', 'Rental income, capital gains or another complex situation')]),
+          est: (s, L) => {
+            if (s.complex) return L === 'fr' ? 'sur soumission' : 'by quote';
+            return (L === 'fr' ? 'à partir de ' : 'from ') + fm(t1Calc(s).total, L) + TAX[L];
+          },
+          internal: s => {
+            if (s.complex) return [];
+            const r = t1Calc(s);
+            if (!r.extras.length) return [];
+            return ['', 'Ajouts internes (non affichés au client) :'].concat(r.extras.map(e => '- ' + e[0] + ' : + ' + e[1] + ' $'), ['Total estimé interne : ' + r.total + ' $ + taxes']);
+          } },
+        { fr: 'Accompagnement comptable complet', en: 'Full accounting support', dfr: 'Service complet : impôts + TPS/TVQ + tenue de livres mensuelle', den: 'Full service: taxes + GST/QST + monthly bookkeeping', pfr: '110 $/mois' + TAX.fr, pen: '$110/mo' + TAX.en, go: 'particuliers:ta-complet',
+          opts: [S('tax', 'Inscrit aux taxes (TPS/TVQ) ?', 'Registered for GST/QST?', [['Oui', 'Yes'], ['Non', 'No'], ['Je ne sais pas', "I don't know"]]), C('payroll', "J'ai aussi besoin de la paie (employés)", 'I also need payroll (employees)')],
+          est: (s, L) => (L === 'fr' ? '110 $/mois' : '$110/mo') + TAX[L] },
+        { fr: 'Déclarations TPS / TVQ', en: 'GST / QST returns', dfr: 'Déclarations de taxes de vente produites et conciliées à vos revenus', den: 'Sales tax returns filed and reconciled with your income', pfr: 'sur soumission', pen: 'by quote', go: 'particuliers:ta-tps',
+          opts: [S('freq', 'Fréquence de déclaration', 'Filing frequency', [['Mensuelle', 'Monthly'], ['Trimestrielle', 'Quarterly'], ['Annuelle', 'Annual'], ['Je ne sais pas', "I don't know"]], null, null, true),
+                 S('tx', 'Combien de transactions par mois ?', 'How many transactions per month?', [['Moins de 10', 'Under 10'], ['10 à 24', '10 to 24'], ['25 et plus', '25 or more']], null, null, true)],
+          internal: s => s.tx == null ? [] : ['', 'Repère interne (non affiché au client) : TPS/TVQ, ' + ['< 10', '10 à 24', '25+'][s.tx] + ' transactions/mois = ' + GST_ADD[s.tx] + ' $ (ajout T1)'] },
+        { fr: 'Services connexes', en: 'Related services', dfr: 'Création, compte bancaire, terminal de paiement : cochez ce qu\'il vous faut', den: 'Setup, bank account, payment terminal: tick what you need', pfr: 'à partir de 200 $' + TAX.fr, pen: 'from $200' + TAX.en, go: 'particuliers:ta-connexes',
+          opts: [M('svcs', 'Services souhaités', 'Services needed', [['Création d\'entreprise — enregistrée', 'Business setup — registered', 200], ['Création d\'entreprise — incorporée', 'Business setup — incorporated', 700], ['Ouverture d\'un compte bancaire', 'Business bank account opening', 300], ['Commande d\'un terminal de paiement', 'Payment terminal order', 250]])],
+          est: (s, L) => { const P = [200, 700, 300, 250]; const t = P.reduce((a, p, i) => a + (s.svcs[i] ? p : 0), 0); return t ? fm(t, L) + TAX[L] : null; } }
+      ] },
     { fr: 'Planification, conseil et retraite', en: 'Planning, advice & retirement', dfr: 'Budget, REER / FERR / CRI, optimisation fiscale', den: 'Budget, RRSP / RRIF / LIRA, tax optimization', pfr: 'Appeler', pen: 'Call us', go: 'particuliers:retraite',
       opts: [M('topics', 'Sujets qui vous intéressent', 'Topics of interest', [['Budget personnel', 'Personal budget'], ['Conseils personnalisés selon ma situation', 'Personalized advice'], ['Stratégie de retraite (REER, FERR, CRI)', 'Retirement strategy (RRSP, RRIF, LIRA)'], ['Projections et objectifs de retraite', 'Retirement projections and goals'], ['Optimisation fiscale de mes revenus à la retraite', 'Tax optimization of my retirement income'], ['Autre', 'Other']]),
         X('notes', 'Notes : dites-nous ce que vous cherchez', 'Notes: tell us what you are looking for', s => s.topics[5])] }
@@ -2357,12 +2370,13 @@ const FN = {
         opts: [S('why', 'Raison de l\'audit', 'Reason for the audit', [['Prêteur ou investisseur', 'Lender or investor'], ['Exigence légale ou contractuelle', 'Legal or contractual requirement'], ['Autre', 'Other']])] } ] }
   ] }
 };
-const fn = { seg: null, cat: null, svc: null, stage: '', sel: {}, done: false };
+const fn = { seg: null, cat: null, grp: null, svc: null, stage: '', sel: {}, done: false };
 const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 const ix = L => L === 'fr' ? 0 : 1;
 function fnDefaults(it) {
   const s = {};
   it.opts.forEach(o => { s[o.id] = o.t === 'seg' ? o.def : o.t === 'chk' ? false : o.t === 'multi' ? {} : o.t === 'count' ? o.def : o.t === 'text' ? '' : undefined; });
+  Object.assign(s, it.force || {});
   return s;
 }
 function fnReady(it, s) {
@@ -2373,7 +2387,7 @@ function fnReady(it, s) {
   });
 }
 function fnLines(it, s, L) {
-  const out = [], yes = L === 'fr' ? 'Oui' : 'Yes', no = L === 'fr' ? 'Non' : 'No';
+  const out = it.fixed ? [it.fixed[ix(L)]] : [], yes = L === 'fr' ? 'Oui' : 'Yes', no = L === 'fr' ? 'Non' : 'No';
   it.opts.forEach(o => {
     if (o.show && !o.show(s)) return;
     const lab = o[L], v = s[o.id];
@@ -2427,7 +2441,7 @@ const DOCS = {
     if (s.complex) d.push(['Revenus locatifs ou gains en capital : baux, loyers et dépenses, coût d\'acquisition et prix de vente', 'Rental income or capital gains: leases, rents and expenses, acquisition cost and selling price']);
     return d;
   },
-  'particuliers:ta': [
+  'particuliers:ta-complet': [
     [SIN[0], SIN[1]],
     ['Relevés bancaires et de cartes de crédit liés à vos activités', 'Bank and credit card statements for your activities'],
     ['Factures de ventes et reçus de dépenses (numérisés)', 'Sales invoices and expense receipts (scanned)'],
@@ -2435,6 +2449,9 @@ const DOCS = {
     ['Avis de cotisation de l\'année précédente (ARC et Revenu Québec)', 'Last year\'s notices of assessment (CRA and Revenu Québec)'],
     ['Situation familiale : marié(e) ou conjoint(e) de fait, personnes à charge', 'Family situation: married or common-law, dependants']
   ],
+  'particuliers:ta-fin': s => DOCS['particuliers:t1'](s),
+  'particuliers:ta-tps': s => DOCS['entreprises:tpstvq'],
+  'particuliers:ta-connexes': s => DOCS['entreprises:ponctuels'],
   'particuliers:retraite': [
     [SIN[0], SIN[1]],
     ['Derniers avis de cotisation (ARC et Revenu Québec)', 'Latest notices of assessment (CRA and Revenu Québec)'],
@@ -2535,14 +2552,14 @@ function renderFunnel() {
     const it = fn.svc;
     $('fn-3').hidden = false;
     $('fn-back3').textContent = '← ' + (fr ? 'Modifier mes choix' : 'Edit my choices');
-    const head = [segName, catName, it[L]].filter(Boolean).join(' · ');
+    const head = [segName, catName, fn.grp && fn.grp[L], it[L]].filter(Boolean).join(' · ');
     const lines = fnLines(it, fn.sel, L);
     $('fn-recap').innerHTML = `<b>${esc(head)}</b><ul>${lines.map(l => `<li>${esc(l)}</li>`).join('')}<li>${esc((it.est ? (fr ? 'Estimation' : 'Estimate') : (fr ? 'Prix' : 'Price')) + ' : ' + fnPriceText(it, L))}</li></ul>`;
     // The email we receive is always in French
     const frLines = fnLines(it, fn.sel, 'fr');
     $('fn-profile').value = seg.fr;
-    $('fn-service').value = [cat && cat.fr, it.fr].filter(Boolean).join(' › ') + ' — ' + fnPriceText(it, 'fr');
-    $('fn-subject').value = 'Nouvelle demande — ' + seg.fr + ' — ' + it.fr;
+    $('fn-service').value = [cat && cat.fr, fn.grp && fn.grp.fr, it.fr].filter(Boolean).join(' › ') + ' — ' + fnPriceText(it, 'fr');
+    $('fn-subject').value = 'Nouvelle demande — ' + seg.fr + ' — ' + (fn.grp ? fn.grp.fr + ' — ' : '') + it.fr;
     const docs = fnDocs(it, fn.sel);
     $('fn-docs').innerHTML = `<summary>${fr ? 'À nous fournir' : 'To provide to us'}</summary><p>${fr ? 'À titre indicatif : liste non exhaustive. Nous vous confirmerons les documents exacts par téléphone.' : 'For guidance only: not an exhaustive list. We will confirm the exact documents by phone.'}</p><ul>${docs.map(d => `<li>${esc(d[ix(L)])}</li>`).join('')}</ul>`;
     $('fn-details').value = frLines.concat(['Estimation / prix : ' + fnPriceText(it, 'fr'), 'Note : sélections à titre informatif ; forfaits et prix finaux confirmés par téléphone.', '', 'À nous fournir (liste indicative présentée au client, non exhaustive) :'], docs.map(d => '- ' + d[0]), it.internal ? it.internal(fn.sel) : []).join('\n');
@@ -2551,14 +2568,14 @@ function renderFunnel() {
   if (fn.svc) {
     const it = fn.svc;
     $('fn-opt').hidden = false;
-    $('fn-backo').textContent = '← ' + (fr ? 'Retour · ' : 'Back · ') + (catName && cat.items.length > 1 ? catName : segName);
+    $('fn-backo').textContent = '← ' + (fr ? 'Retour · ' : 'Back · ') + (fn.grp ? fn.grp[L] : catName && cat.items.length > 1 ? catName : segName);
     $('fn-opt-title').textContent = it[L];
     $('fn-opt-sub').textContent = it['d' + L];
     renderOpts();
     return;
   }
   $('fn-2').hidden = false;
-  $('fn-back').textContent = '← ' + (cat ? (segName + ' · ' + catName) : (fr ? 'Changer · ' : 'Change · ') + segName);
+  $('fn-back').textContent = '← ' + (fn.grp ? (fr ? 'Retour · ' : 'Back · ') + segName : cat ? (segName + ' · ' + catName) : (fr ? 'Changer · ' : 'Change · ') + segName);
   const cats = $('fn-cats'), list = $('fn-list');
   if (fn.seg === 'entreprises' && !cat) {
     $('fn-title').textContent = fr ? 'Que cherchez-vous ?' : 'What are you looking for?';
@@ -2567,16 +2584,16 @@ function renderFunnel() {
     cats.innerHTML = seg.cats.map((c, i) => `<button type="button" class="fn-cat" data-cat="${i}"><b>${esc(c[L])}</b><span>${esc(c['d' + L])}</span></button>`).join('');
     return;
   }
-  const items = cat ? cat.items : seg.items;
-  $('fn-title').textContent = fr ? 'De quoi avez-vous besoin ?' : 'What do you need?';
-  $('fn-sub').textContent = fr ? 'Choisissez un service, précisez votre situation, puis envoyez votre demande.' : 'Choose a service, tell us your situation, then send your request.';
+  const items = fn.grp ? fn.grp.sub : cat ? cat.items : seg.items;
+  $('fn-title').textContent = fn.grp ? fn.grp[L] : (fr ? 'De quoi avez-vous besoin ?' : 'What do you need?');
+  $('fn-sub').textContent = fn.grp ? (fr ? 'Quel service vous intéresse ? Choisissez, précisez votre situation, puis envoyez votre demande.' : 'Which service are you interested in? Choose, tell us your situation, then send your request.') : (fr ? 'Choisissez un service, précisez votre situation, puis envoyez votre demande.' : 'Choose a service, tell us your situation, then send your request.');
   cats.hidden = true; list.hidden = false;
   list.innerHTML = items.map((r, i) => `<button type="button" class="quick-row" data-i="${i}"><span class="quick-name">${esc(r[L])}<small>${esc(r['d' + L])}</small></span><span class="quick-price">${esc(r['p' + L])}</span></button>`).join('');
 }
 function fnPick(it) { fn.svc = it; fn.sel = fnDefaults(it); fn.stage = 'opt'; renderFunnel(); fnKeepInView('fn-opt'); }
 document.getElementById('fn-1').addEventListener('click', e => {
   const c = e.target.closest('.fn-card'); if (!c) return;
-  fn.seg = c.dataset.seg; fn.cat = null; fn.svc = null; renderFunnel();
+  fn.seg = c.dataset.seg; fn.cat = null; fn.grp = null; fn.svc = null; renderFunnel();
 });
 document.getElementById('fn-cats').addEventListener('click', e => {
   const c = e.target.closest('.fn-cat'); if (!c) return;
@@ -2585,7 +2602,8 @@ document.getElementById('fn-cats').addEventListener('click', e => {
 });
 document.getElementById('fn-list').addEventListener('click', e => {
   const b = e.target.closest('button.quick-row'); if (!b) return;
-  fnPick((fn.cat ? fn.cat.items : FN[fn.seg].items)[+b.dataset.i]);
+  const it = (fn.grp ? fn.grp.sub : fn.cat ? fn.cat.items : FN[fn.seg].items)[+b.dataset.i];
+  if (it.sub) { fn.grp = it; renderFunnel(); fnKeepInView('fn-2'); } else fnPick(it);
 });
 document.getElementById('fn-opts').addEventListener('click', e => {
   const b = e.target.closest('button[data-o]'); if (!b) return;
@@ -2605,12 +2623,13 @@ document.getElementById('fn-opts').addEventListener('input', e => {
   fn.sel[t.dataset.o] = t.value;
 });
 document.getElementById('fn-next').addEventListener('click', () => {
-  if (!fnReady(fn.svc, fn.sel)) return;
+  if (!fn.svc || !fnReady(fn.svc, fn.sel)) return;
   fn.stage = 'form'; renderFunnel(); fnKeepInView('fn-3');
 });
 function fnBack() {
   if (fn.svc && fn.stage === 'form') fn.stage = 'opt';
   else if (fn.svc) { fn.svc = null; if (fn.cat && fn.cat.items.length === 1) fn.cat = null; }
+  else if (fn.grp) fn.grp = null;
   else if (fn.cat) fn.cat = null;
   else fn.seg = null;
   renderFunnel();
@@ -2623,12 +2642,16 @@ function funnelGo(go) {
   for (const k of Object.keys(FN)) {
     const seg = FN[k];
     for (const c of (seg.cats || [null])) {
-      const it = (c ? c.items : seg.items).find(x => x.go === go);
-      if (!it) continue;
-      fn.done = false; fn.seg = k; fn.cat = c; fn.svc = it; fn.sel = fnDefaults(it); fn.stage = 'opt';
-      renderFunnel();
-      document.getElementById('soumission').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return;
+      for (const top of (c ? c.items : seg.items)) {
+        const hit = top.go === go ? top : (top.sub || []).find(x => x.go === go);
+        if (!hit) continue;
+        fn.done = false; fn.seg = k; fn.cat = c; fn.stage = 'opt';
+        if (hit.sub) { fn.grp = hit; fn.svc = null; fn.sel = {}; }
+        else { fn.grp = hit === top ? null : top; fn.svc = hit; fn.sel = fnDefaults(hit); }
+        renderFunnel();
+        document.getElementById('soumission').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
     }
   }
 }
