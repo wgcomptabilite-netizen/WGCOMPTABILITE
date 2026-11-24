@@ -54,10 +54,18 @@
     "Saint-Basile-le-Grand",
     "Saint-Hilaire",
     "Chambly",
-    "Richelieu",
     "Carignan",
+    "Richelieu",
+    "Saint-Jean-sur-Richelieu",
+    "Saint-Hyacinthe",
+    "Granby",
+    "Boucherville",
+    "Saint-Bruno-de-Montarville",
+    "Saint-Lambert",
     "Longueuil",
     "Brossard",
+    "Montréal",
+    "Laval",
     "Vallée-du-Richelieu",
     "Rive-Sud de Montréal",
     "Montérégie"
@@ -1789,6 +1797,15 @@ button,input,select,textarea{font-family:inherit}
 .svc-list li::before{content:"";position:absolute;left:0;top:.62em;width:.45rem;height:2px;background:var(--gold)}
 .service-card:hover .svc-tag{color:var(--gold-light)}
 .service-card:hover .svc-list li{color:rgba(244,232,198,.85)}
+
+/* Round 15: stylish diamond bullets, centered contact + footer, CPA link */
+.svc-list li{padding-left:1.35rem}
+.svc-list li::before{content:"";position:absolute;left:.1rem;top:.5em;width:.5rem;height:.5rem;background:linear-gradient(135deg,#f6d675,#cf9f35);transform:rotate(45deg);border-radius:1px;box-shadow:0 0 0 2px rgba(207,159,53,.22)}
+.service-card:hover .svc-list li::before{box-shadow:0 0 0 2px rgba(244,210,110,.35)}
+.contact{align-items:center}
+footer{flex-direction:column;justify-content:center;text-align:center;gap:.7rem;padding:2.5rem 1.5rem}
+.footer-cpa a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(244,210,110,.45);padding-bottom:2px;transition:color .2s,border-color .2s}
+.footer-cpa a:hover,.footer-cpa a:focus-visible{color:var(--gold-light);border-bottom-color:var(--gold-light)}
 </style>
 </head>
 <body>
@@ -2081,7 +2098,7 @@ button,input,select,textarea{font-family:inherit}
       </div>
       <div class="contact-row">
         <span class="contact-label" data-lang data-fr="Territoire" data-en="Service area">Territoire</span>
-        <span class="contact-val" data-lang data-fr="Otterburn Park, Beloeil, Mont-Saint-Hilaire, Chambly, Richelieu, Longueuil, Brossard et toute la Montérégie, ainsi qu&#39;à distance partout au Québec." data-en="Otterburn Park, Beloeil, Mont-Saint-Hilaire, Chambly, Richelieu, Longueuil, Brossard and all of Montérégie, as well as remotely across Quebec.">Otterburn Park, Beloeil, Mont-Saint-Hilaire, Chambly, Richelieu, Longueuil, Brossard et toute la Montérégie, ainsi qu'à distance partout au Québec.</span>
+        <span class="contact-val" data-lang data-fr="Otterburn Park, Beloeil, Mont-Saint-Hilaire, Saint-Basile-le-Grand, McMasterville, Chambly, Carignan, Richelieu, Saint-Jean-sur-Richelieu, Saint-Hyacinthe, Granby, Boucherville, Saint-Bruno-de-Montarville, Saint-Lambert, Longueuil, Brossard, Montréal et Laval, ainsi qu&#39;à distance partout au Québec." data-en="Otterburn Park, Beloeil, Mont-Saint-Hilaire, Saint-Basile-le-Grand, McMasterville, Chambly, Carignan, Richelieu, Saint-Jean-sur-Richelieu, Saint-Hyacinthe, Granby, Boucherville, Saint-Bruno-de-Montarville, Saint-Lambert, Longueuil, Brossard, Montréal and Laval, as well as remotely across Quebec.">Otterburn Park, Beloeil, Mont-Saint-Hilaire, Saint-Basile-le-Grand, McMasterville, Chambly, Carignan, Richelieu, Saint-Jean-sur-Richelieu, Saint-Hyacinthe, Granby, Boucherville, Saint-Bruno-de-Montarville, Saint-Lambert, Longueuil, Brossard, Montréal et Laval, ainsi qu'à distance partout au Québec.</span>
       </div>
       <div class="contact-row">
         <span class="contact-label" data-lang data-fr="Langues" data-en="Languages">Langues</span>
@@ -2145,7 +2162,7 @@ button,input,select,textarea{font-family:inherit}
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">W<span>&</span>G Comptabilité</div>
-  <p class="footer-cpa" data-lang data-fr="Vincent Watts, CPA auditeur · Membre de l&#39;Ordre des CPA du Québec" data-en="Vincent Watts, CPA auditor · Member of the Ordre des CPA du Québec">Vincent Watts, CPA auditeur · Membre de l'Ordre des CPA du Québec</p>
+  <p class="footer-cpa"><a href="https://cpaquebec.ca/fr/trouver-un-cpa/tableau-de-lordre/" target="_blank" rel="noopener" data-lang data-fr="Vincent Watts, CPA auditeur · Membre de l&#39;Ordre des CPA du Québec" data-en="Vincent Watts, CPA auditor · Member of the Ordre des CPA du Québec" data-href-en="https://cpaquebec.ca/en/find-a-cpa/orders-membership-roll/" data-href-fr="https://cpaquebec.ca/fr/trouver-un-cpa/tableau-de-lordre/">Vincent Watts, CPA auditeur · Membre de l'Ordre des CPA du Québec</a></p>
   <p class="footer-copy">© 2026 W&amp;G Comptabilité · <a href="#" class="privacy-open" data-lang data-fr="Confidentialité" data-en="Privacy">Confidentialité</a></p>
 </footer>
 
@@ -2182,6 +2199,7 @@ function setLang(lang) {
     el.textContent = el.getAttribute('data-' + lang);
   });
 
+  document.querySelectorAll('[data-href-fr]').forEach(el => { el.href = el.getAttribute('data-href-' + lang); });
   const svc = document.getElementById('input-service');
   if (svc) svc.placeholder = svc.getAttribute('data-' + lang + '-placeholder');
   const msg = document.getElementById('input-msg');
