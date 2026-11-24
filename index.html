@@ -1806,13 +1806,43 @@ button,input,select,textarea{font-family:inherit}
 footer{flex-direction:column;justify-content:center;text-align:center;gap:.7rem;padding:2.5rem 1.5rem}
 .footer-cpa a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(244,210,110,.45);padding-bottom:2px;transition:color .2s,border-color .2s}
 .footer-cpa a:hover,.footer-cpa a:focus-visible{color:var(--gold-light);border-bottom-color:var(--gold-light)}
+
+/* Round 17: services regrouped (Particuliers / Entreprises), larger and clearer */
+.svc-group{max-width:1180px;margin:0 auto 3.25rem}
+.svc-group-head{display:flex;align-items:baseline;gap:1rem 1.5rem;flex-wrap:wrap;margin-bottom:1.25rem;padding-bottom:.9rem;border-bottom:1px solid rgba(117,89,31,.28)}
+.svc-group-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.1rem;line-height:1.1;color:var(--navy)}
+.svc-group-sub{font-size:var(--fs-base);color:var(--text-muted)}
+.svc-cards{display:grid;gap:1.25rem}
+.svc-cards.c3{grid-template-columns:repeat(3,1fr)}
+.svc-cards.c4{grid-template-columns:repeat(4,1fr)}
+.svc-cards .service-card{background:#fff9e8;border:1px solid rgba(180,140,50,.35);border-radius:var(--r);padding:1.9rem 1.6rem 2rem;box-shadow:0 10px 26px rgba(120,85,20,.12);transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s}
+.svc-cards .service-card:hover{background:var(--navy);transform:translateY(-4px);box-shadow:0 18px 38px rgba(23,51,33,.3)}
+.svc-cards .svc-name{font-size:1.65rem;line-height:1.15;color:var(--navy);margin:0 0 1.1rem;padding-bottom:1rem;border-bottom:1px solid rgba(180,140,50,.4)}
+.svc-cards .service-card:hover .svc-name{color:var(--cream);border-bottom-color:rgba(244,210,110,.5)}
+.svc-cards .svc-list{margin-top:0;gap:.8rem}
+.svc-cards .svc-list li{font-size:var(--fs-base);line-height:1.4;color:var(--navy)}
+.svc-cards .svc-list li::before{top:.45em}
+.svc-cards .service-card:hover .svc-list li{color:var(--cream)}
+.svc-call{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:1.8rem 2.2rem;border-radius:var(--r);background:linear-gradient(135deg,#f6d675 0%,#cf9f35 100%);color:var(--navy);text-decoration:none;box-shadow:0 14px 32px rgba(150,105,25,.3);transition:transform .25s var(--ease)}
+.svc-call:hover{transform:translateY(-3px)}
+.svc-call-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.65rem;line-height:1.1}
+.svc-call-text{font-size:var(--fs-base);margin-top:.3rem}
+.svc-call-btn{font-size:var(--fs-xs);letter-spacing:.14em;text-transform:uppercase;font-weight:600;background:var(--navy);color:var(--gold-light);padding:.85rem 1.5rem;border-radius:999px;white-space:nowrap}
+@media(max-width:1100px){.svc-cards.c4{grid-template-columns:repeat(2,1fr)}.svc-cards.c3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.svc-cards.c3,.svc-cards.c4{grid-template-columns:1fr}.svc-group-title{font-size:1.8rem}.svc-call{padding:1.5rem}}
+
+/* tap targets */
+a.contact-val{display:inline-flex;align-items:center;min-height:44px}
+
+/* card titles unified at 1.6rem */
+.svc-cards .svc-name,.pillar-name,.member-name,.svc-call-title{font-size:1.6rem}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="logo">W<span>&</span>G Comptabilité</div>
-  <a class="nav-cta" href="#soumission"><span data-lang data-fr="Parlons-en" data-en="Let's talk">Parlons-en</span><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg></a>
+  <a class="nav-cta" href="#soumission"><span data-lang data-fr="Démarrer ma soumission" data-en="Start my quote">Démarrer ma soumission</span><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 6l5 4-5 4"/></svg></a>
   <div class="nav-right">
     <button type="button" class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <ul id="nav-links">
@@ -1987,92 +2017,85 @@ footer{flex-direction:column;justify-content:center;text-align:center;gap:.7rem;
     <span class="section-label" data-lang data-fr="02 — Services" data-en="02 — Services">02 — Services</span>
     <h2 class="section-title" data-lang data-fr="Ce que nous offrons" data-en="What we offer">Ce que nous offrons</h2>
   </div>
-  <div class="services-grid reveal">
-    <a class="service-card" href="#soumission" data-goto="particuliers:t1">
-      <span class="svc-num">01</span>
-      <div class="svc-line"></div>
-      <span class="svc-tag" data-lang data-fr="Particuliers" data-en="Individuals">Particuliers</span>
-      <h3 class="svc-name" data-lang data-fr="Déclaration de revenus" data-en="Tax return">Déclaration de revenus</h3>
-      <ul class="svc-list">
+  <div class="svc-group reveal">
+    <div class="svc-group-head">
+      <h3 class="svc-group-title" data-lang data-fr="Particuliers" data-en="Individuals">Particuliers</h3>
+      <p class="svc-group-sub" data-lang data-fr="Impôts, travail autonome et planification de votre avenir." data-en="Taxes, self-employment and planning for your future.">Impôts, travail autonome et planification de votre avenir.</p>
+    </div>
+    <div class="svc-cards c3">
+      <a class="service-card" href="#soumission" data-goto="particuliers:t1">
+        <h4 class="svc-name" data-lang data-fr="Déclaration de revenus" data-en="Tax return">Déclaration de revenus</h4>
+        <ul class="svc-list">
         <li data-lang data-fr="Déclarations fédérale et du Québec" data-en="Federal and Quebec returns">Déclarations fédérale et du Québec</li>
         <li data-lang data-fr="Déclaration individuelle ou en couple" data-en="Individual or couple return">Déclaration individuelle ou en couple</li>
         <li data-lang data-fr="Produites dans les délais" data-en="Filed on time">Produites dans les délais</li>
       </ul>
-    </a>
-    <a class="service-card" href="#soumission" data-goto="particuliers:ta">
-      <span class="svc-num">02</span>
-      <div class="svc-line"></div>
-      <span class="svc-tag" data-lang data-fr="Particuliers" data-en="Individuals">Particuliers</span>
-      <h3 class="svc-name" data-lang data-fr="Travailleur autonome" data-en="Self-employed">Travailleur autonome</h3>
-      <ul class="svc-list">
+      </a>
+      <a class="service-card" href="#soumission" data-goto="particuliers:ta">
+        <h4 class="svc-name" data-lang data-fr="Travailleur autonome" data-en="Self-employed">Travailleur autonome</h4>
+        <ul class="svc-list">
         <li data-lang data-fr="Déclaration de revenus" data-en="Income tax return">Déclaration de revenus</li>
         <li data-lang data-fr="Déclarations TPS / TVQ" data-en="GST / QST returns">Déclarations TPS / TVQ</li>
         <li data-lang data-fr="Tenue de livres mensuelle" data-en="Monthly bookkeeping">Tenue de livres mensuelle</li>
       </ul>
-    </a>
-    <a class="service-card" href="#soumission" data-goto="particuliers:retraite">
-      <span class="svc-num">03</span>
-      <div class="svc-line"></div>
-      <span class="svc-tag" data-lang data-fr="Particuliers" data-en="Individuals">Particuliers</span>
-      <h3 class="svc-name" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement">Planification, conseil et retraite</h3>
-      <ul class="svc-list">
+      </a>
+      <a class="service-card" href="#soumission" data-goto="particuliers:retraite">
+        <h4 class="svc-name" data-lang data-fr="Planification, conseil et retraite" data-en="Planning, advice &amp; retirement">Planification, conseil et retraite</h4>
+        <ul class="svc-list">
         <li data-lang data-fr="Budget personnel" data-en="Personal budget">Budget personnel</li>
         <li data-lang data-fr="Conseils personnalisés selon votre situation" data-en="Advice tailored to your situation">Conseils personnalisés selon votre situation</li>
         <li data-lang data-fr="Stratégie de retraite (REER, FERR, CRI)" data-en="Retirement strategy (RRSP, RRIF, LIRA)">Stratégie de retraite (REER, FERR, CRI)</li>
         <li data-lang data-fr="Optimisation fiscale à la retraite" data-en="Tax optimization in retirement">Optimisation fiscale à la retraite</li>
       </ul>
-    </a>
-    <a class="service-card" href="#soumission" data-goto="entreprises:livres">
-      <span class="svc-num">04</span>
-      <div class="svc-line"></div>
-      <span class="svc-tag" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</span>
-      <h3 class="svc-name" data-lang data-fr="Tenue de livres" data-en="Bookkeeping">Tenue de livres</h3>
-      <ul class="svc-list">
+      </a>
+    </div>
+  </div>
+  <div class="svc-group reveal">
+    <div class="svc-group-head">
+      <h3 class="svc-group-title" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</h3>
+      <p class="svc-group-sub" data-lang data-fr="De la tenue de livres à l'audit, pour faire croître votre entreprise." data-en="From bookkeeping to audit, to help your business grow.">De la tenue de livres à l'audit, pour faire croître votre entreprise.</p>
+    </div>
+    <div class="svc-cards c4">
+      <a class="service-card" href="#soumission" data-goto="entreprises:livres">
+        <h4 class="svc-name" data-lang data-fr="Tenue de livres" data-en="Bookkeeping">Tenue de livres</h4>
+        <ul class="svc-list">
         <li data-lang data-fr="Conciliation bancaire et saisie des transactions" data-en="Bank reconciliation and transaction entry">Conciliation bancaire et saisie des transactions</li>
         <li data-lang data-fr="Comptes clients et fournisseurs" data-en="Receivables and payables">Comptes clients et fournisseurs</li>
         <li data-lang data-fr="Forfaits Essentiel, Croissance, Stratégique et CFO" data-en="Essential, Growth, Strategic and CFO plans">Forfaits Essentiel, Croissance, Stratégique et CFO</li>
       </ul>
-    </a>
-    <a class="service-card" href="#soumission" data-goto="entreprises:impots">
-      <span class="svc-num">05</span>
-      <div class="svc-line"></div>
-      <span class="svc-tag" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</span>
-      <h3 class="svc-name" data-lang data-fr="Fiscalité" data-en="Tax">Fiscalité</h3>
-      <ul class="svc-list">
+      </a>
+      <a class="service-card" href="#soumission" data-goto="entreprises:impots">
+        <h4 class="svc-name" data-lang data-fr="Fiscalité" data-en="Tax">Fiscalité</h4>
+        <ul class="svc-list">
         <li data-lang data-fr="Fin d&#x27;année (T2 / T3) : société ou fiducie" data-en="Year-end (T2 / T3): corporation or trust">Fin d'année (T2 / T3) : société ou fiducie</li>
         <li data-lang data-fr="Déclarations TPS / TVQ" data-en="GST / QST returns">Déclarations TPS / TVQ</li>
         <li data-lang data-fr="Conseil et optimisation : rémunération, structure" data-en="Advice and optimization: compensation, structure">Conseil et optimisation : rémunération, structure</li>
       </ul>
-    </a>
-    <a class="service-card" href="#soumission" data-goto="entreprises:ponctuels">
-      <span class="svc-num">06</span>
-      <div class="svc-line"></div>
-      <span class="svc-tag" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</span>
-      <h3 class="svc-name" data-lang data-fr="Conseil &amp; accompagnement" data-en="Advisory &amp; support">Conseil & accompagnement</h3>
-      <ul class="svc-list">
+      </a>
+      <a class="service-card" href="#soumission" data-goto="entreprises:ponctuels">
+        <h4 class="svc-name" data-lang data-fr="Conseil &amp; accompagnement" data-en="Advisory &amp; support">Conseil & accompagnement</h4>
+        <ul class="svc-list">
         <li data-lang data-fr="Démarrage d&#x27;entreprise : création, compte bancaire, terminal" data-en="Business start-up: setup, bank account, terminal">Démarrage d'entreprise : création, compte bancaire, terminal</li>
         <li data-lang data-fr="Paie : T4 et RL-1" data-en="Payroll: T4 and RL-1 slips">Paie : T4 et RL-1</li>
         <li data-lang data-fr="CFO à temps partiel" data-en="Fractional CFO">CFO à temps partiel</li>
       </ul>
-    </a>
-    <a class="service-card" href="#soumission" data-goto="entreprises:compilation">
-      <span class="svc-num">07</span>
-      <div class="svc-line"></div>
-      <span class="svc-tag" data-lang data-fr="Entreprises" data-en="Businesses">Entreprises</span>
-      <h3 class="svc-name" data-lang data-fr="Audit &amp; états financiers" data-en="Audit &amp; financial statements">Audit & états financiers</h3>
-      <ul class="svc-list">
+      </a>
+      <a class="service-card" href="#soumission" data-goto="entreprises:compilation">
+        <h4 class="svc-name" data-lang data-fr="Audit &amp; états financiers" data-en="Audit &amp; financial statements">Audit & états financiers</h4>
+        <ul class="svc-list">
         <li data-lang data-fr="Mission de compilation" data-en="Compilation engagement">Mission de compilation</li>
         <li data-lang data-fr="Audit par un CPA auditeur" data-en="Audit by a CPA auditor">Audit par un CPA auditeur</li>
       </ul>
-    </a>
-    <a class="service-card featured" href="#contact">
-      <span class="svc-num">08</span>
-      <div class="svc-line"></div>
-      <h3 class="svc-name" data-lang data-fr="Appel préliminaire" data-en="Introductory call">Appel préliminaire</h3>
-      <p class="svc-desc" data-lang data-fr="Toujours gratuit. Parlez-nous de votre situation, sans engagement." data-en="Always free. Tell us about your situation, no commitment.">Toujours gratuit. Parlez-nous de votre situation, sans engagement.</p>
-      <span class="svc-more" data-lang data-fr="Nous joindre →" data-en="Contact us →">Nous joindre →</span>
-    </a>
+      </a>
+    </div>
   </div>
+  <a class="svc-call reveal" href="#contact">
+    <div>
+      <h3 class="svc-call-title" data-lang data-fr="Appel préliminaire" data-en="Introductory call">Appel préliminaire</h3>
+      <p class="svc-call-text" data-lang data-fr="Toujours gratuit. Parlez-nous de votre situation, sans engagement." data-en="Always free. Tell us about your situation, no commitment.">Toujours gratuit. Parlez-nous de votre situation, sans engagement.</p>
+    </div>
+    <span class="svc-call-btn" data-lang data-fr="Nous joindre →" data-en="Contact us →">Nous joindre →</span>
+  </a>
 </section>
 
 <!-- CONTACT -->
