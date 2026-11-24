@@ -1843,6 +1843,26 @@ a.contact-val{display:inline-flex;align-items:center;min-height:44px}
   .hero-lead::before { content: ''; position: absolute; top: 0; left: 50%; width: 56px; height: 1px; margin-left: -28px; background: var(--gold); }
   .hero-lead em { font-style: italic; color: var(--gold-light); }
   .hero-main .hero-title { font-size: clamp(2.2rem, 4.8vw, 3.5rem); }
+
+  /* ===== Round 19: about after the mission, then a separate quote section ===== */
+  .about, .services, .pricing, .contact, .quote { position: relative; }
+  .quote {
+    margin-top: calc(var(--ov) * -1); border-radius: calc(var(--ov) * .75) calc(var(--ov) * .75) 0 0;
+    padding: calc(5rem + var(--ov)) 1.5rem 6rem;
+    background: radial-gradient(70% 50% at 50% 0%, rgba(230,200,130,.16) 0%, transparent 72%), linear-gradient(180deg, #10281a 0%, #0b1e13 100%);
+    box-shadow: 0 -18px 50px rgba(70,45,10,.30), 0 -3px 0 rgba(230,200,130,.75);
+  }
+  .quote-head { max-width: 640px; margin: 0 auto 2.25rem; text-align: center; }
+  .quote-head .section-label { display: block; margin-bottom: .9rem; color: var(--gold-light); opacity: 1; }
+  .quote-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(2.2rem, 4.4vw, 3.1rem); line-height: 1.1; color: var(--cream); margin-bottom: .9rem; text-wrap: balance; }
+  .quote-title em { font-style: italic; color: var(--gold-light); }
+  .quote-sub { font-size: var(--fs-base); color: rgba(248,245,239,.72); }
+  .quote-wrap { max-width: 880px; margin: 0 auto; }
+  .quote-wrap .hero-actions { margin-top: 2rem; }
+  .hero { padding-bottom: calc(5rem + var(--ov)); }
+  .hero-main .hero-subtitle.hero-mission { margin-bottom: 0; }
+  @media (max-width: 900px) { .quote { padding: calc(4.5rem + var(--ov)) 1.5rem 5rem; } }
+  @media (max-width: 600px) { .quote { padding: calc(4rem + var(--ov)) 1rem 4rem; } .quote-head { margin-bottom: 1.75rem; } }
 </style>
 </head>
 <body>
@@ -1877,7 +1897,48 @@ a.contact-val{display:inline-flex;align-items:center;min-height:44px}
       <span data-lang data-fr="Plus qu'un comptable : un <em>partenaire d'affaires.</em>" data-en="More than an accountant: a <em>business partner.</em>">Plus qu'un comptable : un <em>partenaire d'affaires.</em></span>
     </h1>
     <p class="hero-subtitle hero-mission" data-lang data-fr="Notre mission est de transcender le rôle traditionnel du comptable. À l'ère numérique, notre rôle ne se limite plus à parler de chiffres. Nous voulons être un véritable partenaire d'affaires pour nos clients : les accompagner dans tous leurs enjeux comptables et financiers, leur fournir les outils dont ils ont besoin et demeurer proactifs, à l'avant-garde des avancées technologiques." data-en="Our mission is to go beyond the traditional role of the accountant. In the digital era, our role is no longer just about numbers. We want to be a true business partner for our clients: supporting them through all their accounting and financial challenges, giving them the tools they need, and staying proactive, at the forefront of technology.">Notre mission est de transcender le rôle traditionnel du comptable. À l'ère numérique, notre rôle ne se limite plus à parler de chiffres. Nous voulons être un véritable partenaire d'affaires pour nos clients : les accompagner dans tous leurs enjeux comptables et financiers, leur fournir les outils dont ils ont besoin et demeurer proactifs, à l'avant-garde des avancées technologiques.</p>
-    <p class="hero-lead" data-lang data-fr="Dites-nous <em>ce qu'il vous faut.</em> Quelques questions, gratuit et sans engagement : nous vous rappelons." data-en="Tell us <em>what you need.</em> A few questions, free and no obligation: we'll call you back.">Dites-nous <em>ce qu'il vous faut.</em> Quelques questions, gratuit et sans engagement : nous vous rappelons.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="apropos">
+  <div class="section-header reveal">
+    <span class="section-label" data-lang data-fr="01 — À propos" data-en="01 — About">01 — À propos</span>
+    <h2 class="section-title" data-lang data-fr="Deux professionnels de la Montérégie" data-en="Two professionals from Montérégie">Deux professionnels de la Montérégie</h2>
+  </div>
+  <p class="about-intro reveal" data-lang data-fr="Vincent et Anaël sont deux jeunes professionnels qui ont grandi en Montérégie. Leurs chemins se sont croisés dans l'immobilier, puis ils ont choisi de se lancer à leur compte en fondant W&amp;G Comptabilité." data-en="Vincent and Anaël are two young professionals who grew up in Montérégie. Their paths crossed in real estate, and they then chose to go out on their own by founding W&amp;G Comptabilité.">Vincent et Anaël sont deux jeunes professionnels qui ont grandi en Montérégie. Leurs chemins se sont croisés dans l'immobilier, puis ils ont choisi de se lancer à leur compte en fondant W&G Comptabilité.</p>
+  <div class="team-grid reveal">
+    <div class="member">
+      <div class="member-head">
+        <div class="member-photo">W</div>
+        <div>
+          <h3 class="member-name">Vincent Watts</h3>
+          <p class="member-role" data-lang data-fr="CPA auditeur" data-en="CPA auditor">CPA auditeur</p>
+        </div>
+      </div>
+      <p class="member-bio" data-lang data-fr="Formé à HEC Montréal, Vincent a fait ses classes au cabinet EY, où il a obtenu son titre de CPA auditeur. Il a ensuite poursuivi sa carrière dans l'immobilier. Aujourd'hui, il se spécialise dans l'accompagnement des particuliers, des entrepreneurs et des entreprises québécoises, pour les aider à atteindre leurs objectifs." data-en="Trained at HEC Montréal, Vincent began his career at EY, where he earned his CPA auditor designation. He then moved into real estate. Today, he specializes in helping individuals, entrepreneurs and Quebec businesses reach their goals.">Formé à HEC Montréal, Vincent a fait ses classes au cabinet EY, où il a obtenu son titre de CPA auditeur. Il a ensuite poursuivi sa carrière dans l'immobilier. Aujourd'hui, il se spécialise dans l'accompagnement des particuliers, des entrepreneurs et des entreprises québécoises, pour les aider à atteindre leurs objectifs.</p>
+    </div>
+    <div class="member">
+      <div class="member-head">
+        <div class="member-photo">G</div>
+        <div>
+          <h3 class="member-name">Anaël Gagné</h3>
+          <p class="member-role" data-lang data-fr="Construction &amp; immobilier" data-en="Construction &amp; real estate">Construction & immobilier</p>
+        </div>
+      </div>
+      <p class="member-bio" data-lang data-fr="Anaël s'est lancé directement sur le marché du travail, en tenue de livres et en gestion de projets dans la construction et l'immobilier. Tombé en amour avec le milieu, il a acquis son premier immeuble à revenus. Aujourd'hui, il exerce en comptabilité avec une spécialisation dans tous les domaines de la construction et de l'immobilier." data-en="Anaël went straight into the workforce, doing bookkeeping and project management in construction and real estate. He fell in love with the industry and bought his first income property. Today he practises accounting with a specialization in every area of construction and real estate.">Anaël s'est lancé directement sur le marché du travail, en tenue de livres et en gestion de projets dans la construction et l'immobilier. Tombé en amour avec le milieu, il a acquis son premier immeuble à revenus. Aujourd'hui, il exerce en comptabilité avec une spécialisation dans tous les domaines de la construction et de l'immobilier.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote" id="demarrer">
+  <div class="quote-head reveal">
+    <span class="section-label" data-lang data-fr="Soumission gratuite" data-en="Free quote">Soumission gratuite</span>
+    <h2 class="quote-title" data-lang data-fr="Dites-nous <em>ce qu'il vous faut.</em>" data-en="Tell us <em>what you need.</em>">Dites-nous <em>ce qu'il vous faut.</em></h2>
+    <p class="quote-sub" data-lang data-fr="Quelques questions, gratuit et sans engagement : nous vous rappelons." data-en="A few questions, free and no obligation: we'll call you back.">Quelques questions, gratuit et sans engagement : nous vous rappelons.</p>
+  </div>
+  <div class="quote-wrap reveal">
     <div class="quick" id="soumission">
       <ol class="fn-progress" id="fn-progress" aria-label="Progression"></ol>
       <div class="fn-step" id="fn-1">
@@ -1961,37 +2022,6 @@ a.contact-val{display:inline-flex;align-items:center;min-height:44px}
         <span><strong>5,0</strong> · <span data-lang data-fr="17 avis Google" data-en="17 Google reviews">17 avis Google</span></span>
       </a>
       <a href="#contact" class="cta-ghost" data-lang data-fr="Préférez écrire ? Écrivez-nous →" data-en="Prefer to write? Message us →">Préférez écrire ? Écrivez-nous →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="apropos">
-  <div class="section-header reveal">
-    <span class="section-label" data-lang data-fr="01 — À propos" data-en="01 — About">01 — À propos</span>
-    <h2 class="section-title" data-lang data-fr="Deux professionnels de la Montérégie" data-en="Two professionals from Montérégie">Deux professionnels de la Montérégie</h2>
-  </div>
-  <p class="about-intro reveal" data-lang data-fr="Vincent et Anaël sont deux jeunes professionnels qui ont grandi en Montérégie. Leurs chemins se sont croisés dans l'immobilier, puis ils ont choisi de se lancer à leur compte en fondant W&amp;G Comptabilité." data-en="Vincent and Anaël are two young professionals who grew up in Montérégie. Their paths crossed in real estate, and they then chose to go out on their own by founding W&amp;G Comptabilité.">Vincent et Anaël sont deux jeunes professionnels qui ont grandi en Montérégie. Leurs chemins se sont croisés dans l'immobilier, puis ils ont choisi de se lancer à leur compte en fondant W&G Comptabilité.</p>
-  <div class="team-grid reveal">
-    <div class="member">
-      <div class="member-head">
-        <div class="member-photo">W</div>
-        <div>
-          <h3 class="member-name">Vincent Watts</h3>
-          <p class="member-role" data-lang data-fr="CPA auditeur" data-en="CPA auditor">CPA auditeur</p>
-        </div>
-      </div>
-      <p class="member-bio" data-lang data-fr="Formé à HEC Montréal, Vincent a fait ses classes au cabinet EY, où il a obtenu son titre de CPA auditeur. Il a ensuite poursuivi sa carrière dans l'immobilier. Aujourd'hui, il se spécialise dans l'accompagnement des particuliers, des entrepreneurs et des entreprises québécoises, pour les aider à atteindre leurs objectifs." data-en="Trained at HEC Montréal, Vincent began his career at EY, where he earned his CPA auditor designation. He then moved into real estate. Today, he specializes in helping individuals, entrepreneurs and Quebec businesses reach their goals.">Formé à HEC Montréal, Vincent a fait ses classes au cabinet EY, où il a obtenu son titre de CPA auditeur. Il a ensuite poursuivi sa carrière dans l'immobilier. Aujourd'hui, il se spécialise dans l'accompagnement des particuliers, des entrepreneurs et des entreprises québécoises, pour les aider à atteindre leurs objectifs.</p>
-    </div>
-    <div class="member">
-      <div class="member-head">
-        <div class="member-photo">G</div>
-        <div>
-          <h3 class="member-name">Anaël Gagné</h3>
-          <p class="member-role" data-lang data-fr="Construction &amp; immobilier" data-en="Construction &amp; real estate">Construction & immobilier</p>
-        </div>
-      </div>
-      <p class="member-bio" data-lang data-fr="Anaël s'est lancé directement sur le marché du travail, en tenue de livres et en gestion de projets dans la construction et l'immobilier. Tombé en amour avec le milieu, il a acquis son premier immeuble à revenus. Aujourd'hui, il exerce en comptabilité avec une spécialisation dans tous les domaines de la construction et de l'immobilier." data-en="Anaël went straight into the workforce, doing bookkeeping and project management in construction and real estate. He fell in love with the industry and bought his first income property. Today he practises accounting with a specialization in every area of construction and real estate.">Anaël s'est lancé directement sur le marché du travail, en tenue de livres et en gestion de projets dans la construction et l'immobilier. Tombé en amour avec le milieu, il a acquis son premier immeuble à revenus. Aujourd'hui, il exerce en comptabilité avec une spécialisation dans tous les domaines de la construction et de l'immobilier.</p>
     </div>
   </div>
 </section>
@@ -2664,7 +2694,7 @@ const navScroll = () => document.querySelector('nav').classList.toggle('scrolled
 window.addEventListener('scroll', navScroll, { passive: true });
 navScroll();
 new IntersectionObserver(([e]) => document.querySelector('.call-fab').classList.toggle('show', !e.isIntersecting), { threshold: 0.05 })
-  .observe(document.querySelector('.hero-main'));
+  .observe(document.querySelector('.hero'));
 
 // Mobile menu
 const menuBtn = document.getElementById('menu-btn');
